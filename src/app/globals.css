@@ -4,6 +4,19 @@
 @tailwind components;
 @tailwind utilities;
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #0c3741;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background: #06232b;
+}
+
 :root {
   /* Fonts */
   --font-sans: "Montserrat", sans-serif;
