@@ -1,7 +1,7 @@
 import Main from "@/components/Main";
 
-function HomePage() {
+function AllProjects() {
   return <Main />;
 }
 
-export default HomePage;
+export default AllProjects;

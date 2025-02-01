@@ -1,11 +1,5 @@
-import Main from "../components/Main";
+import { redirect } from "next/navigation";
 
-function Home() {
-  return (
-    <div className="font-kode_mono">
-      <Main />
-    </div>
-  );
+export default function Home() {
+  redirect("/home");
 }
-
-export default Home;
