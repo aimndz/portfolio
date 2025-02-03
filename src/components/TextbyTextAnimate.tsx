@@ -8,7 +8,7 @@ function TextbyTextAnimate({
   className?: string;
 }) {
   return (
-    <p className={`flex text-p-muted tracking-custom uppercase ${className}`}>
+    <p className={`flex tracking-custom uppercase ${className}`}>
       {text.split("").map((letter, index) => {
         if (letter === " ") {
           return <span key={index}>&nbsp;</span>;
@@ -22,8 +22,8 @@ function TextbyTextAnimate({
               opacity: 1,
               y: 0,
               transition: {
-                duration: 0.5,
-                delay: index * 0.1,
+                duration: 0.3,
+                delay: index * 0.05,
               },
             }}
           >
