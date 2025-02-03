@@ -2,7 +2,7 @@ import SectionTitle from "../SectionTitle";
 
 function AboutMe() {
   return (
-    <div className="max-w-4xl mx-auto">
+    <div className="max-w-4xl mx-auto mt-52">
       <SectionTitle title="About me" />
       <p className="text-p-muted text-lg text-justify">
         I am a full-stack developer with a passion for both coding and

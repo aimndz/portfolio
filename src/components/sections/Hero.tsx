@@ -13,9 +13,11 @@ function Hero() {
   const { country, fullName, position } = content;
 
   return (
-    <div className="flex flex-col items-center h-screen space-y-4 ">
-      <div className="z-30 text-center mt-48">
-        <div className="flex gap-3 items-center text-p-muted tracking-custom justify-center uppercase -mb-11 mt-3">
+    <div className="flex flex-col items-center h-[calc(100vh-8rem)] space-y-4 relative">
+      {/* Hero Content */}
+      <div className="z-30 text-center mt-48 ">
+        {/* Country */}
+        <div className="flex gap-3 items-center text-sm md:text-base text-p-muted tracking-custom justify-center uppercase -mb-11 mt-3">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -24,7 +26,9 @@ function Hero() {
           </motion.div>
           <TextbyTextAnimate text={country} />
         </div>
-        <h1 className="flex justify-center font-montserrat font-extrabold text-[10rem] ">
+
+        {/* AIM */}
+        <h1 className="flex justify-center text-[8rem] md:text-[10rem] font-montserrat font-extrabold ">
           {["A", "I", "M"].map((letter, index) => (
             <motion.span
               key={index}
@@ -47,15 +51,21 @@ function Hero() {
             </motion.span>
           ))}
         </h1>
-        <div className="flex justify-center tracking-custom uppercase text-heading -mt-10">
+
+        {/* Full name */}
+        <div className="flex justify-center text-sm md:text-base tracking-custom uppercase text-heading -mt-10">
           <TextbyTextAnimate
             text={fullName}
             className="text-accent-100 font-bold"
           />
         </div>
-        <div className="flex text-p-muted tracking-custom uppercase mt-3">
-          <TextbyTextAnimate text={position} className="font-bold" />
+
+        {/* Position */}
+        <div className="flex text-p-muted text-sm md:text-base tracking-custom uppercase mt-3">
+          <TextbyTextAnimate text={position} className="text-p-default" />
         </div>
+
+        {/* Socials Icon */}
         <motion.div
           className="flex justify-center gap-3 mt-3"
           initial={{ opacity: 0, y: 20 }}
@@ -67,13 +77,44 @@ function Hero() {
           <LinkedIn />
         </motion.div>
       </div>
-      <div className="absolute flex justify-center items-center w-full">
+
+      <div className="absolute  bottom-28 min-[500px]:bottom-0 min-[750px]:-bottom-56 flex justify-center items-center w-full">
         <Radar />
         <div className="absolute inset-0">
-          {/* Horizontal Line */}
-          <div className="absolute top-1/2 left-0 w-full h-[1px] bg-s-default"></div>
+          <div>
+            {/* Horizontal Line */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 w-[calc(100vw-10px)] h-[1px] bg-s-default -z-10"></div>
+
+            {/* Crosshair */}
+            <div className="absolute inset-0 flex justify-center items-center z-50">
+              <motion.div
+                initial={{ scale: 0.8, rotate: 135, opacity: 0 }}
+                animate={{
+                  scale: [0.8, 1, 0.8],
+                  rotate: 0,
+                  opacity: 1,
+                  transition: {
+                    scale: {
+                      duration: 2,
+                      repeat: Infinity,
+                      repeatType: "loop",
+                    },
+                    rotate: {
+                      duration: 0.5,
+                      delay: 1.3,
+                      ease: "easeOut",
+                    },
+                  },
+                }}
+              >
+                <CrossHair />
+              </motion.div>
+            </div>
+          </div>
         </div>
-        <div className="absolute bottom-72 left-1/2 transform -translate-x-1/2 z-10">
+
+        {/* Arrow Down */}
+        <div className="absolute bottom-10 min-[500px]:bottom-10 min-[750px]:bottom-60 left-1/2 transform -translate-x-1/2 z-10">
           <motion.div
             initial={{ y: 0, opacity: 0 }}
             animate={{
@@ -94,30 +135,6 @@ function Hero() {
             className="cursor-pointer"
           >
             <ArrowDown />
-          </motion.div>
-        </div>
-        <div className="absolute inset-0 flex justify-center items-center z-50">
-          <motion.div
-            initial={{ scale: 0.8, rotate: 135, opacity: 0 }}
-            animate={{
-              scale: [0.8, 1, 0.8],
-              rotate: 0,
-              opacity: 1,
-              transition: {
-                scale: {
-                  duration: 2,
-                  repeat: Infinity,
-                  repeatType: "loop",
-                },
-                rotate: {
-                  duration: 0.5,
-                  delay: 1.3,
-                  ease: "easeOut",
-                },
-              },
-            }}
-          >
-            <CrossHair />
           </motion.div>
         </div>
       </div>
