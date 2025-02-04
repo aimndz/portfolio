@@ -17,11 +17,8 @@ function Hero() {
       {/* Hero Content */}
       <div className="z-30 text-center mt-48 ">
         {/* Country */}
-        <div className="flex gap-3 items-center text-sm md:text-base text-p-muted tracking-custom justify-center uppercase -mb-11 mt-3">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-          >
+        <div className="flex gap-3 items-center text-sm md:text-base text-p-muted justify-center uppercase -mb-11 mt-3">
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
             <MapPin />
           </motion.div>
           <TextbyTextAnimate text={country} />
@@ -37,10 +34,9 @@ function Hero() {
                   ? "ml-[-12px] gradient-text"
                   : "mr-[-4px] gradient-text"
               }
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0 }}
               animate={{
                 opacity: 1,
-                y: 0,
                 transition: {
                   duration: 0.5,
                   delay: index * 0.5,
@@ -53,7 +49,7 @@ function Hero() {
         </h1>
 
         {/* Full name */}
-        <div className="flex justify-center text-sm md:text-base tracking-custom uppercase text-heading -mt-10">
+        <div className="flex justify-center text-sm md:text-base uppercase text-heading -mt-10">
           <TextbyTextAnimate
             text={fullName}
             className="text-accent-100 font-bold"
@@ -61,7 +57,7 @@ function Hero() {
         </div>
 
         {/* Position */}
-        <div className="flex text-p-muted text-sm md:text-base tracking-custom uppercase mt-3">
+        <div className="flex text-p-muted text-sm md:text-base justify-center uppercase mt-3">
           <TextbyTextAnimate text={position} className="text-p-default" />
         </div>
 
