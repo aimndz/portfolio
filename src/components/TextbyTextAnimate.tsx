@@ -8,7 +8,9 @@ function TextbyTextAnimate({
   className?: string;
 }) {
   return (
-    <p className={`flex tracking-custom uppercase ${className}`}>
+    <p
+      className={`flex md:tracking-widest tracking-widest  uppercase ${className}`}
+    >
       {text.split("").map((letter, index) => {
         if (letter === " ") {
           return <span key={index}>&nbsp;</span>;

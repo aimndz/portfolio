@@ -1,7 +1,7 @@
 function Footer() {
   return (
-    <footer className="text-center mb-3">
-      © 2025 Amiel Ian Mendoza. All rights reserved.
+    <footer className="text-center mb-3 text-sm">
+      © 2025 AIM. All rights reserved.
     </footer>
   );
 }

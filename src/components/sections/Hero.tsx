@@ -15,7 +15,7 @@ function Hero() {
   return (
     <div className="flex flex-col items-center h-[calc(100vh-8rem)] space-y-4 relative">
       {/* Hero Content */}
-      <div className="z-30 text-center mt-48 ">
+      <div className="z-30 text-center md:mt-48 mt-32">
         {/* Country */}
         <div className="flex gap-3 items-center text-sm md:text-base text-p-muted justify-center uppercase -mb-11 mt-3">
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>

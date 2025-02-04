@@ -2,10 +2,10 @@ import CornerAccent from "../../public/icons/CornerAccent";
 
 function SectionTitle({ title }: { title: string }) {
   return (
-    <h2 className="relative gradient-text text-3xl font-montserrat font-extrabold uppercase mb-20 inline-block">
-      <CornerAccent className="absolute bottom-8 left-0" />
+    <h2 className="relative gradient-text text-xl md:text-3xl font-montserrat font-extrabold uppercase md:mb-20 mb-14 inline-block">
+      <CornerAccent className="absolute md:bottom-8 md:left-0 left-3 bottom-3" />
       <p className="ml-8">{title}</p>
-      <CornerAccent className="absolute right-[-30] top-8 rotate-180" />
+      <CornerAccent className="absolute md:right-[-30] md:top-8 top-3 right-[-20] rotate-180" />
     </h2>
   );
 }

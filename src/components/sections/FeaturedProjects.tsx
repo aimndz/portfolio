@@ -4,7 +4,7 @@ import Github from "../../../public/icons/Github";
 
 function FeaturedProjects() {
   return (
-    <div className="mt-48 max-w-4xl mx-auto mb-48 z-10">
+    <div className="mt-48 max-w-4xl mx-10 mb-48 z-10">
       <SectionTitle title="Featured Projects" />
       <div className="bg-s-muted rounded-lg border border-s-default overflow-hidden">
         <div className="px-4 pt-4">
