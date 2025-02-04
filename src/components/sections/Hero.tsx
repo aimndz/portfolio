@@ -74,7 +74,7 @@ function Hero() {
         </motion.div>
       </div>
 
-      <div className="absolute  bottom-28 min-[500px]:bottom-0 min-[750px]:-bottom-56 flex justify-center items-center w-full">
+      <div className="absolute bottom-28 min-[500px]:bottom-0 min-[750px]:-bottom-64 flex justify-center items-center w-full">
         <Radar />
         <div className="absolute inset-0">
           <div>
