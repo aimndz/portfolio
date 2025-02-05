@@ -2,8 +2,8 @@ import { useRouter, usePathname } from "next/navigation";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 import Home from "./Home";
 import AllProjects from "./AllProjects";
-import { ArrowUpRight } from "lucide-react";
-import { Button } from "./ui/button";
+// import { ArrowUpRight } from "lucide-react";
+// import { Button } from "./ui/button";
 
 function NavigationTab() {
   const router = useRouter();

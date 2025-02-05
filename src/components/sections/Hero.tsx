@@ -8,6 +8,7 @@ import MapPin from "../../../public/icons/MapPin";
 import TextbyTextAnimate from "../TextbyTextAnimate";
 import { motion } from "motion/react";
 import Radar from "../Radar";
+import Link from "next/link";
 
 function Hero() {
   const { country, fullName, position } = content;
@@ -15,7 +16,7 @@ function Hero() {
   return (
     <div className="flex flex-col items-center h-[calc(100vh-8rem)] space-y-4 relative">
       {/* Hero Content */}
-      <div className="z-30 text-center md:mt-48 mt-32">
+      <div className="z-[100] text-center md:mt-48 mt-32">
         {/* Country */}
         <div className="flex gap-3 items-center text-sm md:text-base text-p-muted justify-center uppercase -mb-11 mt-3">
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
@@ -63,14 +64,23 @@ function Hero() {
 
         {/* Socials Icon */}
         <motion.div
-          className="flex justify-center gap-3 mt-3"
+          className="flex justify-center gap-3 mt-3 items-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1 }}
         >
-          <Github />
-          <Instagram />
-          <LinkedIn />
+          <Link href="https://github.com/aimndz" target="_blank">
+            <Github />
+          </Link>
+          <Link href="https://www.instagram.com/aim.ndz/" target="_blank">
+            <Instagram />
+          </Link>
+          <Link
+            href="https://www.linkedin.com/in/amiel-ian-mendoza-aa8849312/"
+            target="_blank"
+          >
+            <LinkedIn />
+          </Link>
         </motion.div>
       </div>
 
