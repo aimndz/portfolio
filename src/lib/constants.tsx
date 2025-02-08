@@ -13,7 +13,7 @@ import {
 } from "devicons-react";
 
 export const content = {
-  country: "Philippines",
+  country: "Cavite, Philippines",
   fullName: "Amiel Ian Mendoza",
   position: "[ Full-Stack Developer ]",
   technologies: [

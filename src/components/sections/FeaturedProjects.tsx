@@ -1,6 +1,7 @@
 import Image from "next/image";
 import SectionTitle from "../SectionTitle";
 import Github from "../../../public/icons/Github";
+import Link from "next/link";
 
 function FeaturedProjects() {
   return (
@@ -9,7 +10,7 @@ function FeaturedProjects() {
       <div className="bg-s-muted rounded-lg border border-s-default overflow-hidden">
         <div className="px-4 pt-4">
           <Image
-            src="/images/blissnflair.png"
+            src="/images/projects/blissnflair.png"
             alt="blissnflair"
             width={0}
             height={0}
@@ -21,8 +22,9 @@ function FeaturedProjects() {
           <h3 className="font-bold text-xl">
             Bliss and Flair Commercial Building Website
           </h3>
+          <p className="text-accent-100">Lead Developer / Designer</p>
           <p className="text-p-muted mt-4">
-            An event place management system that offers venue booking,
+            An event place management system build for Bliss and Flair Commercial Building that offers venue booking,
             scheduling, and managing, providing a better experience for both
             admins and customers.
           </p>
@@ -31,12 +33,20 @@ function FeaturedProjects() {
               TypeScript
             </div>
             <div className="py-1 px-3 text-xs rounded-full bg-s-default border border-s-default overflow-hidden inline-block">
+              React
+            </div>
+            <div className="py-1 px-3 text-xs rounded-full bg-s-default border border-s-default overflow-hidden inline-block">
+              Express
+            </div>
+            <div className="py-1 px-3 text-xs rounded-full bg-s-default border border-s-default overflow-hidden inline-block">
               PostgreSQL
             </div>
           </div>
-          <div className="absolute bottom-4 right-4">
-            <Github />
-          </div>
+          {/* <div className="absolute bottom-4 right-4">
+            <Link href="https://github.com/aimndz/blissnflair">
+              <Github />
+            </Link>
+          </div> */}
           <div className="absolute top-28 left-1/2 transform -translate-x-1/2 w-full z-10 aspect-square rounded-full blur-2xl bg-white opacity-10"></div>
         </div>
       </div>
