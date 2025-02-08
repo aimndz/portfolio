@@ -1,3 +1,4 @@
+import AllProjects from "@/components/AllProjects";
 import {
   Css3Original,
   ExpressOriginal,
@@ -70,7 +71,7 @@ export const content = {
       description:
         "An event place management system build for Bliss and Flair Commercial Building that offers venue booking, scheduling, and managing, providing a better experience for both admins and customers.",
       stack: ["TypeScript", "React", "Express", "PostgreSQL"],
-      route: "/blissnflair",
+      route: "https://github.com/aimndz/blissnflair",
     },
     {
       name: "Propertize",
@@ -79,7 +80,18 @@ export const content = {
       description:
         "Propertize is a real estate management system designed to simplify buying, selling, and renting properties.",
       stack: ["CodeIgniter 4", "PHP", "MySQL"],
-      route: "/propertize",
+      route: "https://github.com/aimndz/propertize",
+    },
+  ],
+  otherProjects: [
+    {
+      name: "Cinematrix",
+      image: "/images/projects/cinematrix.png",
+      role: "Lead Developer and Designer",
+      description:
+        "Cinematrix is a simple yet powerful cinema booking management system. It's designed to make managing cinema operations a breeze, from handling movie listings to processing ticket sales and tracking customer bookings.",
+      stack: ["C#", "MySQL"],
+      route: "https://github.com/aimndz/Cinematrix",
     },
   ],
 };
