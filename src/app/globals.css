@@ -55,6 +55,15 @@ body {
   color: transparent;
 }
 
+.glowing-gradient-text {
+  background-image: var(--color-accent-gradient);
+  text-shadow: 0 5px 15px #efa86b33, 0 -5px 15px #ff5a0026,
+    0 -5px 25px #ffffff40;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
