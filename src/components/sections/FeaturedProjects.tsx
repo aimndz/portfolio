@@ -11,7 +11,7 @@ function FeaturedProjects() {
   const { featuredProjects } = content;
 
   return (
-    <section className="mt-48 max-w-4xl mx-10 mb-48 z-10">
+    <section className="mt-48 max-w-4xl mx-10 mb-20 z-10">
       <div className="flex justify-between ">
         <SectionTitle title="Featured Projects" />
         <Link href="/projects">
