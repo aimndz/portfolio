@@ -7,7 +7,7 @@ function HomePage() {
   useEffect(() => {
     (async () => {
       const LocomotiveScroll = (await import("locomotive-scroll")).default;
-      const locomotiveScroll = new LocomotiveScroll();
+      new LocomotiveScroll();
     })();
   }, []);
 

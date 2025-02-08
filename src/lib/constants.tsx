@@ -1,4 +1,3 @@
-import AllProjects from "@/components/AllProjects";
 import {
   Css3Original,
   ExpressOriginal,
