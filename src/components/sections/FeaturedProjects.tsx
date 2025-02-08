@@ -1,7 +1,7 @@
 import Image from "next/image";
 import SectionTitle from "../SectionTitle";
-import Github from "../../../public/icons/Github";
-import Link from "next/link";
+// import Github from "../../../public/icons/Github";
+// import Link from "next/link";
 
 function FeaturedProjects() {
   return (
@@ -24,9 +24,10 @@ function FeaturedProjects() {
           </h3>
           <p className="text-accent-100">Lead Developer / Designer</p>
           <p className="text-p-muted mt-4">
-            An event place management system build for Bliss and Flair Commercial Building that offers venue booking,
-            scheduling, and managing, providing a better experience for both
-            admins and customers.
+            An event place management system build for Bliss and Flair
+            Commercial Building that offers venue booking, scheduling, and
+            managing, providing a better experience for both admins and
+            customers.
           </p>
           <div className="mt-4 flex gap-3">
             <div className="py-1 px-3 text-xs rounded-full bg-s-default border border-s-default overflow-hidden inline-block">
