@@ -14,8 +14,8 @@ function AllProjects() {
           Projects
         </h1>
         <p className="text-center mt-3 text-p-muted max-w-lg mx-auto">
-          These are some of my projects that, honestly, I have no idea how I
-          survived.
+          These are some of my projects that, honestly, I still don’t know how I
+          pulled off.
         </p>
       </div>
       <div className="grid grid-cols-1 gap-10">
