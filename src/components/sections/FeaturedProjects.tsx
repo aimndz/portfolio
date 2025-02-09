@@ -4,7 +4,7 @@ import { content } from "@/lib/constants";
 import { Button } from "../ui/button";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { motion } from "motion/react";
+// import { motion } from "motion/react";
 // import Github from "../../../public/icons/Github";
 // import Link from "next/link";
 

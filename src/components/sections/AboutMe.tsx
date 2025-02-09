@@ -1,11 +1,17 @@
 import SectionTitle from "../SectionTitle";
+import { motion } from "framer-motion";
 
 function AboutMe() {
   return (
     <div className="max-w-4xl mx-10 md:mt-52">
       <SectionTitle title="About me" />
       <div className="text-p-muted md:text-lg text-md">
-        <p>
+        <motion.p
+          initial={{ opacity: 0, y: 100, filter: "blur(8px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 0.5 }}
+          viewport={{ amount: 0.5 }}
+        >
           I&apos;m a{" "}
           <span className="text-p-default">full-stack developer</span> and an{" "}
           <span className="text-p-default">artist</span> who sees programming
@@ -14,9 +20,16 @@ function AboutMe() {
           love <span className="text-p-default">solving problems</span> (which I
           sometimes create myself), which makes coding the perfect blend of
           logic and creativity for me.
-        </p>
+        </motion.p>
+
         <br />
-        <p>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ delay: 0.1, duration: 0.5 }}
+          viewport={{ amount: 0.5 }}
+        >
           In my spare time, you&apos;ll probably find me learning something new
           on tech (lol nerd). Other than that, you&apos;ll find me playing
           basketball, drawing, or playing video games. Whether it&apos;s art,
@@ -25,7 +38,7 @@ function AboutMe() {
           <span className="text-p-default">
             Let&apos;s build something awesome together!
           </span>
-        </p>
+        </motion.p>
       </div>
     </div>
   );
