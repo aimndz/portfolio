@@ -15,7 +15,7 @@ function FeaturedProjects() {
       <div className="flex justify-between ">
         <SectionTitle title="Featured Projects" />
         <Link href="/projects">
-          <Button className="bg-transparent hover:bg-s-default transition-all delay-75 ease-linear rounded-full">
+          <Button className="p-6 bg-transparent hover:bg-s-muted hover:text-accent-100 transition-all delay-75 ease-linear rounded-full">
             View More <ArrowRight />{" "}
           </Button>
         </Link>
