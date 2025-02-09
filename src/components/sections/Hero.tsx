@@ -95,7 +95,7 @@ function Hero() {
       <div
         data-scroll
         data-scroll-speed="0.3"
-        className="absolute bottom-28 min-[500px]:bottom-0 min-[750px]:-bottom-64 flex justify-center items-center w-full"
+        className="absolute -bottom-0 min-[600px]:-bottom-36 min-[750px]:-bottom-72 flex justify-center items-center w-full"
       >
         <Radar />
         <div className="absolute inset-0">
@@ -132,7 +132,7 @@ function Hero() {
         </div>
 
         {/* Arrow Down */}
-        <div className="absolute bottom-10 min-[500px]:bottom-10 min-[750px]:bottom-60 left-1/2 transform -translate-x-1/2 z-10">
+        <div className="absolute bottom-10 min-[600px]:bottom-24 min-[750px]:bottom-60 left-1/2 transform -translate-x-1/2 z-10">
           <motion.div
             initial={{ y: 0, opacity: 0 }}
             animate={{
