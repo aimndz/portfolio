@@ -71,7 +71,7 @@ function Hero() {
           className="flex justify-center gap-3 mt-3 items-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1 }}  
+          transition={{ duration: 1, delay: 1 }}
         >
           <Link href="https://github.com/aimndz" target="_blank">
             <Github />
