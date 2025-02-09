@@ -20,7 +20,10 @@ function NavigationTab() {
     <div className="flex justify-center mt-10">
       <Tabs value={activeTab} onValueChange={handleTabChange} className="z-50">
         <div>
-          <Link href="/" className="fixed left-32 top-10 z-[999]">
+          <Link
+            href="/"
+            className="left-10 min-[900px]:left-32 top-14 hidden md:block fixed z-[999]"
+          >
             <Logo />
           </Link>
 
@@ -33,7 +36,7 @@ function NavigationTab() {
             </TabsTrigger>
           </TabsList>
 
-          <Button className="fixed z-[999] right-32 top-10 text-md flex gap-1 uppercase font-medium rounded-full py-6 px-6 bg-transparent text-p-default hover:bg-s-muted hover:text-accent-100 transition-all duration-300">
+          <Button className="fixed hidden z-[999] right-6 min-[900px]:right-24 md:top-10 text-md md:flex gap-1 uppercase font-medium rounded-full py-6 px-6 bg-transparent text-p-default hover:bg-s-muted hover:text-accent-100 transition-all duration-300">
             <span>Resume</span> <ArrowUpRight />
           </Button>
         </div>

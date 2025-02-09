@@ -12,11 +12,11 @@ function FeaturedProjects() {
 
   return (
     <section className="mt-48 max-w-4xl mx-10 mb-20 z-10">
-      <div className="flex justify-between ">
+      <div className="flex justify-between">
         <SectionTitle title="Featured Projects" />
         <Link href="/projects">
-          <Button className="p-6 bg-transparent hover:bg-s-muted hover:text-accent-100 transition-all delay-75 ease-linear rounded-full">
-            View More <ArrowRight />{" "}
+          <Button className="p-6 bg-transparent hidden md:flex hover:bg-s-muted hover:text-accent-100 transition-all delay-75 ease-linear rounded-full">
+            View More <ArrowRight />
           </Button>
         </Link>
       </div>
@@ -41,7 +41,7 @@ function FeaturedProjects() {
                   <h3 className="font-bold text-xl">{project.name}</h3>
                   <p className="text-accent-100">{project.role}</p>
                   <p className="text-p-muted mt-4">{project.description}</p>
-                  <div className="mt-4 flex gap-3">
+                  <div className="mt-4 flex gap-3 flex-wrap">
                     {project.stack.map((stack, index) => (
                       <div
                         key={index}

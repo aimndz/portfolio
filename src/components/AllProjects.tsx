@@ -8,7 +8,7 @@ function AllProjects() {
   const allProjects = [...featuredProjects, ...otherProjects];
 
   return (
-    <section className="mt-28 max-w-4xl mx-10 mb-48 z-10">
+    <section className="mt-28 max-w-4xl mx-10 mb-20 z-10">
       <div className="md:mb-20 mb-14">
         <h1 className="text-4xl md:text-6xl font-montserrat font-bold  glowing-gradient-text text-center">
           Projects
@@ -36,7 +36,7 @@ function AllProjects() {
                 <h3 className="font-bold text-xl">{project.name}</h3>
                 <p className="text-accent-100">{project.role}</p>
                 <p className="text-p-muted mt-4">{project.description}</p>
-                <div className="mt-4 flex gap-3">
+                <div className="mt-4 flex gap-3 flex-wrap">
                   {project.stack.map((stack, index) => (
                     <div
                       key={index}

@@ -9,6 +9,7 @@ import TextbyTextAnimate from "../TextbyTextAnimate";
 import { motion } from "motion/react";
 import Radar from "../Radar";
 import Link from "next/link";
+import { Paperclip } from "lucide-react";
 
 function Hero() {
   const { country, fullName, position } = content;
@@ -84,6 +85,9 @@ function Hero() {
             target="_blank"
           >
             <LinkedIn />
+          </Link>
+          <Link href="" target="_blank" className="md:hidden block">
+            <Paperclip className="text-p-muted" />
           </Link>
         </motion.div>
       </div>
