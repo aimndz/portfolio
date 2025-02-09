@@ -4,6 +4,7 @@ import { content } from "@/lib/constants";
 import { Button } from "../ui/button";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { motion } from "motion/react";
 // import Github from "../../../public/icons/Github";
 // import Link from "next/link";
 
@@ -26,7 +27,7 @@ function FeaturedProjects() {
         {featuredProjects.map((project, index) => (
           <Link key={index} href={project.route} target="_blank">
             <div>
-              <div className="bg-s-muted rounded-lg border border-s-default overflow-hidden">
+              <div className="bg-s-muted rounded-lg border border-s-default overflow-hidden group">
                 <div>
                   <Image
                     src={project.image}
@@ -51,14 +52,10 @@ function FeaturedProjects() {
                       </div>
                     ))}
                   </div>
-                  {/* <div className="absolute bottom-4 right-4">
-                  <Link href="https://github.com/aimndz/blissnflair">
-                    <Github />
-                  </Link>
-                </div> */}
-
                   {/* Background glow */}
-                  <div className="absolute top-28 left-1/2 transform -translate-x-1/2 w-full z-10 aspect-square rounded-full blur-2xl bg-white opacity-10"></div>
+                  <div className="absolute top-28 left-1/2 transform -translate-x-1/2 w-full z-10 aspect-square rounded-full blur-2xl bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300">
+                    <div className="absolute inset-0 bg-white/30 rounded-full blur-xl" />
+                  </div>
                 </div>
               </div>
             </div>
