@@ -5,7 +5,7 @@ function Technologies() {
   const { technologies } = content;
 
   return (
-    <div className="mt-48 max-w-4xl mx-10">
+    <div className="mt-48 max-w-4xl mx-5">
       <SectionTitle title="Technologies" />
       <div className="grid grid-cols-1 min-[500px]:grid-cols-2 md:grid-cols-4 gap-3 ">
         {technologies.map((tech, index) => {

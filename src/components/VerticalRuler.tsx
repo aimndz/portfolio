@@ -11,9 +11,9 @@ function VerticalRuler({ position = "left" }) {
 
   const lineClass =
     position === "left"
-      ? "left-5 min-[900px]:left-20"
+      ? "min-[900px]:left-20"
       : position === "right"
-      ? "right-5 min-[900px]:right-20"
+      ? "min-[900px]:right-20"
       : "left-1/2 top-0 h-full w-[1px] bg-s-default -z-10";
   const textClass = position === "left" ? "left-16" : "right-16";
 

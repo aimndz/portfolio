@@ -8,7 +8,7 @@ function AllProjects() {
   const allProjects = [...featuredProjects, ...otherProjects];
 
   return (
-    <section className="mt-28 max-w-4xl mx-10 mb-20 z-10">
+    <section className="mt-28 max-w-4xl mx-5 mb-20 z-10">
       <div className="md:mb-20 mb-14">
         <h1 className="text-4xl md:text-6xl font-montserrat font-bold  glowing-gradient-text text-center">
           Projects

@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 
 function Radar() {
   return (
-    <div className="relative w-full mx-10">
+    <div className="relative w-full mx-5">
       {/* Radar Glow */}
       <motion.div
         className="absolute inset-0 flex justify-center items-center"
