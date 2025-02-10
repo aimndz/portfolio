@@ -3,7 +3,7 @@ function VerticalRuler({ position = "left" }) {
 
   function createRuler() {
     const result = [];
-    for (let i = 0; i <= 1000; i += 50) {
+    for (let i = 0; i <= 720; i += 10) {
       result.push(i);
     }
     return result;
