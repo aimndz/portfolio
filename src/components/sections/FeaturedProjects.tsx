@@ -13,10 +13,10 @@ function FeaturedProjects() {
 
   return (
     <section className="mt-48 max-w-4xl mx-5 mb-20 z-10">
-      <div className="flex justify-between">
+      <div className="flex justify-between items-center">
         <SectionTitle title="Featured Projects" />
         <Link href="/projects">
-          <Button className="p-6 bg-transparent hidden md:flex hover:bg-s-muted hover:text-accent-100 transition-all delay-75 ease-linear rounded-full">
+          <Button className="p-6 bg-transparent hidden md:flex hover:bg-s-muted hover:text-accent-100 transition-all delay-75 ease-linear rounded-full md:mb-20 mb-10">
             View More <ArrowRight />
           </Button>
         </Link>
