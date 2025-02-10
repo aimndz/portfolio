@@ -25,7 +25,13 @@ function FeaturedProjects() {
       {/* Projects */}
       <div className="grid grid-cols-1 gap-10">
         {featuredProjects.map((project, index) => (
-          <Link key={index} href={project.route} target="_blank">
+          <Link
+            key={index}
+            href={project.route}
+            target="_blank"
+            className="relative"
+          >
+            <div className="glow-top"></div>
             <div>
               <div className="bg-s-muted rounded-lg border border-s-default overflow-hidden group">
                 <div>

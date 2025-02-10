@@ -64,6 +64,27 @@ body {
   background-clip: text;
 }
 
+.glow-top {
+  position: absolute;
+  inset: 0% 0% auto;
+  z-index: 1;
+  background-image: linear-gradient(
+    to right,
+    #0000 5%,
+    rgb(38, 176, 206) 35%,
+    #fff 50%,
+    #fffc 65%,
+    #0000 95%
+  );
+  background-image: linear-gradient(
+    to right,
+    #0000 10%,
+    rgb(38, 176, 206) 50%,
+    #0000 90%
+  );
+  height: 1px;
+}
+
 .icon:hover {
   fill: #d9d9d9;
   transition: all 0.3s ease 75ms;

@@ -19,6 +19,7 @@ function Technologies() {
               transition={{ duration: 0.5 }}
               viewport={{ amount: 0.1 }}
             >
+              <div className="glow-top"></div>
               <i>{tech.icon}</i>
               <p className="text-p-default">{tech.name}</p>
               <div className="absolute top-10 left-1/2 transform -translate-x-1/2 w-[150%] aspect-square rounded-full blur-lg bg-white opacity-10"></div>

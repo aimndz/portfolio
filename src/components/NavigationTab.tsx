@@ -28,6 +28,7 @@ function NavigationTab() {
           </Link>
 
           <TabsList className="w-52 h-12 fixed top-10 left-1/2 transform -translate-x-1/2 z-[999]">
+            <div className="glow-top"></div>
             <TabsTrigger value="home" className="uppercase w-full h-9">
               Home
             </TabsTrigger>
