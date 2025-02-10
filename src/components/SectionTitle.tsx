@@ -5,8 +5,8 @@ function SectionTitle({ title }: { title: string }) {
   return (
     <motion.h2
       className="relative text-xl md:text-3xl font-montserrat font-extrabold md:mb-20 mb-10 inline-block p-4 md:p-8 glowing-gradient-text"
-      initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
-      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
       <CornerAccent className="absolute top-0 left-0" />
