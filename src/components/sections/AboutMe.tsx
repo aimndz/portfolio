@@ -10,7 +10,7 @@ function AboutMe() {
           initial={{ opacity: 0, y: 100, filter: "blur(8px)" }}
           whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 0.5 }}
-          viewport={{ amount: 0.5 }}
+          viewport={{ amount: 0.1 }}
         >
           I&apos;m a{" "}
           <span className="text-p-default">full-stack developer</span> and an{" "}
@@ -27,8 +27,8 @@ function AboutMe() {
         <motion.p
           initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
           whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ delay: 0.1, duration: 0.5 }}
-          viewport={{ amount: 0.5 }}
+          transition={{ delay: 0.3, duration: 0.5 }}
+          viewport={{ amount: 0.1 }}
         >
           In my spare time, you&apos;ll probably find me learning something new
           on tech (lol nerd). Other than that, you&apos;ll find me playing
