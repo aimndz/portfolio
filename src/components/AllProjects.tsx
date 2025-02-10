@@ -36,7 +36,10 @@ function AllProjects() {
                 <div className="relative overflow-hidden p-4">
                   <h3 className="font-bold text-xl">{project.name}</h3>
                   <p className="text-accent-100">{project.role}</p>
-                  <p className="text-p-muted mt-4">{project.description}</p>
+                  <p className="text-p-muted mt-4">
+                    <span className="text-p-default">{project.date}</span> -{" "}
+                    {project.description}
+                  </p>
                   <div className="mt-4 flex gap-3 flex-wrap">
                     {project.stack.map((stack, index) => (
                       <div

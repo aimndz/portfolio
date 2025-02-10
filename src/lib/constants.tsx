@@ -67,8 +67,9 @@ export const content = {
       name: "Bliss and Flair Commercial Building Website",
       image: "/images/projects/blissnflair.png",
       role: "Lead Developer and Designer",
+      date: "Jan 2025",
       description:
-        "An event place management system build for Bliss and Flair Commercial Building that offers venue booking, scheduling, and managing, providing a better experience for both admins and customers.",
+        "Event management system for Bliss & Flair Commercial Building.",
       stack: ["TypeScript", "React", "Express", "PostgreSQL"],
       route: "https://github.com/aimndz/blissnflair",
     },
@@ -76,8 +77,9 @@ export const content = {
       name: "Propertize",
       image: "/images/projects/propertize.png",
       role: "Lead Developer and Designer",
+      date: "Jul 2024",
       description:
-        "Propertize is a real estate management system designed to simplify buying, selling, and renting properties.",
+        "Real estate management system for buying, selling, and renting properties.",
       stack: ["CodeIgniter 4", "PHP", "MySQL"],
       route: "https://github.com/aimndz/propertize",
     },
@@ -87,8 +89,9 @@ export const content = {
       name: "Cinematrix",
       image: "/images/projects/cinematrix.png",
       role: "Lead Developer and Designer",
+      date: "Jan 2024",
       description:
-        "Cinematrix is a simple yet powerful cinema booking management system. It's designed to make managing cinema operations a breeze, from handling movie listings to processing ticket sales and tracking customer bookings.",
+        "A cinema booking system for managing movie listings, ticket sales, and customer bookings.",
       stack: ["C#", "MySQL"],
       route: "https://github.com/aimndz/Cinematrix",
     },
