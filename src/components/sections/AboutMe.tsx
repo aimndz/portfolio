@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 
 function AboutMe() {
   return (
-    <div className="max-w-4xl mx-5 md:mt-52">
+    <div className="mx-5 max-w-4xl md:mt-52">
       <SectionTitle title="About me" />
-      <div className="text-p-muted md:text-lg text-md">
+      <div className="text-md text-p-muted md:text-lg">
         <motion.p
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}

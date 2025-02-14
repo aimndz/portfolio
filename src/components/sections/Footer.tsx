@@ -1,7 +1,7 @@
 function Footer() {
   return (
-    <footer className="text-center mb-10 text-sm mx-5">
-      <div className="flex flex-col md:flex-row md:justify-center md:space-x-2 text-lg">
+    <footer className="mx-5 mb-10 text-center text-sm">
+      <div className="flex flex-col text-lg md:flex-row md:justify-center md:space-x-2">
         <p>
           <span className="block md:inline-block">
             © 2025 Amiel Ian Mendoza.

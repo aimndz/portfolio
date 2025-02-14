@@ -13,8 +13,8 @@ function VerticalRuler({ position = "left" }) {
     position === "left"
       ? "min-[900px]:left-20"
       : position === "right"
-      ? "min-[900px]:right-20"
-      : "left-1/2 top-0 h-full w-[1px] bg-s-default -z-10";
+        ? "min-[900px]:right-20"
+        : "left-1/2 top-0 h-full w-[1px] bg-s-default -z-10";
   const textClass = position === "left" ? "left-16" : "right-16";
 
   return (
@@ -24,7 +24,7 @@ function VerticalRuler({ position = "left" }) {
         className={`fixed ${lineClass} top-0 h-full w-[1px] bg-s-default`}
       ></div>
       <div
-        className={`absolute hidden min-[900px]:block ${textClass} top-0 h-full w-[1px] text-s-default space-y-8 mt-8`}
+        className={`absolute hidden min-[900px]:block ${textClass} top-0 mt-8 h-full w-[1px] space-y-8 text-s-default`}
       >
         {rulerNumbers.map((number, index) => (
           <div

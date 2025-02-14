@@ -6,14 +6,14 @@ function Technologies() {
   const { technologies } = content;
 
   return (
-    <div className="mt-48 max-w-4xl mx-5">
+    <div className="mx-5 mt-48 max-w-4xl">
       <SectionTitle title="Technologies" />
-      <div className="grid grid-cols-1 min-[500px]:grid-cols-2 md:grid-cols-4 gap-3 ">
+      <div className="grid grid-cols-1 gap-3 min-[500px]:grid-cols-2 md:grid-cols-4">
         {technologies.map((tech, index) => {
           return (
             <motion.div
               key={index}
-              className="flex items-center space-x-4 bg-s-muted md:p-4 p-2 rounded-lg border border-s-default relative overflow-hidden"
+              className="relative flex items-center space-x-4 overflow-hidden rounded-lg border border-s-default bg-s-muted p-2 md:p-4"
               initial={{ opacity: 0, y: 100, filter: "blur(2px)" }}
               whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               transition={{ duration: 0.5 }}
@@ -22,7 +22,7 @@ function Technologies() {
               <div className="glow-top"></div>
               <i>{tech.icon}</i>
               <p className="text-p-default">{tech.name}</p>
-              <div className="absolute top-10 left-1/2 transform -translate-x-1/2 w-[150%] aspect-square rounded-full blur-lg bg-white opacity-10"></div>
+              <div className="absolute left-1/2 top-10 aspect-square w-[150%] -translate-x-1/2 transform rounded-full bg-white opacity-10 blur-lg"></div>
             </motion.div>
           );
         })}

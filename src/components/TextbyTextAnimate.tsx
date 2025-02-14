@@ -9,7 +9,7 @@ function TextbyTextAnimate({
 }) {
   return (
     <p
-      className={`flex md:tracking-widest tracking-widest  uppercase ${className}`}
+      className={`flex uppercase tracking-widest md:tracking-widest ${className}`}
     >
       {text.split("").map((letter, index) => {
         if (letter === " ") {

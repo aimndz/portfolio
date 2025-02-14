@@ -19,28 +19,28 @@ function NavigationTab() {
   };
 
   return (
-    <div className="flex justify-center mt-10">
+    <div className="mt-10 flex justify-center">
       <Tabs value={activeTab} onValueChange={handleTabChange} className="z-50">
         <div>
           <Link
             href="/"
-            className="left-10 min-[900px]:left-32 top-14 hidden md:block fixed z-[999]"
+            className="fixed left-10 top-14 z-[999] hidden md:block min-[900px]:left-32"
           >
             <Logo />
           </Link>
 
-          <TabsList className="w-52 h-12 fixed top-10 left-1/2 transform -translate-x-1/2 z-[999]">
+          <TabsList className="fixed left-1/2 top-10 z-[999] h-12 w-52 -translate-x-1/2 transform">
             <div className="glow-top"></div>
-            <TabsTrigger value="home" className="uppercase w-full h-9">
+            <TabsTrigger value="home" className="h-9 w-full uppercase">
               Home
             </TabsTrigger>
-            <TabsTrigger value="projects" className="uppercase w-full h-9">
+            <TabsTrigger value="projects" className="h-9 w-full uppercase">
               Proj
             </TabsTrigger>
           </TabsList>
 
           <Link href={content.socialLinks.resume} target="_blank">
-            <Button className="fixed hidden z-[999] right-6 min-[900px]:right-24 md:top-10 text-md md:flex gap-1 uppercase font-medium rounded-full py-6 px-6 bg-transparent text-p-default hover:bg-s-muted hover:text-accent-100 transition-all duration-300">
+            <Button className="text-md fixed right-6 z-[999] hidden gap-1 rounded-full bg-transparent px-6 py-6 font-medium uppercase text-p-default transition-all duration-300 hover:bg-s-muted hover:text-accent-100 md:top-10 md:flex min-[900px]:right-24">
               <span>Resume</span> <ArrowUpRight />
             </Button>
           </Link>
