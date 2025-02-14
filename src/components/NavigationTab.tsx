@@ -14,7 +14,8 @@ function NavigationTab() {
   const activeTab = pathname === "/projects" ? "projects" : "home";
 
   const handleTabChange = (value: string) => {
-    router.push(`/${value}`, { scroll: false });
+    const route = value === "home" ? "/" : `/${value}`;
+    router.push(route, { scroll: false });
   };
 
   return (
