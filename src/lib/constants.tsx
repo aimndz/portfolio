@@ -16,6 +16,13 @@ export const content = {
   country: "Cavite, Philippines",
   fullName: "Amiel Ian Mendoza",
   position: "[ Full-Stack Developer ]",
+  socialLinks: {
+    github: "https://github.com/aimndz",
+    instagram: "https://www.instagram.com/aim.ndz/",
+    linkedin: "https://www.linkedin.com/in/amiel-ian-mendoza-aa8849312/",
+    resume:
+      "https://drive.google.com/file/d/1QUkCEfc5kdImTl1H2UehTn4-QgC0tA9S/view",
+  },
   technologies: [
     {
       name: "TypeScript",

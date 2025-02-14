@@ -74,20 +74,17 @@ function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1 }}
         >
-          <Link href="https://github.com/aimndz" target="_blank">
+          <Link href={content.socialLinks.github} target="_blank">
             <Github />
           </Link>
-          <Link href="https://www.instagram.com/aim.ndz/" target="_blank">
+          <Link href={content.socialLinks.instagram} target="_blank">
             <Instagram />
           </Link>
-          <Link
-            href="https://www.linkedin.com/in/amiel-ian-mendoza-aa8849312/"
-            target="_blank"
-          >
+          <Link href={content.socialLinks.linkedin} target="_blank">
             <LinkedIn />
           </Link>
           <Link
-            href="https://drive.google.com/file/d/1QUkCEfc5kdImTl1H2UehTn4-QgC0tA9S/view"
+            href={content.socialLinks.resume}
             target="_blank"
             className="md:hidden block"
           >
