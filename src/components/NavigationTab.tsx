@@ -37,9 +37,14 @@ function NavigationTab() {
             </TabsTrigger>
           </TabsList>
 
-          <Button className="fixed hidden z-[999] right-6 min-[900px]:right-24 md:top-10 text-md md:flex gap-1 uppercase font-medium rounded-full py-6 px-6 bg-transparent text-p-default hover:bg-s-muted hover:text-accent-100 transition-all duration-300">
-            <span>Resume</span> <ArrowUpRight />
-          </Button>
+          <Link
+            href="https://drive.google.com/file/d/1QUkCEfc5kdImTl1H2UehTn4-QgC0tA9S/view"
+            target="_blank"
+          >
+            <Button className="fixed hidden z-[999] right-6 min-[900px]:right-24 md:top-10 text-md md:flex gap-1 uppercase font-medium rounded-full py-6 px-6 bg-transparent text-p-default hover:bg-s-muted hover:text-accent-100 transition-all duration-300">
+              <span>Resume</span> <ArrowUpRight />
+            </Button>
+          </Link>
         </div>
         <TabsContent value="home">
           <Home />

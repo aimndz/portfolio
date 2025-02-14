@@ -86,7 +86,11 @@ function Hero() {
           >
             <LinkedIn />
           </Link>
-          <Link href="" target="_blank" className="md:hidden block">
+          <Link
+            href="https://drive.google.com/file/d/1QUkCEfc5kdImTl1H2UehTn4-QgC0tA9S/view"
+            target="_blank"
+            className="md:hidden block"
+          >
             <Paperclip className="text-p-muted" />
           </Link>
         </motion.div>
