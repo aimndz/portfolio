@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { content } from "@/lib/constants";
+import { motion } from "motion/react";
 
 function AllProjects() {
   const { featuredProjects, otherProjects } = content;
@@ -20,44 +21,51 @@ function AllProjects() {
       </div>
       <div className="grid grid-cols-1 gap-10">
         {allProjects.map((project, index) => (
-          <Link key={index} href={project.route} target="_blank">
-            <div>
-              <div className="group overflow-hidden rounded-lg border border-s-default bg-s-muted">
-                <div>
-                  <Image
-                    src={project.image}
-                    alt="blissnflair"
-                    width={0}
-                    height={0}
-                    sizes="100vw"
-                    style={{ width: "100%", height: "auto" }}
-                  />
-                </div>
-                <div className="relative overflow-hidden p-4">
-                  <h3 className="text-xl font-bold">{project.name}</h3>
-                  <p className="text-accent-100">{project.role}</p>
-                  <p className="mt-4 text-p-muted">
-                    <span className="text-p-default">{project.date}</span> -{" "}
-                    {project.description}
-                  </p>
-                  <div className="mt-4 flex flex-wrap gap-3">
-                    {project.stack.map((stack, index) => (
-                      <div
-                        key={index}
-                        className="inline-block overflow-hidden rounded-full border border-s-default bg-s-default px-3 py-1 text-xs"
-                      >
-                        {stack}
-                      </div>
-                    ))}
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 100, filter: "blur(2px)" }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            transition={{ duration: 0.5 }}
+          >
+            <Link href={project.route} target="_blank">
+              <div>
+                <div className="group overflow-hidden rounded-lg border border-s-default bg-s-muted">
+                  <div>
+                    <Image
+                      src={project.image}
+                      alt="blissnflair"
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      style={{ width: "100%", height: "auto" }}
+                    />
                   </div>
-                  {/* Background glow */}
-                  <div className="absolute left-1/2 top-28 z-10 aspect-square w-full -translate-x-1/2 transform rounded-full bg-white opacity-0 blur-2xl transition-opacity duration-300 group-hover:opacity-10">
-                    <div className="absolute inset-0 rounded-full bg-white/30 blur-xl" />
+                  <div className="relative overflow-hidden p-4">
+                    <h3 className="text-xl font-bold">{project.name}</h3>
+                    <p className="text-accent-100">{project.role}</p>
+                    <p className="mt-4 text-p-muted">
+                      <span className="text-p-default">{project.date}</span> -{" "}
+                      {project.description}
+                    </p>
+                    <div className="mt-4 flex flex-wrap gap-3">
+                      {project.stack.map((stack, index) => (
+                        <div
+                          key={index}
+                          className="inline-block overflow-hidden rounded-full border border-s-default bg-s-default px-3 py-1 text-xs"
+                        >
+                          {stack}
+                        </div>
+                      ))}
+                    </div>
+                    {/* Background glow */}
+                    <div className="absolute left-1/2 top-28 z-10 aspect-square w-full -translate-x-1/2 transform rounded-full bg-white opacity-0 blur-2xl transition-opacity duration-300 group-hover:opacity-10">
+                      <div className="absolute inset-0 rounded-full bg-white/30 blur-xl" />
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </Link>
+            </Link>
+          </motion.div>
         ))}
       </div>
     </section>
