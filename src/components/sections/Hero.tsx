@@ -23,7 +23,7 @@ function Hero() {
         className="z-[100] mt-32 text-center md:mt-48"
       >
         {/* Country */}
-        <div className="-mb-11 mt-3 flex items-center justify-center gap-3 text-sm uppercase text-p-muted md:text-base">
+        <div className="-mb-11 ml-6 mt-3 flex items-center justify-center gap-3 text-sm uppercase text-p-muted md:text-base">
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
             <MapPin />
           </motion.div>
