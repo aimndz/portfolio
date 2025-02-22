@@ -15,7 +15,7 @@ function NavigationTab() {
 
   const handleTabChange = (value: string) => {
     const route = value === "home" ? "/" : `/${value}`;
-    router.push(route);
+    router.push(route, { scroll: false });
   };
 
   return (
