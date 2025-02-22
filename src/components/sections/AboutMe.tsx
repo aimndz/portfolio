@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 function AboutMe() {
   return (
-    <div className="mx-5 max-w-4xl md:mt-52">
+    <div className="mx-5 mt-36 max-w-4xl">
       <SectionTitle title="About me" />
       <div className="text-md text-p-muted md:text-lg">
         <motion.p
