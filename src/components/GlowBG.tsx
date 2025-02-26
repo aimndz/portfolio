@@ -1,12 +1,20 @@
 function GlowBG() {
   return (
-    <div
-      className="absolute left-1/2 top-[-20vh] -z-10 aspect-square w-full max-w-7xl -translate-x-1/2 transform rounded-full opacity-30 min-[300px]:top-[-30vh] min-[600px]:top-[-60vh] min-[750px]:top-[-70vh] min-[850px]:top-[-80vh] min-[1000px]:top-[-100vh]"
-      style={{
-        background:
-          "radial-gradient(circle at center, rgba(23, 214, 255, 1) 0%, rgba(23, 214, 255, 0.3) 30%, rgba(23, 214, 255, 0) 70%)",
-      }}
-    />
+    <div>
+      <div
+        className="fixed left-0 top-0 -z-30 h-full w-full"
+        style={{
+          background: "linear-gradient(rgb(6, 26, 31) 20%, rgb(0, 0, 0) 100%)",
+        }}
+      ></div>
+      <div
+        className="fixed left-1/2 top-1/2 -z-30 h-[820px] w-[820px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle, rgb(6, 26, 31), transparent 100%)",
+        }}
+      ></div>
+    </div>
   );
 }
 
