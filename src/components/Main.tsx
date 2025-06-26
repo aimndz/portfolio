@@ -7,7 +7,7 @@ import Footer from "./sections/Footer";
 
 function Main() {
   return (
-    <main className="font-kode_mono text-p-default">
+    <main className="font-montserrat text-p-default">
       <div>
         <GlowBG /> {/* Glow main hero section */}
         <NavigationTab />

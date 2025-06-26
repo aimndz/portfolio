@@ -12,11 +12,12 @@ export default {
     extend: {
       fontFamily: {
         montserrat: "var(--font-sans)",
-        kode_mono: "var(--font-mono)",
+        dm_mono: "var(--font-mono)",
       },
       colors: {
         "p-default": "var(--color-primary-100)",
         "p-muted": "var(--color-primary-200)",
+        "p-accent-100": "var(--color-primary-300)",
 
         "s-default": "var(--color-secondary-100)",
         "s-muted": "var(--color-secondary-200)",
@@ -25,6 +26,7 @@ export default {
         heading: "var(--color-accent-100)",
 
         "accent-100": "var(--color-accent-100)",
+        "accent-200": "var(--color-accent-200)",
         "accent-gradient": "var(--color-accent-gradient)",
 
         foreground: "hsl(var(--foreground))",

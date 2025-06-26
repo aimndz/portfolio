@@ -15,7 +15,7 @@ import {
 export const content = {
   country: "Cavite, Philippines",
   fullName: "Amiel Ian Mendoza",
-  position: "[ Full-Stack Developer ]",
+  position: "Full-Stack Developer",
   socialLinks: {
     github: "https://github.com/aimndz",
     instagram: "https://www.instagram.com/aim.ndz/",

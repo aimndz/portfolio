@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -20,17 +20,19 @@
 :root {
   /* Fonts */
   --font-sans: "Montserrat", sans-serif;
-  --font-mono: "Kode Mono", monospace;
+  --font-mono: "DM Mono", monospace;
 
   /* Colors */
   --color-primary-100: #d9d9d9;
   --color-primary-200: #979797;
+  --color-primary-300: #676767;
 
   --color-secondary-100: #0c3741;
   --color-secondary-200: #06232b;
   --color-secondary-300: #041417;
 
   --color-accent-100: #efa86b;
+  --color-accent-200: #a5754c;
 
   --color-accent-gradient: linear-gradient(0deg, #463323 0%, #efa86b 100%);
 }
@@ -57,7 +59,9 @@ body {
 
 .glowing-gradient-text {
   background-image: var(--color-accent-gradient);
-  text-shadow: 0 5px 15px #efa86b33, 0 -5px 15px #ff5a0026,
+  text-shadow:
+    0 5px 15px #efa86b33,
+    0 -5px 15px #ff5a0026,
     0 -5px 25px #ffffff40;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;

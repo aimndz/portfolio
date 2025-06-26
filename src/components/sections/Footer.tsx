@@ -9,9 +9,7 @@ function Footer() {
           <span className="block md:inline-block">All rights reserved.</span>
         </p>
       </div>
-      <p className="text-p-muted">
-        Built with love, patience, and questionable decisions.
-      </p>
+      <p className="text-p-muted">{`Built with ${"<3"} and idk decisions.`}</p>
     </footer>
   );
 }

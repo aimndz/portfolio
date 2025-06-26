@@ -13,7 +13,7 @@ function FeaturedProjects() {
   const { featuredProjects } = content;
 
   return (
-    <section className="z-10 mx-5 mb-20 mt-48 max-w-4xl">
+    <section className="z-10 mx-5 mb-20 mt-48 max-w-4xl font-montserrat">
       <div className="flex items-center justify-between">
         <SectionTitle title="Featured Projects" />
         <Link href="/projects">

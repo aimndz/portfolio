@@ -19,7 +19,7 @@ function NavigationTab() {
   };
 
   return (
-    <div className="mt-10 flex justify-center">
+    <div className="font-dm_mono mt-10 flex justify-center">
       <Tabs value={activeTab} onValueChange={handleTabChange} className="z-50">
         <div>
           <Link

@@ -20,10 +20,10 @@ function Hero() {
       <div
         data-scroll
         data-scroll-speed="0.5"
-        className="z-[100] mt-32 text-center md:mt-48"
+        className="z-[100] mt-32 text-center md:mt-56"
       >
         {/* Country */}
-        <div className="-mb-11 ml-6 mt-3 flex items-center justify-center gap-3 text-sm uppercase text-p-muted md:text-base">
+        <div className="font-dm_mono ml-6 mt-3 flex items-center justify-center gap-3 text-sm uppercase text-p-muted md:text-base">
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
             <MapPin />
           </motion.div>
@@ -31,7 +31,7 @@ function Hero() {
         </div>
 
         {/* AIM */}
-        <h1 className="flex justify-center font-montserrat text-[8rem] font-extrabold md:text-[10rem]">
+        <h1 className="-mt-12 flex justify-center font-montserrat text-[8rem] font-semibold md:-mt-14 md:text-[10rem]">
           {["A", "I", "M"].map((letter, index) => (
             <motion.span
               key={index}
@@ -55,21 +55,22 @@ function Hero() {
         </h1>
 
         {/* Full name */}
-        <div className="-mt-10 flex justify-center text-sm uppercase text-heading md:text-base">
+        <div className="-mt-12 flex justify-center font-montserrat uppercase text-heading md:-mt-14 md:text-base">
           <TextbyTextAnimate
             text={fullName}
-            className="font-bold text-accent-100"
+            size="text-2xl"
+            className="text-accent-200 font-bold tracking-normal"
           />
         </div>
 
         {/* Position */}
-        <div className="mt-3 flex justify-center text-sm uppercase text-p-muted md:text-base">
-          <TextbyTextAnimate text={position} className="text-p-default" />
+        <div className="font-dm_mono -mt-1 flex justify-center text-sm uppercase text-p-muted md:text-base">
+          <TextbyTextAnimate text={position} className="text-p-muted" />
         </div>
 
         {/* Socials Icon */}
         <motion.div
-          className="mt-3 flex items-center justify-center gap-3"
+          className="mt-2 flex items-center justify-center gap-3"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1 }}

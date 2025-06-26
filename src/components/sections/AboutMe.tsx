@@ -8,7 +8,7 @@ function AboutMe() {
   return (
     <div className="mx-5 mt-36 max-w-4xl">
       <SectionTitle title="About me" />
-      <div className="text-md text-p-muted md:text-lg">
+      <div className="text-p-accent-100 text-lg md:text-xl">
         <motion.p
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -16,12 +16,12 @@ function AboutMe() {
           viewport={{ amount: 0.1 }}
         >
           I&apos;m a{" "}
-          <span className="text-p-default">full-stack developer</span> and an{" "}
-          <span className="text-p-default">artist</span> who sees programming
+          <span className="text-accent-100">full-stack developer</span> and an{" "}
+          <span className="text-accent-100">artist</span> who sees programming
           the same way I see art. I was an artist first before diving into
           development, so that creative mindset naturally carried over. I also
-          love <span className="text-p-default">solving problems</span> (which I
-          sometimes create myself), which makes coding the perfect blend of
+          love <span className="text-accent-100">solving problems</span> (which
+          I sometimes create myself), which makes coding the perfect blend of
           logic and creativity for me.
         </motion.p>
 
@@ -38,7 +38,7 @@ function AboutMe() {
           basketball, drawing, or playing video games. Whether it&apos;s art,
           code, or strategy, I believe in creating, innovating, and having fun
           along the way.{" "}
-          <span className="text-p-default">
+          <span className="text-accent-100">
             Let&apos;s build something awesome together!
           </span>
         </motion.p>
