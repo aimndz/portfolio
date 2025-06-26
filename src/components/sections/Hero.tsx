@@ -15,7 +15,7 @@ function Hero() {
   const { country, fullName, position } = content;
 
   return (
-    <div className="relative flex h-[calc(100vh-8rem)] flex-col items-center space-y-4">
+    <div className="relative flex flex-col items-center space-y-4">
       {/* Hero Content */}
       <div
         data-scroll
@@ -23,7 +23,7 @@ function Hero() {
         className="z-[100] mt-32 text-center md:mt-48"
       >
         {/* Country */}
-        <div className="-mb-11 mt-3 flex items-center justify-center gap-3 text-sm uppercase text-p-muted md:text-base">
+        <div className="-mb-11 ml-6 mt-3 flex items-center justify-center gap-3 text-sm uppercase text-p-muted md:text-base">
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
             <MapPin />
           </motion.div>
@@ -96,10 +96,10 @@ function Hero() {
       <div
         data-scroll
         data-scroll-speed="0.3"
-        className="absolute -bottom-0 flex w-full items-center justify-center min-[600px]:-bottom-36 min-[750px]:-bottom-72"
+        className="relative mt-96 flex w-full items-center justify-center"
       >
         <Radar />
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 md:-mt-[22rem]">
           <div>
             {/* Horizontal Line */}
             <div className="absolute left-1/2 top-1/2 -z-10 h-[1px] w-[calc(100vw-10px)] -translate-x-1/2 bg-s-default"></div>
