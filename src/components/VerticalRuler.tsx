@@ -24,7 +24,7 @@ function VerticalRuler({ position = "left" }) {
         className={`fixed ${lineClass} top-0 h-full w-[1px] bg-s-default`}
       ></div>
       <div
-        className={`font-dm_mono absolute hidden min-[900px]:block ${textClass} top-0 mt-8 h-full w-[1px] space-y-8 text-s-default`}
+        className={`absolute hidden font-dm_mono min-[900px]:block ${textClass} top-0 mt-8 h-full w-[1px] space-y-8 text-s-default`}
       >
         {rulerNumbers.map((number, index) => (
           <div

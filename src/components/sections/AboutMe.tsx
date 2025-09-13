@@ -8,21 +8,22 @@ function AboutMe() {
   return (
     <div className="mx-5 mt-36 max-w-4xl">
       <SectionTitle title="About me" />
-      <div className="text-p-accent-100 text-lg md:text-xl">
+      <div className="text-lg text-p-accent-100 md:text-xl">
         <motion.p
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ amount: 0.1 }}
+          className="text-justify"
         >
           I&apos;m a{" "}
           <span className="text-accent-100">full-stack developer</span> and an{" "}
           <span className="text-accent-100">artist</span> who sees programming
           the same way I see art. I was an artist first before diving into
           development, so that creative mindset naturally carried over. I also
-          love <span className="text-accent-100">solving problems</span> (which
-          I sometimes create myself), which makes coding the perfect blend of
-          logic and creativity for me.
+          enjoy solving problems{" "}
+          <span className="italic">(especially self-made ones)</span> because of
+          the satisfaction when you finally figure it out.
         </motion.p>
 
         <br />
@@ -32,14 +33,16 @@ function AboutMe() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.5 }}
           viewport={{ amount: 0.1 }}
+          className="text-justify"
         >
           In my spare time, you&apos;ll probably find me learning something new
-          on tech (lol nerd). Other than that, you&apos;ll find me playing
-          basketball, drawing, or playing video games. Whether it&apos;s art,
-          code, or strategy, I believe in creating, innovating, and having fun
-          along the way.{" "}
+          on tech <span className="italic">(lol nerd)</span>. Other than that,
+          you&apos;ll find me playing basketball, drawing, or playing video
+          games. Whether it&apos;s art, code, or just figuring out a strategy,
+          I&apos;m all about creating, trying new things, and having fun with
+          it.{" "}
           <span className="text-accent-100">
-            Let&apos;s build something awesome together!
+            Let&apos;s build something cool together!
           </span>
         </motion.p>
       </div>
