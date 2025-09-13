@@ -4,6 +4,7 @@ import CrossHair from "../../../public/icons/CrossHair";
 import Github from "../../../public/icons/Github";
 import Instagram from "../../../public/icons/Instagram";
 import LinkedIn from "../../../public/icons/LinkedIn";
+import Logo from "../../../public/icons/Logo";
 import MapPin from "../../../public/icons/MapPin";
 import TextbyTextAnimate from "../TextbyTextAnimate";
 import { motion } from "motion/react";
@@ -23,49 +24,49 @@ function Hero() {
         className="z-[100] mt-32 text-center md:mt-56"
       >
         {/* Country */}
-        <div className="font-dm_mono ml-6 mt-3 flex items-center justify-center gap-3 text-sm uppercase text-p-muted md:text-base">
+        <div className="mb-3 mt-3 flex items-center justify-center gap-3 font-dm_mono text-sm uppercase text-p-muted md:text-base">
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
             <MapPin />
           </motion.div>
           <TextbyTextAnimate text={country} />
         </div>
 
-        {/* AIM */}
-        <h1 className="-mt-12 flex justify-center font-montserrat text-[8rem] font-semibold md:-mt-14 md:text-[10rem]">
-          {["A", "I", "M"].map((letter, index) => (
-            <motion.span
-              key={index}
-              className={
-                index === 2
-                  ? "gradient-text ml-[-12px]"
-                  : "gradient-text mr-[-4px]"
-              }
-              initial={{ opacity: 0 }}
-              animate={{
-                opacity: 1,
-                transition: {
-                  duration: 0.5,
-                  delay: index * 0.5,
-                },
-              }}
-            >
-              {letter}
-            </motion.span>
-          ))}
-        </h1>
+        {/* Logo */}
+        <div className="mx-5 flex h-[6rem] items-center justify-center">
+          <motion.div
+            className="flex items-center justify-center"
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: 1,
+              transition: {
+                duration: 0.5,
+                delay: 0.5,
+              },
+            }}
+            style={{
+              height: "100%",
+              width: "auto",
+            }}
+          >
+            <Logo className="h-full w-60 md:w-auto" />
+          </motion.div>
+        </div>
 
         {/* Full name */}
-        <div className="-mt-12 flex justify-center font-montserrat uppercase text-heading md:-mt-14 md:text-base">
+        <div className="mt-2 flex justify-center font-montserrat uppercase text-heading md:text-base">
           <TextbyTextAnimate
             text={fullName}
             size="text-2xl"
-            className="text-accent-200 font-bold tracking-normal"
+            className="font-semibold normal-case tracking-normal text-accent-100"
           />
         </div>
 
         {/* Position */}
-        <div className="font-dm_mono -mt-1 flex justify-center text-sm uppercase text-p-muted md:text-base">
-          <TextbyTextAnimate text={position} className="text-p-muted" />
+        <div className="-mt-2 flex justify-center font-dm_mono text-sm uppercase text-p-muted md:text-base">
+          <TextbyTextAnimate
+            text={position}
+            className="normal-case text-p-muted"
+          />
         </div>
 
         {/* Socials Icon */}
