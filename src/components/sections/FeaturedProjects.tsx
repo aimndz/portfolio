@@ -1,7 +1,6 @@
 import Image from "next/image";
 import SectionTitle from "../SectionTitle";
 import { content } from "@/lib/constants";
-import { Button } from "../ui/button";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { motion } from "motion/react";
@@ -16,10 +15,12 @@ function FeaturedProjects() {
     <section className="z-10 mx-5 mb-20 mt-48 max-w-4xl font-montserrat">
       <div className="flex items-center justify-between">
         <SectionTitle title="Featured Projects" />
-        <Link href="/projects">
-          <Button className="mb-10 hidden rounded-full bg-transparent p-6 transition-all delay-75 ease-linear hover:bg-s-muted hover:text-accent-100 md:mb-20 md:flex">
-            View More <ArrowRight />
-          </Button>
+        <Link
+          href="/projects"
+          className="flex items-center gap-3 border-b border-transparent text-white hover:border-white"
+        >
+          <p>⛶</p>
+          <p>View More</p> <ArrowRight size={20} />
         </Link>
       </div>
 
