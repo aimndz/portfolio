@@ -10,7 +10,7 @@ function TextbyTextAnimate({
   size?: string;
 }) {
   return (
-    <p className={`flex uppercase ${size} ${className}`}>
+    <p className={`flex ${size} ${className}`}>
       {text.split("").map((letter, index) => {
         if (letter === " ") {
           return <span key={index}>&nbsp;</span>;
