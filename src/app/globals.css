@@ -34,7 +34,11 @@
   --color-accent-100: #efa86b;
   --color-accent-200: #a5754c;
 
-  --color-accent-gradient: linear-gradient(0deg, #463323 0%, #efa86b 100%);
+  --color-accent-gradient: linear-gradient(
+    -90deg,
+    rgba(239, 168, 107, 0.5) 0%,
+    rgba(239, 168, 107, 1) 100%
+  );
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -59,10 +63,6 @@ body {
 
 .glowing-gradient-text {
   background-image: var(--color-accent-gradient);
-  text-shadow:
-    0 5px 15px #efa86b33,
-    0 -5px 15px #ff5a0026,
-    0 -5px 25px #ffffff40;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   background-clip: text;

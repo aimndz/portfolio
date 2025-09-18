@@ -11,10 +11,10 @@ function AllProjects() {
   return (
     <section className="z-10 mx-5 mb-20 mt-28 max-w-4xl font-montserrat">
       <div className="mb-14 md:mb-20">
-        <h1 className="glowing-gradient-text text-center text-4xl font-bold md:text-6xl">
+        <h1 className="text-center text-4xl font-bold text-accent-100 md:text-6xl">
           Projects
         </h1>
-        <p className="font-dm_mono mx-auto mt-3 max-w-lg text-center text-p-muted">
+        <p className="mx-auto mt-3 max-w-lg text-center font-dm_mono text-p-muted">
           These are some of my projects that, honestly, I still don’t know how I
           pulled off.
         </p>
