@@ -8,7 +8,7 @@ function SectionTitle({ title }: { title: string }) {
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <h2 className="relative z-50 mb-10 inline-block p-4 font-montserrat text-xl font-extrabold text-accent-100 md:mb-10 md:p-8 md:text-3xl">
+      <h2 className="relative z-50 mb-2 inline-block p-4 font-montserrat text-xl font-extrabold text-accent-100 md:mb-3 md:p-8 md:text-3xl">
         <CornerAccent className="absolute left-0 top-0" />
         <p>{title}</p>
         <div>
