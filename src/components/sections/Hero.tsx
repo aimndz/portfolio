@@ -1,5 +1,5 @@
 import { content } from "@/lib/constants";
-import ArrowDown from "../../../public/icons/ArrowDown";
+import ArrowDown from "../../../public/icons/CustomArrow";
 import CrossHair from "../../../public/icons/CrossHair";
 import Github from "../../../public/icons/Github";
 import Instagram from "../../../public/icons/Instagram";

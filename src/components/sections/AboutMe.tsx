@@ -1,7 +1,7 @@
 import Link from "next/link";
 import SectionTitle from "../SectionTitle";
 import { motion } from "framer-motion";
-import { ArrowRight, Mail } from "lucide-react";
+import { ChevronsRight, Mail } from "lucide-react";
 import Image from "next/image";
 import { Separator } from "../ui/separator";
 import { useState } from "react";
@@ -181,10 +181,8 @@ function AboutMe() {
               href="/about-me"
               className="group flex items-center gap-3 border-b border-transparent text-accent-100 hover:border-accent-100"
             >
-              <p className="rotate-45 transition-all delay-150 duration-150">
-                ⛶
-              </p>
-              <p>Let&apos;s Get Personal</p> <ArrowRight size={20} />
+              <p>Let&apos;s Get Personal</p>
+              <ChevronsRight size={20} />
             </Link>
           </motion.div>
         </div>

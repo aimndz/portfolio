@@ -1,7 +1,7 @@
 import Image from "next/image";
 import SectionTitle from "../SectionTitle";
 import { content } from "@/lib/constants";
-import { ArrowRight } from "lucide-react";
+import { ChevronsRight } from "lucide-react";
 import Link from "next/link";
 import { motion } from "motion/react";
 // import { motion } from "motion/react";
@@ -13,19 +13,19 @@ function FeaturedProjects() {
 
   return (
     <section className="z-10 mx-5 mb-20 mt-48 max-w-4xl font-montserrat">
-      <div className="flex items-center justify-between">
+      <div className="flex gap-3 md:flex-row md:items-center md:justify-between">
         <SectionTitle title="Featured Projects" />
         <Link
           href="/projects"
-          className="flex items-center gap-3 border-b border-transparent text-white hover:border-white"
+          className="flex items-center gap-3 border-b border-transparent text-accent-100 hover:border-accent-100"
         >
-          <p>⛶</p>
-          <p>View More</p> <ArrowRight size={20} />
+          <p className="hidden sm:block">View More</p>
+          <ChevronsRight size={20} />
         </Link>
       </div>
 
       {/* Projects */}
-      <div className="grid grid-cols-1 gap-10">
+      <div className="grid grid-cols-1 gap-6">
         {featuredProjects.map((project, index) => (
           <motion.div
             key={index}
@@ -54,7 +54,7 @@ function FeaturedProjects() {
                       <span className="text-p-default">{project.date}</span> -{" "}
                       {project.description}
                     </p>
-                    <div className="mt-4 flex flex-wrap gap-3">
+                    <div className="mt-4 flex flex-wrap gap-2">
                       {project.stack.map((stack, index) => (
                         <div
                           key={index}
