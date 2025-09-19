@@ -19,7 +19,7 @@ function NavigationTab() {
   };
 
   return (
-    <div className="font-dm_mono mt-10 flex justify-center">
+    <div className="mt-10 flex justify-center font-dm_mono">
       <Tabs value={activeTab} onValueChange={handleTabChange} className="z-50">
         <div>
           <Link
@@ -29,7 +29,7 @@ function NavigationTab() {
             <Logo />
           </Link>
 
-          <TabsList className="fixed left-1/2 top-10 z-[999] h-12 w-52 -translate-x-1/2 transform">
+          <TabsList className="fixed left-1/2 top-10 z-[999] h-12 w-52 -translate-x-1/2 transform border border-[#0c374180] bg-[#06232b80] backdrop-blur-md">
             <div className="glow-top"></div>
             <TabsTrigger value="home" className="h-9 w-full uppercase">
               Home
