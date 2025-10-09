@@ -14,8 +14,8 @@ const TabsList = React.forwardRef<
   <TabsPrimitive.List
     ref={ref}
     className={cn(
-      "inline-flex h-9 items-center justify-center bg-s-muted p-1 text-muted-foreground border border-s-default rounded-full shadow-xl",
-      className
+      "inline-flex h-9 items-center justify-center rounded-full border border-s-default bg-s-muted p-1 text-muted-foreground shadow-xl",
+      className,
     )}
     {...props}
   />
@@ -29,8 +29,8 @@ const TabsTrigger = React.forwardRef<
   <TabsPrimitive.Trigger
     ref={ref}
     className={cn(
-      "inline-flex items-center justify-center whitespace-nowrap rounded-full px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-s-default data-[state=active]:text-accent-100 data-[state=active]:shadow data-[state=active]:before:content-[''] data-[state=active]:before:block  data-[state=active]:before:w-2 data-[state=active]:before:h-2 data-[state=active]:before:mr-2 data-[state=active]:before:rounded-full before:bg-current",
-      className
+      "inline-flex items-center justify-center whitespace-nowrap rounded-full px-3 py-1 text-sm font-medium ring-offset-background transition-all before:bg-current focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-s-default data-[state=active]:text-accent-100 data-[state=active]:shadow data-[state=active]:before:mr-2 data-[state=active]:before:block data-[state=active]:before:h-2 data-[state=active]:before:w-2 data-[state=active]:before:rounded-full data-[state=active]:before:content-['']",
+      className,
     )}
     {...props}
   />
@@ -43,10 +43,7 @@ const TabsContent = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <TabsPrimitive.Content
     ref={ref}
-    className={cn(
-      "mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
-      className
-    )}
+    className={cn("mt-2 focus-visible:outline-none", className)}
     {...props}
   />
 ));
