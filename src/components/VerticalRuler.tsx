@@ -14,7 +14,7 @@ function VerticalRuler({ position = "left" }) {
       ? "min-[900px]:left-20"
       : position === "right"
         ? "min-[900px]:right-20"
-        : "left-1/2 top-0 h-full w-[1px] bg-s-default -z-10";
+        : "left-1/2 top-0 h-[calc(100vh+500px)] w-[1px] bg-s-default -z-10";
   const textClass = position === "left" ? "left-16" : "right-16";
 
   return (
