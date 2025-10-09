@@ -10,7 +10,7 @@ function AboutMe() {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className="mx-5 mt-36 max-w-4xl">
+    <div id="about-me" className="mx-5 mt-36 max-w-4xl">
       <SectionTitle title="About me" />
       <div className="flex flex-col gap-6 sm:flex-row">
         <motion.div

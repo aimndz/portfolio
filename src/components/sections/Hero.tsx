@@ -15,6 +15,13 @@ import { Paperclip } from "lucide-react";
 function Hero() {
   const { country, fullName, position } = content;
 
+  const scrollToAboutMe = () => {
+    const aboutMeSection = document.getElementById("about-me");
+    if (aboutMeSection) {
+      aboutMeSection.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  };
+
   return (
     <div className="relative flex flex-col items-center space-y-4">
       {/* Hero Content */}
@@ -135,7 +142,7 @@ function Hero() {
         </div>
 
         {/* Arrow Down */}
-        <div className="absolute bottom-10 left-1/2 z-10 -translate-x-1/2 transform min-[600px]:bottom-24 min-[750px]:bottom-60">
+        <div className="absolute bottom-10 left-1/2 z-[60] -translate-x-1/2 transform min-[600px]:bottom-24 min-[750px]:bottom-60">
           <motion.div
             initial={{ y: 0, opacity: 0 }}
             animate={{
@@ -153,6 +160,7 @@ function Hero() {
                 },
               },
             }}
+            onClick={scrollToAboutMe}
             className="cursor-pointer"
           >
             <ArrowDown />
