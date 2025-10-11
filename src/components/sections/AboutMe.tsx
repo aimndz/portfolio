@@ -114,7 +114,7 @@ function AboutMe() {
                 </svg>
               </Link>
               <Link
-                href="https://x.com/aim_mndz"
+                href="https://x.com/aim_ndz"
                 target="_blank"
                 className="hidden hover:underline md:block"
               >
