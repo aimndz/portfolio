@@ -9,7 +9,7 @@ function Main() {
   return (
     <main className="font-montserrat text-p-default">
       <div>
-        <GlowBG /> {/* Glow main hero section */}
+        <GlowBG />
         <NavigationTab />
       </div>
 

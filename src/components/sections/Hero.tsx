@@ -23,15 +23,50 @@ function Hero() {
   };
 
   return (
-    <div className="relative flex flex-col items-center space-y-4">
+    <div className="relative mx-5 flex min-h-screen flex-col items-center">
+      {/* Radar — positioned behind hero content */}
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+        <div className="relative w-full max-w-4xl translate-y-[15%] md:translate-y-[10%]">
+          <Radar />
+          {/* Horizontal Line */}
+          <div className="bg-s-default absolute top-1/2 left-1/2 -z-10 h-px w-[calc(100vw-10px)] -translate-x-1/2"></div>
+
+          {/* Crosshair */}
+          <div className="pointer-events-auto absolute inset-0 z-50 flex items-center justify-center">
+            <motion.div
+              initial={{ scale: 0.8, rotate: 135, opacity: 0 }}
+              animate={{
+                scale: [0.8, 1, 0.8],
+                rotate: 0,
+                opacity: 1,
+                transition: {
+                  scale: {
+                    duration: 2,
+                    repeat: Infinity,
+                    repeatType: "loop",
+                  },
+                  rotate: {
+                    duration: 0.5,
+                    delay: 1.3,
+                    ease: "easeOut",
+                  },
+                },
+              }}
+            >
+              <CrossHair />
+            </motion.div>
+          </div>
+        </div>
+      </div>
+
       {/* Hero Content */}
       <div
         data-scroll
         data-scroll-speed="0.5"
-        className="z-[100] mt-32 text-center md:mt-56"
+        className="z-10 mt-32 text-center md:mt-56"
       >
         {/* Country */}
-        <div className="mb-3 mt-3 flex items-center justify-center gap-3 font-dm_mono text-sm text-p-muted md:text-base">
+        <div className="font-dm-mono text-p-muted mt-3 mb-3 flex items-center justify-center gap-3 text-sm md:text-base">
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
             <MapPin />
           </motion.div>
@@ -39,7 +74,7 @@ function Hero() {
         </div>
 
         {/* Logo */}
-        <div className="mx-5 flex h-[6rem] items-center justify-center">
+        <div className="relative mx-5 flex h-24 items-center justify-center">
           <motion.div
             className="flex items-center justify-center"
             initial={{ opacity: 0 }}
@@ -60,19 +95,19 @@ function Hero() {
         </div>
 
         {/* Full name */}
-        <div className="mt-2 flex justify-center font-montserrat uppercase text-heading md:text-base">
+        <div className="font-montserrat text-heading mt-2 flex justify-center uppercase md:text-base">
           <TextbyTextAnimate
             text={fullName}
             size="text-2xl"
-            className="font-semibold normal-case tracking-normal text-accent-100"
+            className="text-accent-100 font-semibold tracking-normal normal-case"
           />
         </div>
 
         {/* Position */}
-        <div className="-mt-2 flex justify-center font-dm_mono text-sm uppercase text-p-muted md:text-base">
+        <div className="font-dm-mono text-p-muted -mt-2 flex justify-center text-sm uppercase md:text-base">
           <TextbyTextAnimate
             text={position}
-            className="normal-case text-p-muted"
+            className="text-p-muted normal-case"
           />
         </div>
 
@@ -102,70 +137,30 @@ function Hero() {
         </motion.div>
       </div>
 
-      <div
-        data-scroll
-        data-scroll-speed="0.3"
-        className="relative mt-96 flex w-full items-center justify-center"
-      >
-        <Radar />
-        <div className="absolute inset-0 md:-mt-[22rem]">
-          <div>
-            {/* Horizontal Line */}
-            <div className="absolute left-1/2 top-1/2 -z-10 h-[1px] w-[calc(100vw-10px)] -translate-x-1/2 bg-s-default"></div>
-
-            {/* Crosshair */}
-            <div className="absolute inset-0 z-50 flex items-center justify-center">
-              <motion.div
-                initial={{ scale: 0.8, rotate: 135, opacity: 0 }}
-                animate={{
-                  scale: [0.8, 1, 0.8],
-                  rotate: 0,
-                  opacity: 1,
-                  transition: {
-                    scale: {
-                      duration: 2,
-                      repeat: Infinity,
-                      repeatType: "loop",
-                    },
-                    rotate: {
-                      duration: 0.5,
-                      delay: 1.3,
-                      ease: "easeOut",
-                    },
-                  },
-                }}
-              >
-                <CrossHair />
-              </motion.div>
-            </div>
-          </div>
-        </div>
-
-        {/* Arrow Down */}
-        <div className="absolute bottom-10 left-1/2 z-[60] -translate-x-1/2 transform min-[600px]:bottom-24 min-[750px]:bottom-60">
-          <motion.div
-            initial={{ y: 0, opacity: 0 }}
-            animate={{
-              y: [0, 15, 0],
-              opacity: 1,
-              transition: {
-                opacity: {
-                  duration: 1,
-                  delay: 1,
-                },
-                y: {
-                  duration: 2,
-                  repeat: Infinity,
-                  repeatType: "loop",
-                },
+      {/* Arrow Down — at the bottom of viewport */}
+      <div className="z-20 mt-auto mb-40">
+        <motion.div
+          initial={{ y: 0, opacity: 0 }}
+          animate={{
+            y: [0, 15, 0],
+            opacity: 1,
+            transition: {
+              opacity: {
+                duration: 1,
+                delay: 1,
               },
-            }}
-            onClick={scrollToAboutMe}
-            className="cursor-pointer"
-          >
-            <ArrowDown />
-          </motion.div>
-        </div>
+              y: {
+                duration: 2,
+                repeat: Infinity,
+                repeatType: "loop",
+              },
+            },
+          }}
+          onClick={scrollToAboutMe}
+          className="cursor-pointer"
+        >
+          <ArrowDown />
+        </motion.div>
       </div>
     </div>
   );

@@ -29,7 +29,7 @@ function VerticalRuler({ position = "left" }) {
       ></div>
       {/* Numbers - extended fade over more numbers */}
       <div
-        className={`absolute hidden font-dm_mono min-[900px]:block ${textClass} top-0 mt-8 h-[calc(100vh+500px)] w-[1px] space-y-8 text-s-default`}
+        className={`font-dm-mono absolute hidden min-[900px]:block ${textClass} text-s-default top-0 mt-8 h-[calc(100vh+500px)] w-[1px] space-y-8`}
       >
         {rulerNumbers.slice(0, 20).map((number, index) => (
           <div
