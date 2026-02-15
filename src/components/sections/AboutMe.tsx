@@ -138,11 +138,10 @@ function AboutMe() {
             <span className="text-p-default">
               full-stack developer / artist
             </span>{" "}
-            who sees programming the same way I see art. I was an artist first
-            before diving into development, so that creative mindset naturally
-            carried over. I also enjoy solving problems{" "}
-            <span className="italic">(especially self-made ones)</span> because
-            of the satisfaction when you finally figure it out.
+            who sees programming the same way I see art. I started out drawing
+            before I ever wrote code, and that creative way of thinking still
+            shapes how I build today. I see programming as another medium — one
+            where structure, clarity, and expression matter.
           </motion.p>
           <br />
           <motion.p
@@ -156,10 +155,9 @@ function AboutMe() {
             viewport={{ amount: 0.1, once: true }}
           >
             In my spare time, you&apos;ll probably find me learning something
-            new on tech <span className="italic">(lol nerd)</span>. Other than
-            that, you&apos;ll find me{" "}
+            playing new on tech. Other than that, you&apos;ll find me{" "}
             <span className="text-p-default">
-              playing basketball, drawing, or playing video games
+              drawing, playing basketball, or gaming
             </span>
             . Whether it&apos;s art, code, or just figuring out a strategy,
             I&apos;m all about creating, trying new things, and having fun with
