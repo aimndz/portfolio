@@ -80,15 +80,19 @@ function Hero() {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       className="relative flex min-h-screen w-full flex-col items-center overflow-x-clip"
-      style={{ perspective: "1200px" }}
+      style={{
+        perspective: isTouch ? "none" : "1200px",
+        contain: "layout style",
+      }}
     >
       {/* 3D Scene Layer (Grid + Radar) */}
       <motion.div
         className="pointer-events-none absolute inset-0 overflow-visible"
         style={{
-          rotateX: springTiltX,
-          rotateY: springTiltY,
-          transformStyle: "preserve-3d",
+          rotateX: isTouch ? 0 : springTiltX,
+          rotateY: isTouch ? 0 : springTiltY,
+          transformStyle: isTouch ? "flat" : "preserve-3d",
+          willChange: isTouch ? "auto" : "transform",
         }}
       >
         {/* Background Grid */}
@@ -101,7 +105,7 @@ function Hero() {
               "linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)",
             WebkitMaskImage:
               "linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)",
-            transform: "translateZ(-50px)", // Slightly behind radar for parallax
+            transform: isTouch ? "none" : "translateZ(-50px)",
           }}
         />
 
@@ -109,20 +113,22 @@ function Hero() {
         <div className="absolute inset-0 flex items-center justify-center overflow-visible">
           <div
             className="group relative w-full max-w-4xl translate-y-[10%] cursor-crosshair overflow-visible md:translate-y-[10%]"
-            style={{ transformStyle: "preserve-3d" }}
+            style={{ transformStyle: isTouch ? "flat" : "preserve-3d" }}
           >
             <Radar mouseX={mouseX} mouseY={mouseY} isHovered={isHovered} />
 
             {/* Horizontal Line */}
             <div
               className="bg-s-default absolute top-1/2 left-1/2 -z-10 h-px w-screen -translate-x-1/2 opacity-30"
-              style={{ transform: "translateZ(-10px)" }}
+              style={{
+                transform: isTouch ? "translateX(-50%)" : "translateZ(-10px)",
+              }}
             ></div>
 
             {/* Crosshair — Centered */}
             <div className="pointer-events-none absolute inset-0 z-50 flex items-center justify-center">
               <motion.div
-                style={{ transform: "translateZ(30px)" }} // Pop slightly forward
+                style={{ transform: isTouch ? "none" : "translateZ(30px)" }}
                 initial={{ scale: 0.8, rotate: 135, opacity: 0 }}
                 animate={{
                   scale: [0.8, 1, 0.8],
@@ -152,21 +158,25 @@ function Hero() {
 
       {/* Hero Content */}
       <motion.div
-        data-scroll
-        data-scroll-speed="0.1"
         className="relative z-10 mx-5 mt-32 text-center md:mt-56"
+        {...(!isTouch && {
+          "data-scroll": true,
+          "data-scroll-speed": "0.1",
+        })}
         initial={{ y: 0 }}
         animate={{
-          y: [0, -10, 0],
+          y: isTouch ? 0 : [0, -10, 0],
         }}
         transition={{
           duration: 5,
-          repeat: Infinity,
+          repeat: isTouch ? 0 : Infinity,
           ease: "easeInOut",
         }}
       >
         {/* Shadow Overlay for depth */}
-        <div className="absolute inset-0 -z-10 scale-150 transform-gpu rounded-full bg-black/5 opacity-50 blur-3xl" />
+        <div
+          className={`absolute inset-0 -z-10 scale-150 transform-gpu rounded-full bg-black/5 opacity-50 ${isTouch ? "blur-xl" : "blur-3xl"}`}
+        />
 
         {/* Corner Brackets Framing Content */}
         <div className="pointer-events-none absolute -inset-10 hidden md:block">

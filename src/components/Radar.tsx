@@ -88,7 +88,8 @@ function Radar({ mouseX, mouseY, isHovered = false }: RadarProps) {
 
           {/* Radar Sweep Beam */}
           <motion.div
-            className="bg-conic-from-90 absolute inset-0 rounded-full from-[#1FD7FF]/20 to-transparent"
+            className="bg-conic-from-90 absolute inset-0 transform-gpu rounded-full from-[#1FD7FF]/20 to-transparent"
+            style={{ willChange: "transform" }}
             animate={{ rotate: 360 }}
             transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
           />
