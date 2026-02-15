@@ -1,5 +1,7 @@
 import { content } from "@/lib/constants";
-import ProjectCard from "./ProjectCard";
+import { motion } from "motion/react";
+import Link from "next/link";
+import Image from "next/image";
 
 function AllProjects() {
   const { featuredProjects, otherProjects } = content;
