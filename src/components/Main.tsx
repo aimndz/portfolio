@@ -1,6 +1,5 @@
 "use client";
 
-import GlowBG from "./GlowBG";
 import VerticalRuler from "./VerticalRuler";
 import NavigationTab from "./NavigationTab";
 import Footer from "./sections/Footer";
@@ -8,12 +7,7 @@ import Footer from "./sections/Footer";
 function Main() {
   return (
     <main className="font-montserrat text-p-default">
-      <div>
-        <GlowBG /> {/* Glow main hero section */}
-        <NavigationTab />
-      </div>
-
-      <Footer />
+      <NavigationTab />
 
       {/* Center Vertical Line */}
       <VerticalRuler position="center" />
@@ -21,6 +15,8 @@ function Main() {
       <VerticalRuler position="left" />
       {/* Right Vertical Line */}
       <VerticalRuler position="right" />
+
+      <Footer />
     </main>
   );
 }

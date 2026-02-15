@@ -71,11 +71,11 @@ function AboutMe() {
             </motion.div>
           </motion.div>
           <Separator className="my-3 bg-[#0C3741] md:my-4" />
-          <div className="-mt-2 flex justify-center gap-3 text-p-muted md:flex-col md:gap-0">
-            <div className="flex items-center justify-center gap-3">
+          <div className="text-p-muted -mt-2 flex justify-center gap-3 md:flex-col md:gap-0">
+            <div className="flex items-center gap-3">
               <Link
                 href="mailto:amiel.ian.mendoza@gmail.com"
-                className="rounded-md p-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-100 md:-m-0 md:p-0"
+                className="focus-visible:ring-accent-100 rounded-md p-2 focus-visible:ring-2 focus-visible:outline-none md:m-0 md:p-0"
               >
                 <Mail size={20} />
               </Link>
@@ -88,11 +88,11 @@ function AboutMe() {
             </div>
             <div className="flex items-center gap-3">
               <Link
-                href="https://x.com/aim_mndz"
+                href="https://x.com/aim_ndz"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Open X (Twitter) profile"
-                className="-m-2 rounded-md p-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-100 md:-m-0 md:p-0"
+                className="focus-visible:ring-accent-100 -m-2 rounded-md p-2 focus-visible:ring-2 focus-visible:outline-none md:m-0 md:p-0"
               >
                 <svg
                   width={18}
@@ -118,7 +118,7 @@ function AboutMe() {
                 target="_blank"
                 className="hidden hover:underline md:block"
               >
-                @aim_mndz
+                @aim_ndz
               </Link>
             </div>
           </div>
@@ -179,7 +179,7 @@ function AboutMe() {
           >
             <Link
               href="/about-me"
-              className="group flex items-center gap-3 border-b border-transparent text-accent-100 hover:border-accent-100"
+              className="group text-accent-100 hover:border-accent-100 flex items-center gap-3 border-b border-transparent"
             >
               <p>Let&apos;s Get Personal</p>
               <ChevronsRight size={20} />

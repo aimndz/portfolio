@@ -1,7 +1,5 @@
-import Link from "next/link";
-import Image from "next/image";
 import { content } from "@/lib/constants";
-import { motion } from "motion/react";
+import ProjectCard from "./ProjectCard";
 
 function AllProjects() {
   const { featuredProjects, otherProjects } = content;
@@ -9,17 +7,17 @@ function AllProjects() {
   const allProjects = [...featuredProjects, ...otherProjects];
 
   return (
-    <section className="z-10 mx-5 mb-20 mt-28 max-w-4xl font-montserrat">
+    <section className="font-montserrat z-10 mx-5 mt-28 mb-20 max-w-4xl">
       <div className="mb-14 md:mb-20">
-        <h1 className="text-center text-4xl font-bold text-accent-100 md:text-6xl">
+        <h1 className="text-accent-100 text-center text-4xl font-bold md:text-6xl">
           Projects
         </h1>
-        <p className="mx-auto mt-3 max-w-lg text-center font-dm_mono text-p-muted">
+        <p className="font-dm-mono text-p-muted mx-auto mt-3 max-w-lg text-center">
           These are some of my projects that, honestly, I still don’t know how I
           pulled off.
         </p>
       </div>
-      <div className="grid grid-cols-1 gap-10">
+      <div className="grid grid-cols-1 gap-12">
         {allProjects.map((project, index) => (
           <motion.div
             key={index}
@@ -27,9 +25,9 @@ function AllProjects() {
             whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ duration: 0.5 }}
           >
-            <Link href={project.route} target="_blank">
+            <Link href={`/projects/${project.slug}`}>
               <div>
-                <div className="group overflow-hidden rounded-lg border border-s-default bg-s-muted">
+                <div className="group border-s-default bg-s-muted overflow-hidden rounded-lg border">
                   <div>
                     <Image
                       src={project.image}
@@ -43,7 +41,7 @@ function AllProjects() {
                   <div className="relative overflow-hidden p-4">
                     <h3 className="text-xl font-bold">{project.name}</h3>
                     <p className="text-accent-100">{project.role}</p>
-                    <p className="mt-4 text-p-muted">
+                    <p className="text-p-muted mt-4">
                       <span className="text-p-default">{project.date}</span> -{" "}
                       {project.description}
                     </p>
@@ -51,14 +49,14 @@ function AllProjects() {
                       {project.stack.map((stack, index) => (
                         <div
                           key={index}
-                          className="inline-block overflow-hidden rounded-full border border-s-default bg-s-default px-3 py-1 text-xs"
+                          className="border-s-default bg-s-default inline-block overflow-hidden rounded-full border px-3 py-1 text-xs"
                         >
                           {stack}
                         </div>
                       ))}
                     </div>
                     {/* Background glow */}
-                    <div className="absolute left-1/2 top-28 z-10 aspect-square w-full -translate-x-1/2 transform rounded-full bg-white opacity-0 blur-2xl transition-opacity duration-300 group-hover:opacity-10">
+                    <div className="absolute top-28 left-1/2 z-10 aspect-square w-full -translate-x-1/2 transform rounded-full bg-white opacity-0 blur-2xl transition-opacity duration-300 group-hover:opacity-10">
                       <div className="absolute inset-0 rounded-full bg-white/30 blur-xl" />
                     </div>
                   </div>
