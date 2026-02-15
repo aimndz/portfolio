@@ -79,7 +79,7 @@ function Hero() {
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative flex min-h-screen w-full flex-col items-center overflow-x-clip"
+      className="relative flex min-h-dvh w-full flex-col items-center overflow-x-clip"
       style={{
         perspective: isTouch ? "none" : "1200px",
         contain: "layout style",
@@ -304,8 +304,10 @@ function Hero() {
           onClick={scrollToAboutMe}
           className="group flex cursor-pointer flex-col items-center gap-2"
         >
-          <span className="font-dm-mono text-p-muted text-[9px] tracking-widest uppercase opacity-0 transition-opacity group-hover:opacity-100">
-            Discover More
+          <span
+            className={`font-dm-mono text-p-muted text-[9px] tracking-widest uppercase transition-opacity ${isTouch ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`}
+          >
+            Continue
           </span>
           <ArrowDown />
         </motion.div>
