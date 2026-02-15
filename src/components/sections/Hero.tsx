@@ -79,7 +79,7 @@ function Hero() {
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative mx-5 flex min-h-screen flex-col items-center"
+      className="relative mx-5 flex min-h-screen flex-col items-center overflow-x-clip"
       style={{ perspective: "1200px" }}
     >
       {/* 3D Scene Layer (Grid + Radar) */}
@@ -115,7 +115,7 @@ function Hero() {
 
             {/* Horizontal Line */}
             <div
-              className="bg-s-default absolute top-1/2 left-1/2 -z-10 h-px w-screen -translate-x-1/2 opacity-30"
+              className="bg-s-default absolute top-1/2 left-1/2 -z-10 h-px w-[200%] -translate-x-1/2 opacity-30"
               style={{ transform: "translateZ(-10px)" }}
             ></div>
 
