@@ -30,8 +30,14 @@ function Hero() {
   const springTiltX = useSpring(tiltX, { stiffness: 100, damping: 20 });
   const springTiltY = useSpring(tiltY, { stiffness: 100, damping: 20 });
 
+  const [isTouch, setIsTouch] = useState(false);
+
+  useEffect(() => {
+    setIsTouch("ontouchstart" in window || navigator.maxTouchPoints > 0);
+  }, []);
+
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!containerRef.current) return;
+    if (isTouch || !containerRef.current) return;
     const rect = containerRef.current.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;

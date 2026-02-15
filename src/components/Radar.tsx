@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import {
   motion,
   MotionValue,
@@ -20,9 +21,32 @@ function Radar({ mouseX, mouseY, isHovered = false }: RadarProps) {
   const x = mouseX || localX;
   const y = mouseY || localY;
 
+  const [isTouch, setIsTouch] = useState(false);
+
+  useEffect(() => {
+    setIsTouch("ontouchstart" in window || navigator.maxTouchPoints > 0);
+  }, []);
+
   // Convert percentages to CSS strings
   const glowX = useTransform(x, (v) => `${v}%`);
   const glowY = useTransform(y, (v) => `${v}%`);
+
+  // All useTransform hooks called unconditionally at the top level
+  const outerMask = useTransform(
+    [glowX, glowY],
+    ([gx, gy]) =>
+      `radial-gradient(150px circle at ${gx} ${gy}, black, transparent)`,
+  );
+  const innerMask = useTransform(
+    [glowX, glowY],
+    ([gx, gy]) =>
+      `radial-gradient(120px circle at ${gx} ${gy}, black, transparent)`,
+  );
+  const centerMask = useTransform(
+    [glowX, glowY],
+    ([gx, gy]) =>
+      `radial-gradient(80px circle at ${gx} ${gy}, black, transparent)`,
+  );
 
   return (
     <div className="w-full">
@@ -51,22 +75,16 @@ function Radar({ mouseX, mouseY, isHovered = false }: RadarProps) {
           className="border-s-default relative flex aspect-square w-full items-center justify-center rounded-full border bg-[#1FD7FF]/3"
         >
           {/* Mouse tracking border highlight layer */}
-          <motion.div
-            className="border-accent-100 absolute inset-0 rounded-full border-2 transition-opacity duration-300"
-            style={{
-              opacity: isHovered ? 1 : 0,
-              maskImage: useTransform(
-                [glowX, glowY],
-                ([gx, gy]) =>
-                  `radial-gradient(150px circle at ${gx} ${gy}, black, transparent)`,
-              ),
-              WebkitMaskImage: useTransform(
-                [glowX, glowY],
-                ([gx, gy]) =>
-                  `radial-gradient(150px circle at ${gx} ${gy}, black, transparent)`,
-              ),
-            }}
-          />
+          {!isTouch && (
+            <motion.div
+              className="border-accent-100 absolute inset-0 rounded-full border-2 transition-opacity duration-300"
+              style={{
+                opacity: isHovered ? 1 : 0,
+                maskImage: outerMask,
+                WebkitMaskImage: outerMask,
+              }}
+            />
+          )}
 
           {/* Radar Sweep Beam */}
           <motion.div
@@ -82,22 +100,16 @@ function Radar({ mouseX, mouseY, isHovered = false }: RadarProps) {
             className="border-s-default relative z-10 flex aspect-square w-[66%] items-center justify-center rounded-full border bg-[#1FD7FF]/3"
           >
             {/* Inner highlight */}
-            <motion.div
-              className="border-accent-100 pointer-events-none absolute inset-0 rounded-full border-2 transition-opacity duration-300"
-              style={{
-                opacity: isHovered ? 0.6 : 0,
-                maskImage: useTransform(
-                  [glowX, glowY],
-                  ([gx, gy]) =>
-                    `radial-gradient(120px circle at ${gx} ${gy}, black, transparent)`,
-                ),
-                WebkitMaskImage: useTransform(
-                  [glowX, glowY],
-                  ([gx, gy]) =>
-                    `radial-gradient(120px circle at ${gx} ${gy}, black, transparent)`,
-                ),
-              }}
-            />
+            {!isTouch && (
+              <motion.div
+                className="border-accent-100 pointer-events-none absolute inset-0 rounded-full border-2 transition-opacity duration-300"
+                style={{
+                  opacity: isHovered ? 0.6 : 0,
+                  maskImage: innerMask,
+                  WebkitMaskImage: innerMask,
+                }}
+              />
+            )}
 
             <motion.div
               initial={{ opacity: 0, scale: 0.5 }}
@@ -106,22 +118,16 @@ function Radar({ mouseX, mouseY, isHovered = false }: RadarProps) {
               className="border-s-default aspect-square w-[50%] rounded-full border bg-[#1FD7FF]/3"
             >
               {/* Center highlight */}
-              <motion.div
-                className="border-accent-100 h-full w-full rounded-full border-2 transition-opacity duration-300"
-                style={{
-                  opacity: isHovered ? 0.4 : 0,
-                  maskImage: useTransform(
-                    [glowX, glowY],
-                    ([gx, gy]) =>
-                      `radial-gradient(80px circle at ${gx} ${gy}, black, transparent)`,
-                  ),
-                  WebkitMaskImage: useTransform(
-                    [glowX, glowY],
-                    ([gx, gy]) =>
-                      `radial-gradient(80px circle at ${gx} ${gy}, black, transparent)`,
-                  ),
-                }}
-              />
+              {!isTouch && (
+                <motion.div
+                  className="border-accent-100 h-full w-full rounded-full border-2 transition-opacity duration-300"
+                  style={{
+                    opacity: isHovered ? 0.4 : 0,
+                    maskImage: centerMask,
+                    WebkitMaskImage: centerMask,
+                  }}
+                />
+              )}
             </motion.div>
           </motion.div>
         </motion.div>
