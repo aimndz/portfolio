@@ -1,11 +1,33 @@
 import Image from "next/image";
-import { motion } from "motion/react";
+import {
+  motion,
+  MotionValue,
+  useTransform,
+  useMotionValue,
+} from "motion/react";
 
-function Radar() {
+interface RadarProps {
+  mouseX?: MotionValue<number>;
+  mouseY?: MotionValue<number>;
+  isHovered?: boolean;
+}
+
+function Radar({ mouseX, mouseY, isHovered = false }: RadarProps) {
+  // Local fallbacks if props aren't provided
+  const localX = useMotionValue(50);
+  const localY = useMotionValue(50);
+
+  const x = mouseX || localX;
+  const y = mouseY || localY;
+
+  // Convert percentages to CSS strings
+  const glowX = useTransform(x, (v) => `${v}%`);
+  const glowY = useTransform(y, (v) => `${v}%`);
+
   return (
     <div className="w-full">
       <div className="relative">
-        {/* Radar Glow */}
+        {/* Radar Glow (Base Static Glow) */}
         <motion.div
           className="absolute inset-0 flex items-center justify-center"
           initial={{ opacity: 0, scale: 0.5 }}
@@ -21,25 +43,86 @@ function Radar() {
           />
         </motion.div>
 
-        {/* Animated Radar Circles */}
+        {/* Animated Radar Circles with Localized Border Glow */}
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="border-s-default flex aspect-square w-full items-center justify-center rounded-full border bg-[#1FD7FF]/3"
+          className="border-s-default relative flex aspect-square w-full items-center justify-center rounded-full border bg-[#1FD7FF]/3"
         >
+          {/* Mouse tracking border highlight layer */}
+          <motion.div
+            className="border-accent-100 absolute inset-0 rounded-full border-2 transition-opacity duration-300"
+            style={{
+              opacity: isHovered ? 1 : 0,
+              maskImage: useTransform(
+                [glowX, glowY],
+                ([gx, gy]) =>
+                  `radial-gradient(150px circle at ${gx} ${gy}, black, transparent)`,
+              ),
+              WebkitMaskImage: useTransform(
+                [glowX, glowY],
+                ([gx, gy]) =>
+                  `radial-gradient(150px circle at ${gx} ${gy}, black, transparent)`,
+              ),
+            }}
+          />
+
+          {/* Radar Sweep Beam */}
+          <motion.div
+            className="bg-conic-from-90 absolute inset-0 rounded-full from-[#1FD7FF]/20 to-transparent"
+            animate={{ rotate: 360 }}
+            transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+          />
+
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="border-s-default flex aspect-square w-[66%] items-center justify-center rounded-full border bg-[#1FD7FF]/3"
+            className="border-s-default relative z-10 flex aspect-square w-[66%] items-center justify-center rounded-full border bg-[#1FD7FF]/3"
           >
+            {/* Inner highlight */}
+            <motion.div
+              className="border-accent-100 pointer-events-none absolute inset-0 rounded-full border-2 transition-opacity duration-300"
+              style={{
+                opacity: isHovered ? 0.6 : 0,
+                maskImage: useTransform(
+                  [glowX, glowY],
+                  ([gx, gy]) =>
+                    `radial-gradient(120px circle at ${gx} ${gy}, black, transparent)`,
+                ),
+                WebkitMaskImage: useTransform(
+                  [glowX, glowY],
+                  ([gx, gy]) =>
+                    `radial-gradient(120px circle at ${gx} ${gy}, black, transparent)`,
+                ),
+              }}
+            />
+
             <motion.div
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.6 }}
               className="border-s-default aspect-square w-[50%] rounded-full border bg-[#1FD7FF]/3"
-            ></motion.div>
+            >
+              {/* Center highlight */}
+              <motion.div
+                className="border-accent-100 h-full w-full rounded-full border-2 transition-opacity duration-300"
+                style={{
+                  opacity: isHovered ? 0.4 : 0,
+                  maskImage: useTransform(
+                    [glowX, glowY],
+                    ([gx, gy]) =>
+                      `radial-gradient(80px circle at ${gx} ${gy}, black, transparent)`,
+                  ),
+                  WebkitMaskImage: useTransform(
+                    [glowX, glowY],
+                    ([gx, gy]) =>
+                      `radial-gradient(80px circle at ${gx} ${gy}, black, transparent)`,
+                  ),
+                }}
+              />
+            </motion.div>
           </motion.div>
         </motion.div>
       </div>
