@@ -1,7 +1,5 @@
-import Link from "next/link";
-import Image from "next/image";
 import { content } from "@/lib/constants";
-import { motion } from "motion/react";
+import ProjectCard from "./ProjectCard";
 
 function AllProjects() {
   const { featuredProjects, otherProjects } = content;
@@ -19,7 +17,7 @@ function AllProjects() {
           pulled off.
         </p>
       </div>
-      <div className="grid grid-cols-1 gap-10">
+      <div className="grid grid-cols-1 gap-12">
         {allProjects.map((project, index) => (
           <motion.div
             key={index}

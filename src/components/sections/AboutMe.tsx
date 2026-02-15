@@ -88,7 +88,7 @@ function AboutMe() {
             </div>
             <div className="flex items-center gap-3">
               <Link
-                href="https://x.com/aim_mndz"
+                href="https://x.com/aim_ndz"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Open X (Twitter) profile"
@@ -114,11 +114,11 @@ function AboutMe() {
                 </svg>
               </Link>
               <Link
-                href="https://x.com/aim_mndz"
+                href="https://x.com/aim_ndz"
                 target="_blank"
                 className="hidden hover:underline md:block"
               >
-                @aim_mndz
+                @aim_ndz
               </Link>
             </div>
           </div>

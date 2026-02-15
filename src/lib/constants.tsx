@@ -171,5 +171,41 @@ export const content = {
       lessonsLearned:
         "This was my introduction to building complete CRUD applications with a relational database, and it solidified my understanding of desktop application architecture.",
     },
+    {
+      name: "ThisIsWhereYourTaxesGo",
+      slug: "thisiswhereyourtaxesgo",
+      image: "/images/projects/thisiswhereyourtaxesgo.png",
+      role: "Developer and Designer",
+      date: "Sep 2025",
+      description: "Visualize how taxes are spent.",
+      longDescription:
+        "A desktop cinema booking application that provides a complete solution for movie theater management — from listing now-showing films and scheduling screenings to processing ticket purchases and managing customer bookings.",
+      stack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+      githubUrl: "https://github.com/aimndz/thisiswhereyourtaxesgo",
+      screenshots: ["/images/projects/thisiswhereyourtaxesgo.png"],
+      features: ["Visualize how taxes are spent"],
+      challenges:
+        "Creating an intuitive seat selection UI and ensuring the booking process was atomic (preventing race conditions) were the primary challenges.",
+      lessonsLearned:
+        "This was my introduction to building complete CRUD applications with a relational database, and it solidified my understanding of desktop application architecture.",
+    },
+    {
+      name: "Furfeit",
+      slug: "furfeit",
+      image: "/images/projects/furfeit.png",
+      role: "Developer and Designer",
+      date: "Sep 2025",
+      description: "Visualize how taxes are spent.",
+      longDescription:
+        "A desktop cinema booking application that provides a complete solution for movie theater management — from listing now-showing films and scheduling screenings to processing ticket purchases and managing customer bookings.",
+      stack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+      githubUrl: "https://github.com/aimndz/thisiswhereyourtaxesgo",
+      screenshots: ["/images/projects/thisiswhereyourtaxesgo.png"],
+      features: ["Visualize how taxes are spent"],
+      challenges:
+        "Creating an intuitive seat selection UI and ensuring the booking process was atomic (preventing race conditions) were the primary challenges.",
+      lessonsLearned:
+        "This was my introduction to building complete CRUD applications with a relational database, and it solidified my understanding of desktop application architecture.",
+    },
   ] as Project[],
 };
