@@ -21,7 +21,11 @@ export default function ProjectCard({
       viewport={{ once: true, amount: 0.2 }}
       className="group"
     >
-      <Link href={`/projects/${project.slug}`} className="block">
+      <Link
+        href={`/projects/${project.slug}`}
+        aria-label={`View project details for ${project.name}`}
+        className="block"
+      >
         <div className="border-s-default bg-s-muted group-hover:border-accent-100/50 relative overflow-hidden rounded-xl border transition-all duration-500 group-hover:shadow-[0_0_30px_-10px_rgba(31,215,255,0.2)]">
           {/* Top Edge Glow */}
           <div className="via-accent-100/30 absolute top-0 left-0 h-px w-full bg-linear-to-r from-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />

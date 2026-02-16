@@ -1,8 +1,16 @@
-import AboutMe from "./sections/AboutMe";
-import FeaturedProjects from "./sections/FeaturedProjects";
+import dynamic from "next/dynamic";
 import Hero from "./sections/Hero";
-import Technologies from "./sections/Technologies";
-import DecorativeRadar from "./DecorativeRadar";
+
+const AboutMe = dynamic(() => import("./sections/AboutMe"), { ssr: true });
+const FeaturedProjects = dynamic(() => import("./sections/FeaturedProjects"), {
+  ssr: true,
+});
+const Technologies = dynamic(() => import("./sections/Technologies"), {
+  ssr: true,
+});
+const DecorativeRadar = dynamic(() => import("./DecorativeRadar"), {
+  ssr: true,
+});
 
 function Home() {
   return (

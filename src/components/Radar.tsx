@@ -61,8 +61,9 @@ function Radar({ mouseX, mouseY, isHovered = false }: RadarProps) {
           <Image
             src="/images/radar/radarGlow.svg"
             alt="radar image"
-            width={0}
-            height={0}
+            width={800}
+            height={800}
+            priority
             className="h-auto w-full max-w-5xl"
           />
         </motion.div>
@@ -86,12 +87,10 @@ function Radar({ mouseX, mouseY, isHovered = false }: RadarProps) {
             />
           )}
 
-          {/* Radar Sweep Beam */}
-          <motion.div
-            className="bg-conic-from-90 absolute inset-0 transform-gpu rounded-full from-[#1FD7FF]/20 to-transparent"
+          {/* Radar Sweep Beam - Using CSS animation for performance */}
+          <div
+            className="bg-conic-from-90 absolute inset-0 animate-[spin_4s_linear_infinite] rounded-full from-[#1FD7FF]/20 to-transparent"
             style={{ willChange: "transform" }}
-            animate={{ rotate: 360 }}
-            transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
           />
 
           <motion.div

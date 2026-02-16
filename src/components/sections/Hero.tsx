@@ -195,7 +195,7 @@ function Hero() {
           >
             <MapPin />
           </motion.div>
-          <TextbyTextAnimate text={country} />
+          <TextbyTextAnimate text={country} animateAlways />
         </div>
 
         {/* Logo */}
@@ -231,6 +231,8 @@ function Hero() {
         <div className="font-montserrat text-heading mt-1 flex justify-center uppercase [text-shadow:0_4px_8px_rgba(0,0,0,0.5)] md:text-base">
           <TextbyTextAnimate
             text={fullName}
+            type="letter"
+            animateAlways
             size="text-3xl"
             className="text-accent-100 font-semibold tracking-tight uppercase"
           />
@@ -240,6 +242,7 @@ function Hero() {
         <div className="font-dm-mono text-p-muted -mt-1 flex justify-center text-sm tracking-[0.2em] uppercase [text-shadow:0_2px_4px_rgba(0,0,0,0.3)] md:text-base">
           <TextbyTextAnimate
             text={position}
+            animateAlways
             className="text-p-muted uppercase"
           />
         </div>
@@ -254,6 +257,7 @@ function Hero() {
           <Link
             href={content.socialLinks.github}
             target="_blank"
+            aria-label="Visit my GitHub profile"
             className="block transition-transform hover:scale-110"
           >
             <Github />
@@ -261,6 +265,7 @@ function Hero() {
           <Link
             href={content.socialLinks.instagram}
             target="_blank"
+            aria-label="Visit my Instagram profile"
             className="block transition-transform hover:scale-110"
           >
             <Instagram />
@@ -268,6 +273,7 @@ function Hero() {
           <Link
             href={content.socialLinks.linkedin}
             target="_blank"
+            aria-label="Visit my LinkedIn profile"
             className="block transition-transform hover:scale-110"
           >
             <LinkedIn />
@@ -275,6 +281,7 @@ function Hero() {
           <Link
             href={content.socialLinks.resume}
             target="_blank"
+            aria-label="Download my resume"
             className="block transition-transform hover:scale-110 md:hidden"
           >
             <Paperclip className="text-p-muted" />

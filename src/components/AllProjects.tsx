@@ -27,7 +27,10 @@ function AllProjects() {
             whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ duration: 0.5 }}
           >
-            <Link href={`/projects/${project.slug}`}>
+            <Link
+              href={`/projects/${project.slug}`}
+              aria-label={`View project details for ${project.name}`}
+            >
               <div>
                 <div className="group border-s-default bg-s-muted overflow-hidden rounded-lg border">
                   <div>

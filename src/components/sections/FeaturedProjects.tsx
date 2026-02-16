@@ -13,6 +13,7 @@ function FeaturedProjects() {
         <SectionTitle title="Featured Projects" />
         <Link
           href="/projects"
+          aria-label="View all projects"
           className="text-accent-100 hover:border-accent-100 group flex items-center gap-3 border-b border-transparent transition-all"
         >
           <p className="hidden sm:block">View All Projects</p>

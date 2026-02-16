@@ -1,7 +1,9 @@
 import { useRouter, usePathname } from "next/navigation";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
+import dynamic from "next/dynamic";
+
 import Home from "./Home";
-import AllProjects from "./AllProjects";
+const AllProjects = dynamic(() => import("./AllProjects"), { ssr: true });
 import Logo from "../../public/icons/Logo";
 import { ArrowUpRight } from "lucide-react";
 import { Button } from "./ui/button";
@@ -29,6 +31,7 @@ function NavigationTab() {
         <div>
           <Link
             href="/"
+            aria-label="Home"
             className="fixed top-14 left-10 z-999 hidden min-[900px]:left-32 md:block"
           >
             <Logo />

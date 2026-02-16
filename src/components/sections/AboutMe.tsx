@@ -1,6 +1,6 @@
 import Link from "next/link";
 import SectionTitle from "../SectionTitle";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { ChevronsRight, Mail } from "lucide-react";
 import Image from "next/image";
 import { Separator } from "../ui/separator";
@@ -43,11 +43,12 @@ function AboutMe() {
               }}
             >
               <Image
-                src="/images/me-img.png"
+                src="/images/me-img.webp"
                 alt="About me"
-                width={1500}
-                height={1500}
-                className="rounded-lg"
+                width={500}
+                height={500}
+                priority
+                className="rounded-lg object-cover"
               />
             </motion.div>
             <motion.div
@@ -62,11 +63,11 @@ function AboutMe() {
               }}
             >
               <Image
-                src="/images/me-mirror-flashed.png"
+                src="/images/me-mirror-flashed.webp"
                 alt="About me (mirrored)"
-                width={1500}
-                height={1500}
-                className="rounded-lg"
+                width={500}
+                height={500}
+                className="rounded-lg object-cover"
               />
             </motion.div>
           </motion.div>
@@ -75,6 +76,7 @@ function AboutMe() {
             <div className="flex items-center gap-3">
               <Link
                 href="mailto:amiel.ian.mendoza@gmail.com"
+                aria-label="Send me an email"
                 className="focus-visible:ring-accent-100 rounded-md p-2 focus-visible:ring-2 focus-visible:outline-none md:m-0 md:p-0"
               >
                 <Mail size={20} />
@@ -177,6 +179,7 @@ function AboutMe() {
           >
             <Link
               href="/about-me"
+              aria-label="Visit full about me page"
               className="group text-accent-100 hover:border-accent-100 flex items-center gap-3 border-b border-transparent"
             >
               <p>Let&apos;s Get Personal</p>

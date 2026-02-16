@@ -1,16 +1,14 @@
-import {
-  Css3Original,
-  ExpressOriginal,
-  Html5Original,
-  JavascriptOriginal,
-  NextjsOriginal,
-  NodejsOriginal,
-  PostgresqlOriginal,
-  PrismaOriginal,
-  ReactOriginal,
-  TailwindcssOriginal,
-  TypescriptOriginal,
-} from "devicons-react";
+import Css3Original from "devicons-react/lib/icons/Css3Original";
+import ExpressOriginal from "devicons-react/lib/icons/ExpressOriginal";
+import Html5Original from "devicons-react/lib/icons/Html5Original";
+import JavascriptOriginal from "devicons-react/lib/icons/JavascriptOriginal";
+import NextjsOriginal from "devicons-react/lib/icons/NextjsOriginal";
+import NodejsOriginal from "devicons-react/lib/icons/NodejsOriginal";
+import PostgresqlOriginal from "devicons-react/lib/icons/PostgresqlOriginal";
+import PrismaOriginal from "devicons-react/lib/icons/PrismaOriginal";
+import ReactOriginal from "devicons-react/lib/icons/ReactOriginal";
+import TailwindcssOriginal from "devicons-react/lib/icons/TailwindcssOriginal";
+import TypescriptOriginal from "devicons-react/lib/icons/TypescriptOriginal";
 
 export type Project = {
   name: string;
@@ -90,7 +88,7 @@ export const content = {
     {
       name: "Bliss and Flair Commercial Building Website",
       slug: "blissnflair",
-      image: "/images/projects/blissnflair.png",
+      image: "/images/projects/blissnflair.webp",
       role: "Lead Developer and Designer",
       date: "Jan 2025",
       description:
@@ -99,11 +97,7 @@ export const content = {
         "A full-featured event management platform built for Bliss & Flair Commercial Building. The system allows clients to browse available event spaces, submit booking requests, and manage their reservations — while the admin dashboard enables building managers to oversee all bookings, approve or reject requests, and monitor space utilization in real time.",
       stack: ["TypeScript", "React", "Express", "PostgreSQL"],
       githubUrl: "https://github.com/aimndz/blissnflair",
-      screenshots: [
-        "/images/projects/blissnflair.png",
-        "/images/projects/blissnflair-2.png",
-        "/images/projects/blissnflair-3.png",
-      ],
+      screenshots: ["/images/projects/blissnflair.webp"],
       features: [
         "Event space browsing and booking system",
         "Admin dashboard for managing reservations",
@@ -119,7 +113,7 @@ export const content = {
     {
       name: "Propertize",
       slug: "propertize",
-      image: "/images/projects/propertize.png",
+      image: "/images/projects/propertize.webp",
       role: "Lead Developer and Designer",
       date: "Jul 2024",
       description:
@@ -128,11 +122,7 @@ export const content = {
         "A comprehensive real estate management platform that streamlines the process of listing, buying, selling, and renting properties. The system features property search with advanced filtering, detailed listing pages with image galleries, and a complete transaction management workflow.",
       stack: ["CodeIgniter 4", "PHP", "MySQL"],
       githubUrl: "https://github.com/aimndz/propertize",
-      screenshots: [
-        "/images/projects/propertize.png",
-        "/images/projects/propertize-2.png",
-        "/images/projects/propertize-3.png",
-      ],
+      screenshots: ["/images/projects/propertize.webp"],
       features: [
         "Property listing with image galleries",
         "Advanced search and filtering",
@@ -150,7 +140,7 @@ export const content = {
     {
       name: "Cinematrix",
       slug: "cinematrix",
-      image: "/images/projects/cinematrix.png",
+      image: "/images/projects/cinematrix.webp",
       role: "Lead Developer and Designer",
       date: "Jan 2024",
       description:
@@ -159,7 +149,7 @@ export const content = {
         "A desktop cinema booking application that provides a complete solution for movie theater management — from listing now-showing films and scheduling screenings to processing ticket purchases and managing customer bookings.",
       stack: ["C#", "MySQL"],
       githubUrl: "https://github.com/aimndz/Cinematrix",
-      screenshots: ["/images/projects/cinematrix.png"],
+      screenshots: ["/images/projects/cinematrix.webp"],
       features: [
         "Movie listing and screening scheduler",
         "Seat selection and ticket booking",
@@ -174,7 +164,7 @@ export const content = {
     {
       name: "ThisIsWhereYourTaxesGo",
       slug: "thisiswhereyourtaxesgo",
-      image: "/images/projects/thisiswhereyourtaxesgo.png",
+      image: "/images/projects/thisiswhereyourtaxesgo.webp",
       role: "Developer and Designer",
       date: "Sep 2025",
       description: "Visualize how taxes are spent.",
@@ -182,7 +172,7 @@ export const content = {
         "A desktop cinema booking application that provides a complete solution for movie theater management — from listing now-showing films and scheduling screenings to processing ticket purchases and managing customer bookings.",
       stack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
       githubUrl: "https://github.com/aimndz/thisiswhereyourtaxesgo",
-      screenshots: ["/images/projects/thisiswhereyourtaxesgo.png"],
+      screenshots: ["/images/projects/thisiswhereyourtaxesgo.webp"],
       features: ["Visualize how taxes are spent"],
       challenges:
         "Creating an intuitive seat selection UI and ensuring the booking process was atomic (preventing race conditions) were the primary challenges.",
@@ -192,7 +182,7 @@ export const content = {
     {
       name: "Furfeit",
       slug: "furfeit",
-      image: "/images/projects/furfeit.png",
+      image: "/images/projects/furfeit.webp",
       role: "Developer and Designer",
       date: "Sep 2025",
       description: "Visualize how taxes are spent.",
