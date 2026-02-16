@@ -1,6 +1,5 @@
 "use client";
-
-import { motion } from "motion/react";
+import { motion, Variants } from "motion/react";
 
 interface TextbyTextAnimateProps {
   text: string;
@@ -19,7 +18,7 @@ function TextbyTextAnimate({
 }: TextbyTextAnimateProps) {
   const items = type === "letter" ? text.split("") : text.split(" ");
 
-  const container = {
+  const container: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -30,7 +29,7 @@ function TextbyTextAnimate({
     },
   };
 
-  const child = {
+  const child: Variants = {
     visible: {
       opacity: 1,
       y: 0,
