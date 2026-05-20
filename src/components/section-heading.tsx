@@ -7,7 +7,7 @@ type SectionHeadingProps = {
 export function SectionHeading({ children }: SectionHeadingProps) {
   return (
     <div className="flex items-center gap-4">
-      <h2 className="shrink-0 text-lg font-medium tracking-[-0.01em]">
+      <h2 className="shrink-0 text-lg font-medium">
         {children}
       </h2>
       <Separator className="min-w-0 flex-1 shrink bg-border" />

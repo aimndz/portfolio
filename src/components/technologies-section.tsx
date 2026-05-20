@@ -1,5 +1,8 @@
 import { SectionHeading } from "@/components/section-heading";
+import { technologyIcons } from "@/components/technology-icons";
 import { technologies } from "@/data/portfolio";
+
+type TechnologyIconName = keyof typeof technologyIcons;
 
 export function TechnologiesSection() {
   return (
@@ -11,8 +14,8 @@ export function TechnologiesSection() {
             className="flex min-w-0 items-center gap-2 text-sm text-secondary"
             key={technology.name}
           >
-            <span className="flex h-5 min-w-5 items-center justify-center border border-border font-mono text-[10px] leading-none text-foreground">
-              {technology.token}
+            <span className="flex h-5 min-w-5 items-center justify-center text-foreground">
+              {technologyIcons[technology.icon as TechnologyIconName]}
             </span>
             <span className="truncate">{technology.name}</span>
           </div>
