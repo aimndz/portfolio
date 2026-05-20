@@ -1,18 +1,21 @@
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Analytics } from "@vercel/analytics/next";
-import SmoothScroll from "@/components/SmoothScroll";
 
-const montserrat = Montserrat({
-  variable: "--font-sans",
+const geistSans = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
   title: "Amiel Ian Mendoza - Full-Stack Developer",
-  description: "Personal Portfolio",
+  description:
+    "Portfolio of Amiel Ian Mendoza, a full-stack developer based in Cavite, Philippines.",
 };
 
 export default function RootLayout({
@@ -22,10 +25,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${montserrat.variable} antialiased`}>
-        <SmoothScroll />
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {children}
-        <Analytics />
       </body>
     </html>
   );
