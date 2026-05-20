@@ -1,15 +1,19 @@
-import { ExternalLink } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import { profile } from "@/data/portfolio";
 
 const navItems = [
-  { label: "Home", href: "#home" },
-  { label: "Projs", href: "#projects" },
+  { label: "Home", href: "/" },
+  { label: "Projs", href: "/projects" },
 ];
 
 export function SiteHeader() {
+  const contactHref = `mailto:${profile.email}?subject=${encodeURIComponent(
+    "Portfolio inquiry",
+  )}`;
+
   return (
     <header className="mx-auto grid w-full max-w-[840px] grid-cols-3 border-x border-border font-mono text-xs uppercase text-secondary">
       {navItems.map((item) => (
@@ -25,10 +29,14 @@ export function SiteHeader() {
         asChild
         className="h-12 rounded-none border-0 bg-primary px-2 text-xs text-primary-foreground hover:bg-primary/90"
       >
-        <Link href={profile.resumeUrl} target="_blank">
+        <Link
+          aria-label={`Email ${profile.name}`}
+          href={contactHref}
+          rel="noopener noreferrer"
+        >
           <span className="hidden sm:inline">Contact Me</span>
           <span className="sm:hidden">Contact</span>
-          <ExternalLink aria-hidden="true" className="size-3" />
+          <ArrowUpRight aria-hidden="true" className="size-3.5" />
         </Link>
       </Button>
     </header>
