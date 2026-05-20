@@ -55,6 +55,26 @@
     --radius: 0rem;
   }
 
+  .light {
+    --background: #fafbf8;
+    --foreground: #000101;
+    --card: #fafbf8;
+    --card-foreground: #000101;
+    --popover: #fafbf8;
+    --popover-foreground: #000101;
+    --primary: #000101;
+    --primary-foreground: #fafbf8;
+    --secondary: #5f5a55;
+    --secondary-foreground: #fafbf8;
+    --muted: #efebe5;
+    --muted-foreground: #5f5a55;
+    --accent: #000101;
+    --accent-foreground: #fafbf8;
+    --border: #d8d3ce;
+    --input: #d8d3ce;
+    --ring: #000101;
+  }
+
   * {
     @apply border-border;
   }
@@ -65,7 +85,16 @@
 
   body {
     @apply bg-background text-foreground antialiased;
+    font-family: var(--font-geist-sans), Arial, sans-serif;
     overflow-x: clip;
+  }
+
+  code,
+  kbd,
+  pre,
+  samp,
+  .font-mono {
+    font-family: var(--font-geist-mono), "Courier New", monospace;
   }
 
   ::selection {
