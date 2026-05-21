@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Amiel Ian Mendoza - Full-Stack Developer",
+  title: "Amiel Ian Mendoza | Full-Stack Developer",
   description:
-    "Portfolio of Amiel Ian Mendoza, a full-stack developer based in Cavite, Philippines.",
+    "Explore the portfolio of Amiel Ian Mendoza, a full-stack developer based in Cavite, Philippines.",
 };
 
 export default function RootLayout({
