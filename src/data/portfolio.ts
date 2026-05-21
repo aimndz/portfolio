@@ -57,6 +57,7 @@ export const techStack = {
     { icon: "redis", name: "Redis" },
   ],
   tools: [
+    { icon: "github", name: "GitHub" },
     { icon: "vercel", name: "Vercel" },
     { icon: "cloudflare", name: "Cloudflare" },
     { icon: "git", name: "Git" },
@@ -66,7 +67,6 @@ export const techStack = {
   ],
 };
 
-
 export const projects = [
   {
     name: "All3Rounds",
@@ -75,7 +75,9 @@ export const projects = [
     href: "https://all3rounds.com",
     featured: false,
     home: true,
-    stack: ["Next.js", "TypeScript", "PostgreSQL", "Tailwind CSS"],
+    stack: ["Next.js", "TypeScript", "Cloudflare", "Tailwind"],
+    website: "https://all3rounds.com",
+    github: "https://github.com/aimndz/all3rounds",
   },
   {
     name: "Articuli",
@@ -84,7 +86,8 @@ export const projects = [
     href: "https://github.com/aimndz",
     featured: true,
     home: true,
-    stack: ["Next.js", "TypeScript", "PostgreSQL", "Prisma"],
+    stack: ["Next.js", "TypeScript", "Supabase"],
+    github: "https://github.com/aimndz",
   },
   {
     name: "Bliss and Flair Event Operation System",
@@ -94,6 +97,7 @@ export const projects = [
     featured: false,
     home: true,
     stack: ["React", "Express", "PostgreSQL"],
+    github: "https://github.com/aimndz/blissnflair",
   },
   {
     name: "Propertize",
@@ -103,6 +107,7 @@ export const projects = [
     featured: false,
     home: true,
     stack: ["PHP", "CodeIgniter", "MySQL"],
+    github: "https://github.com/aimndz/propertize",
   },
   {
     name: "Cinematrix",
@@ -112,6 +117,7 @@ export const projects = [
     featured: false,
     home: false,
     stack: ["C#", "MySQL"],
+    github: "https://github.com/aimndz/Cinematrix",
   },
   {
     name: "ThisIsWhereYourTaxesGo",
@@ -120,7 +126,9 @@ export const projects = [
     href: "https://thisiswhereyourtaxesgo.vercel.app",
     featured: false,
     home: false,
-    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+    stack: ["Next.js", "React", "TypeScript", "Tailwind"],
+    github: "https://github.com/aimndz/ThisIsWhereYourTaxesGo",
+    website: "https://thisiswhereyourtaxesgo.vercel.app",
   },
   {
     name: "Furfeit",
@@ -129,7 +137,8 @@ export const projects = [
     href: "https://aimndz.itch.io/furfeit",
     featured: false,
     home: false,
-    stack: ["Next.js", "React", "TypeScript"],
+    stack: ["Godot", "GDScript"],
+    website: "https://aimndz.itch.io/furfeit",
   },
   {
     name: "Scratch-a-Date",
@@ -138,6 +147,8 @@ export const projects = [
     href: "https://aimndz.github.io/scratch-a-date/",
     featured: false,
     home: false,
-    stack: ["React", "Tailwind CSS"],
+    stack: ["React", "Tailwind"],
+    github: "https://github.com/aimndz/scratch-a-date",
+    website: "https://aimndz.github.io/scratch-a-date/",
   },
 ];

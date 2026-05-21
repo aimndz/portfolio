@@ -28,7 +28,7 @@ export function ProjectsSection() {
       </div>
       <div className="mt-5 grid pt-px pl-px sm:grid-cols-2">
         {homeProjects.map((project) => (
-          <ProjectCard key={project.name} project={project} />
+          <ProjectCard key={project.name} project={project} showStack />
         ))}
       </div>
     </section>
