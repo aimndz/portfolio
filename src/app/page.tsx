@@ -3,7 +3,7 @@ import { ProfileHero } from "@/components/profile-hero";
 import { ProjectsSection } from "@/components/projects-section";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
-import { TechnologiesSection } from "@/components/technologies-section";
+import { TechStackSection } from "@/components/tech-stack-section";
 
 export default function Home() {
   return (
@@ -13,7 +13,7 @@ export default function Home() {
         <ProfileHero />
         <div className="mt-7 space-y-7 flex-1 flex flex-col">
           <AboutSection />
-          <TechnologiesSection />
+          <TechStackSection />
           <ProjectsSection />
           <SiteFooter />
         </div>

@@ -35,19 +35,37 @@ export const experiences = [
   },
 ];
 
-export const technologies = [
-  { icon: "typescript", name: "TypeScript" },
-  { icon: "javascript", name: "JavaScript" },
-  { icon: "nextjs", name: "Next.js" },
-  { icon: "react", name: "React" },
-  { icon: "node", name: "Node" },
-  { icon: "express", name: "Express" },
-  { icon: "postgresql", name: "PostgreSQL" },
-  { icon: "prisma", name: "Prisma" },
-  { icon: "tailwindcss", name: "TailwindCSS" },
-  { icon: "css", name: "CSS" },
-  { icon: "html", name: "HTML" },
-];
+export const techStack = {
+  frontend: [
+    { icon: "nextjs", name: "Next.js" },
+    { icon: "react", name: "React" },
+    { icon: "typescript", name: "TypeScript" },
+    { icon: "javascript", name: "JavaScript" },
+    { icon: "tailwindcss", name: "Tailwind" },
+    { icon: "zustand", name: "Zustand" },
+    { icon: "html", name: "HTML5" },
+    { icon: "css", name: "CSS3" },
+  ],
+  backend: [
+    { icon: "node", name: "Node.js" },
+    { icon: "python", name: "Python" },
+    { icon: "fastapi", name: "FastAPI" },
+    { icon: "express", name: "Express" },
+    { icon: "postgresql", name: "PostgreSQL" },
+    { icon: "prisma", name: "Prisma" },
+    { icon: "supabase", name: "Supabase" },
+    { icon: "redis", name: "Redis" },
+  ],
+  tools: [
+    { icon: "vercel", name: "Vercel" },
+    { icon: "cloudflare", name: "Cloudflare" },
+    { icon: "git", name: "Git" },
+    { icon: "postman", name: "Postman" },
+    { icon: "docker", name: "Docker" },
+    { icon: "figma", name: "Figma" },
+  ],
+};
+
 
 export const projects = [
   {
