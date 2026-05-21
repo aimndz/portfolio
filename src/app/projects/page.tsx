@@ -11,16 +11,16 @@ export const metadata = {
 
 export default function ProjectsPage() {
   return (
-    <main className="bg-background text-foreground min-h-screen">
+    <main className="bg-background text-foreground flex min-h-screen flex-col">
       <SiteHeader />
-      <div className="mx-auto w-full max-w-[840px] px-4 pt-10 pb-12 sm:px-6">
+      <div className="mx-auto w-full max-w-[840px] px-4 pt-10 pb-12 sm:px-6 flex-1 flex flex-col">
         <div className="mb-8">
           <h1 className="mt-3 text-3xl font-semibold">All Projects</h1>
         </div>
 
-        <section>
+        <section className="mb-8">
           <SectionHeading>Selected work</SectionHeading>
-          <div className="mt-5 grid gap-4 sm:grid-cols-2">
+          <div className="mt-5 grid pt-px pl-px sm:grid-cols-2">
             {projects.map((project) => (
               <ProjectCard key={project.name} project={project} showStack />
             ))}
