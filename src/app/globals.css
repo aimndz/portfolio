@@ -3,9 +3,6 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -41,10 +38,10 @@
     --popover-foreground: #fafbf8;
     --primary: #fafbf8;
     --primary-foreground: #000101;
-    --secondary: #a6a09b;
+    --secondary: #a7a7a7;
     --secondary-foreground: #000101;
     --muted: #0b0b0a;
-    --muted-foreground: #a6a09b;
+    --muted-foreground: #4b4847;
     --accent: #fafbf8;
     --accent-foreground: #000101;
     --destructive: #ef4444;
@@ -85,7 +82,7 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: var(--font-geist-sans), Arial, sans-serif;
+    font-family: var(--font-sans), Arial, sans-serif;
     overflow-x: clip;
   }
 
@@ -94,10 +91,25 @@
   pre,
   samp,
   .font-mono {
-    font-family: var(--font-geist-mono), "Courier New", monospace;
+    font-family: var(--font-mono), "Courier New", monospace;
   }
 
   ::selection {
     @apply bg-primary text-primary-foreground;
+  }
+
+  .tech-icon svg {
+    height: 18px;
+    width: 18px;
+    overflow: visible;
+  }
+
+  .tech-icon [stroke] {
+    stroke-width: 1.6;
+    vector-effect: non-scaling-stroke;
+  }
+
+  .tech-icon [fill]:not([fill="none"]) {
+    opacity: 0.86;
   }
 }

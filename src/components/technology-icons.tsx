@@ -10,7 +10,7 @@ function IconPlaceholder({
   return (
     <span
       aria-label={`${label} icon placeholder`}
-      className="text-foreground flex size-5 items-center justify-center font-mono text-[9px] leading-none"
+      className="tech-icon text-foreground flex size-5 items-center justify-center font-mono text-[9px] leading-none"
       role="img"
     >
       {children}
