@@ -108,8 +108,4 @@
     stroke-width: 1.6;
     vector-effect: non-scaling-stroke;
   }
-
-  .tech-icon [fill]:not([fill="none"]) {
-    opacity: 0.86;
-  }
 }
