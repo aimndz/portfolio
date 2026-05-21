@@ -25,7 +25,7 @@ export const about = [
 export const experiences = [
   {
     company: "All3Rounds",
-    role: "Founder / Full-stack Developer",
+    role: "Founder / Full-Stack Developer",
     year: "2026",
   },
   {
