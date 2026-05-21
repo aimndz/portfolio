@@ -11,8 +11,8 @@ export function ProfileHero() {
       className="relative flex flex-col items-center pt-7 text-center"
       id="home"
     >
-      <div className="absolute top-7 left-0 max-[520px]:hidden">
-        <ThemeDropdown />
+      <div className="absolute top-7 right-0">
+        <ThemeDropdown align="end" />
       </div>
 
       <div className="relative p-2">
@@ -71,10 +71,6 @@ export function ProfileHero() {
           </div>
         ))}
       </nav>
-
-      <div className="mt-5 min-[521px]:hidden">
-        <ThemeDropdown align="center" />
-      </div>
     </section>
   );
 }

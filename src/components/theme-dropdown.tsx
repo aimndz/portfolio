@@ -41,11 +41,11 @@ export function ThemeDropdown({ align = "start" }: ThemeDropdownProps) {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button
-          className="h-9 cursor-pointer rounded-none border-border px-4 font-mono text-[11px] uppercase text-secondary hover:bg-muted hover:text-foreground"
+          className="h-9 w-9 sm:w-auto cursor-pointer rounded-none border-border px-0 sm:px-4 font-mono text-[11px] uppercase text-secondary hover:bg-muted hover:text-foreground"
           variant="outline"
         >
           <Palette aria-hidden="true" className="size-3.5" />
-          Theme
+          <span className="hidden sm:inline">Theme</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align={align}>
