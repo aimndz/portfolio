@@ -11,19 +11,19 @@ export function ProfileHero() {
       className="relative flex flex-col items-center pt-7 text-center"
       id="home"
     >
-      <div className="absolute top-7 left-0 max-[420px]:static max-[420px]:mb-6">
+      <div className="absolute top-7 left-0 max-[520px]:hidden">
         <ThemeDropdown />
       </div>
 
-      <div className="relative p-4">
-        <span className="bg-secondary absolute top-4 left-0 h-px w-14" />
-        <span className="bg-secondary absolute top-0 left-4 h-14 w-px" />
-        <span className="bg-secondary absolute top-4 right-0 h-px w-14" />
-        <span className="bg-secondary absolute top-0 right-4 h-14 w-px" />
-        <span className="bg-secondary absolute bottom-4 left-0 h-px w-14" />
-        <span className="bg-secondary absolute bottom-0 left-4 h-14 w-px" />
-        <span className="bg-secondary absolute right-0 bottom-4 h-px w-14" />
-        <span className="bg-secondary absolute right-4 bottom-0 h-14 w-px" />
+      <div className="relative p-2">
+        <span className="bg-muted-foreground absolute top-2 left-0 h-px w-2" />
+        <span className="bg-muted-foreground absolute top-0 left-2 h-2 w-px" />
+        <span className="bg-muted-foreground absolute top-2 right-0 h-px w-2" />
+        <span className="bg-muted-foreground absolute top-0 right-2 h-2 w-px" />
+        <span className="bg-muted-foreground absolute bottom-2 left-0 h-px w-2" />
+        <span className="bg-muted-foreground absolute bottom-0 left-2 h-2 w-px" />
+        <span className="bg-muted-foreground absolute right-0 bottom-2 h-px w-2" />
+        <span className="bg-muted-foreground absolute right-2 bottom-0 h-2 w-px" />
 
         <div className="bg-primary relative size-32 overflow-hidden sm:size-36">
           <Image
@@ -45,7 +45,7 @@ export function ProfileHero() {
           {profile.role}
         </p>
         <p className="text-secondary flex items-center justify-center gap-2 font-mono text-sm">
-          <MapPin aria-hidden="true" className="size-4" />
+          <MapPin aria-hidden="true" className="size-3" />
           {profile.location}
         </p>
       </div>
@@ -57,7 +57,7 @@ export function ProfileHero() {
         {profile.socials.map((link, index) => (
           <div className="flex items-center gap-x-2 sm:gap-x-3" key={link.href}>
             {index > 0 ? (
-              <span className="text-border" aria-hidden="true">
+              <span className="text-muted-foreground" aria-hidden="true">
                 /
               </span>
             ) : null}
@@ -71,6 +71,10 @@ export function ProfileHero() {
           </div>
         ))}
       </nav>
+
+      <div className="mt-5 min-[521px]:hidden">
+        <ThemeDropdown align="center" />
+      </div>
     </section>
   );
 }

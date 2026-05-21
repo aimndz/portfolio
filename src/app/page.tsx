@@ -7,11 +7,11 @@ import { TechnologiesSection } from "@/components/technologies-section";
 
 export default function Home() {
   return (
-    <main className="bg-background text-foreground min-h-screen">
+    <main className="bg-background text-foreground flex min-h-screen flex-col">
       <SiteHeader />
-      <div className="mx-auto w-full max-w-[840px] px-4 pb-12 sm:px-6">
+      <div className="mx-auto w-full max-w-[840px] px-4 pb-12 sm:px-6 flex-1 flex flex-col">
         <ProfileHero />
-        <div className="mt-7 space-y-7">
+        <div className="mt-7 space-y-7 flex-1 flex flex-col">
           <AboutSection />
           <TechnologiesSection />
           <ProjectsSection />
