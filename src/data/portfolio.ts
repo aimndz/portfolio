@@ -44,7 +44,7 @@ export const technologies = [
   { icon: "express", name: "Express" },
   { icon: "postgresql", name: "PostgreSQL" },
   { icon: "prisma", name: "Prisma" },
-  { icon: "tailwindcss", name: "tailwindcss" },
+  { icon: "tailwindcss", name: "TailwindCSS" },
   { icon: "css", name: "CSS" },
   { icon: "html", name: "HTML" },
 ];
