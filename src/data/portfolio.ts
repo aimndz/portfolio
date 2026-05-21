@@ -51,6 +51,15 @@ export const technologies = [
 
 export const projects = [
   {
+    name: "All3Rounds",
+    year: "2026",
+    description: "Community-Driven Filipino Battle Rap Archive",
+    href: "https://all3rounds.com",
+    featured: false,
+    home: true,
+    stack: ["Next.js", "TypeScript", "PostgreSQL", "Tailwind CSS"],
+  },
+  {
     name: "Articuli",
     year: "2026",
     description: "Automated Speech Performance Assessment System",
@@ -61,8 +70,8 @@ export const projects = [
   },
   {
     name: "Bliss and Flair Event Operation System",
-    year: "2023",
-    description: "Automated Speech Performance Assessment System",
+    year: "2025",
+    description: "Smart Booking and Event Management",
     href: "https://github.com/aimndz/blissnflair",
     featured: false,
     home: true,
@@ -71,7 +80,7 @@ export const projects = [
   {
     name: "Propertize",
     year: "2024",
-    description: "Real estate management system",
+    description: "Modern Real Estate Management Platform",
     href: "https://github.com/aimndz/propertize",
     featured: false,
     home: true,
@@ -80,17 +89,17 @@ export const projects = [
   {
     name: "Cinematrix",
     year: "2024",
-    description: "Cinema booking and ticketing system",
+    description: "Cinema Booking and Ticketing System",
     href: "https://github.com/aimndz/Cinematrix",
     featured: false,
-    home: true,
+    home: false,
     stack: ["C#", "MySQL"],
   },
   {
     name: "ThisIsWhereYourTaxesGo",
     year: "2025",
-    description: "Public finance visualization experiment",
-    href: "https://github.com/aimndz/thisiswhereyourtaxesgo",
+    description: "Satirical Public Funds Allocation Simulator",
+    href: "https://thisiswhereyourtaxesgo.vercel.app",
     featured: false,
     home: false,
     stack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
@@ -98,10 +107,19 @@ export const projects = [
   {
     name: "Furfeit",
     year: "2025",
-    description: "Food and lifestyle product prototype",
-    href: "https://github.com/aimndz",
+    description: "Sacrifice-Themed Game Jam Entry",
+    href: "https://aimndz.itch.io/furfeit",
     featured: false,
     home: false,
     stack: ["Next.js", "React", "TypeScript"],
+  },
+  {
+    name: "Scratch-a-Date",
+    year: "2025",
+    description: "Bad UX World Cup Date Picker Entry",
+    href: "https://aimndz.github.io/scratch-a-date/",
+    featured: false,
+    home: false,
+    stack: ["React", "Tailwind CSS"],
   },
 ];

@@ -21,9 +21,11 @@ export default function ProjectsPage() {
         <section className="mb-8">
           <SectionHeading>Selected work</SectionHeading>
           <div className="mt-5 grid pt-px pl-px sm:grid-cols-2">
-            {projects.map((project) => (
-              <ProjectCard key={project.name} project={project} showStack />
-            ))}
+            {[...projects]
+              .sort((a, b) => b.year.localeCompare(a.year))
+              .map((project) => (
+                <ProjectCard key={project.name} project={project} showStack />
+              ))}
           </div>
         </section>
 
