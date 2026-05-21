@@ -68,7 +68,7 @@ export function AboutSection() {
                     <p className="text-secondary mt-1 text-sm leading-5">
                       {experience.company}
                     </p>
-                    <p className="text-muted-foreground mt-1 font-mono text-sm">
+                    <p className="text-muted-foreground mt-1 font-mono text-xs">
                       {experience.year}
                     </p>
                   </div>
