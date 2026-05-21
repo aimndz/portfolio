@@ -20,7 +20,7 @@ export function SiteHeader() {
   )}`;
 
   return (
-    <header className="mx-auto grid w-full max-w-[840px] grid-cols-3 border-x border-border font-mono text-xs uppercase text-secondary">
+    <header className="sticky top-0 z-50 bg-background mx-auto grid w-full max-w-[840px] grid-cols-3 border-x border-border font-mono text-xs uppercase text-secondary">
       {navItems.map((item) => {
         const isActive =
           item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
