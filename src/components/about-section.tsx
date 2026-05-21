@@ -8,7 +8,7 @@ export function AboutSection() {
     <section className="grid gap-9 md:grid-cols-[minmax(0,1fr)_270px] md:gap-5">
       <div>
         <SectionHeading>About</SectionHeading>
-        <div className="text-secondary mt-5 space-y-4 text-sm leading-6 sm:text-[15px] sm:leading-7">
+        <div className="text-secondary mt-5 space-y-4 text-sm leading-6 sm:leading-7">
           <p>
             I&apos;m a{" "}
             <AboutHighlight>full-stack developer / artist</AboutHighlight> who
@@ -31,8 +31,8 @@ export function AboutSection() {
 
       <aside className="flex flex-col">
         <SectionHeading>Experience</SectionHeading>
-        <div className="mt-5 flex-1 flex flex-col">
-          <div className="relative flex-1 flex flex-col">
+        <div className="mt-5 flex flex-1 flex-col">
+          <div className="relative flex flex-1 flex-col">
             {experiences.map((experience, index) => {
               const isLast = index === experiences.length - 1;
               return (
@@ -62,13 +62,13 @@ export function AboutSection() {
                       isLast ? "pb-0" : "border-border border-b pb-5"
                     }`}
                   >
-                    <h3 className="text-foreground text-sm font-semibold sm:text-base">
+                    <h3 className="text-foreground text-sm font-semibold">
                       {experience.role}
                     </h3>
-                    <p className="text-foreground mt-1 text-sm leading-5">
+                    <p className="text-secondary mt-1 text-sm leading-5">
                       {experience.company}
                     </p>
-                    <p className="text-secondary mt-1 font-mono text-sm">
+                    <p className="text-muted-foreground mt-1 font-mono text-sm">
                       {experience.year}
                     </p>
                   </div>
