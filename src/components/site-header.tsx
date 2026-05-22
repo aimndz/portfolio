@@ -3,6 +3,7 @@
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { profile } from "@/data/portfolio";
@@ -15,9 +16,15 @@ const navItems = [
 
 export function SiteHeader() {
   const pathname = usePathname();
-  const contactHref = `mailto:${profile.email}?subject=${encodeURIComponent(
-    "Portfolio inquiry",
-  )}`;
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const contactHref = mounted
+    ? `mailto:${profile.email}?subject=${encodeURIComponent("Portfolio inquiry")}`
+    : "#";
 
   return (
     <header className="sticky top-0 z-50 bg-background mx-auto grid w-full max-w-[840px] grid-cols-3 border-x border-border font-mono text-xs uppercase text-secondary">

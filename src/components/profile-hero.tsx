@@ -2,6 +2,7 @@ import { MapPin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
+import { ObfuscatedEmail } from "@/components/obfuscated-email";
 import { profile } from "@/data/portfolio";
 import { ThemeDropdown } from "@/components/theme-dropdown";
 
@@ -44,10 +45,19 @@ export function ProfileHero() {
         <p className="text-foreground font-mono text-sm sm:text-base">
           {profile.role}
         </p>
-        <p className="text-secondary flex items-center justify-center gap-2 font-mono text-sm">
-          <MapPin aria-hidden="true" className="size-3" />
-          {profile.location}
-        </p>
+        <div className="text-secondary mt-2 flex flex-col items-center justify-center gap-1.5 font-mono text-xs sm:flex-row sm:gap-x-4 sm:text-sm">
+          <p className="flex items-center gap-1.5">
+            <MapPin aria-hidden="true" className="size-3.5 text-muted-foreground shrink-0" />
+            {profile.location}
+          </p>
+          <span className="text-muted-foreground hidden sm:inline" aria-hidden="true">
+            /
+          </span>
+          <ObfuscatedEmail
+            email={profile.email}
+            className="hover:text-foreground flex items-center gap-1.5 transition-colors"
+          />
+        </div>
       </div>
 
       <nav
