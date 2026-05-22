@@ -24,15 +24,14 @@ export function TechStackSection() {
       <SectionHeading>Tech Stack</SectionHeading>
 
       <div className="mt-6 flex flex-col gap-6">
-        {categories.map((category, index) => {
+        {categories.map((category) => {
           const displayedItems = isExpanded
             ? category.items
             : category.items.slice(0, 4);
 
           return (
             <div key={category.id} className="flex flex-col gap-3">
-              {index > 0 && <div className="bg-border mb-2 h-px w-full" />}
-              <h3 className="text-secondary font-mono text-[11px] tracking-wider uppercase">
+              <h3 className="text-foreground font-mono text-[11px] tracking-wider uppercase">
                 {category.name}
               </h3>
               <div className="grid grid-cols-2 gap-x-4 gap-y-4 sm:grid-cols-3 md:grid-cols-4">
@@ -43,7 +42,7 @@ export function TechStackSection() {
                       className="text-secondary flex min-w-0 items-center gap-2 text-sm"
                       key={tech.name}
                     >
-                      <span className="text-foreground flex size-5 shrink-0 items-center justify-center">
+                      <span className="flex size-5 shrink-0 items-center justify-center">
                         {techStackIcons[iconName]}
                       </span>
                       <span className="truncate">{tech.name}</span>
