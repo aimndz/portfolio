@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 
 import { Card } from "@/components/ui/card";
 import Image from "next/image";
@@ -22,17 +22,21 @@ type ProjectCardProps = {
 
 export function ProjectCard({ project, showStack = false }: ProjectCardProps) {
   const hasExternalLinks = !!(project.github || project.website);
-  const hasImages = !!(project.images && project.images.length > 0);
+
+  const displayImages = useMemo(() => project.images || [], [project.images]);
+  const hasImages = displayImages.length > 0;
   const showActionBar = hasExternalLinks || hasImages;
 
   // Interactive state
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [activeImgIndex, setActiveImgIndex] = useState(0);
+  const [isFullscreenOpen, setIsFullscreenOpen] = useState(false);
 
   // Reset active image index when drawer closes
   useEffect(() => {
     if (!isDrawerOpen) {
       setActiveImgIndex(0);
+      setIsFullscreenOpen(false);
     }
   }, [isDrawerOpen]);
 
@@ -53,30 +57,32 @@ export function ProjectCard({ project, showStack = false }: ProjectCardProps) {
     if (!isDrawerOpen) return;
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
-        setIsDrawerOpen(false);
+        if (isFullscreenOpen) {
+          setIsFullscreenOpen(false);
+        } else {
+          setIsDrawerOpen(false);
+        }
       } else if (
         e.key === "ArrowLeft" &&
         hasImages &&
-        project.images &&
-        project.images.length > 1
+        displayImages.length > 1
       ) {
         setActiveImgIndex((prev) =>
-          prev === 0 ? project.images!.length - 1 : prev - 1,
+          prev === 0 ? displayImages.length - 1 : prev - 1,
         );
       } else if (
         e.key === "ArrowRight" &&
         hasImages &&
-        project.images &&
-        project.images.length > 1
+        displayImages.length > 1
       ) {
         setActiveImgIndex((prev) =>
-          prev === project.images!.length - 1 ? 0 : prev + 1,
+          prev === displayImages.length - 1 ? 0 : prev + 1,
         );
       }
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [isDrawerOpen, hasImages, project.images]);
+  }, [isDrawerOpen, hasImages, displayImages, isFullscreenOpen]);
 
   // Get formatted domain or mock domain for retro browser mockup
   const getProjectDomain = () => {
@@ -262,7 +268,7 @@ export function ProjectCard({ project, showStack = false }: ProjectCardProps) {
 
             {/* Body: Scrollable image, carousel controls, and description */}
             <div className="flex-1 space-y-4 overflow-y-auto">
-              {project.images && project.images.length > 0 && (
+              {displayImages && displayImages.length > 0 && (
                 <div className="space-y-2">
                   {/* Browser mockup window frame */}
                   <div className="border-border bg-background flex w-full flex-col overflow-hidden border">
@@ -283,16 +289,28 @@ export function ProjectCard({ project, showStack = false }: ProjectCardProps) {
                       </div>
 
                       {/* Image index counter on the right side */}
-                      {project.images && project.images.length > 1 && (
+                      {displayImages && displayImages.length > 1 && (
                         <span className="text-muted-foreground z-10 ml-auto font-mono text-[10px] select-none">
-                          {activeImgIndex + 1}/{project.images.length}
+                          {activeImgIndex + 1}/{displayImages.length}
                         </span>
                       )}
                     </div>
 
                     {/* Screenshot image container */}
-                    <div className="bg-background relative w-full overflow-hidden border-t-0">
-                      {project.images.map((src, index) => {
+                    <div
+                      onClick={() => setIsFullscreenOpen(true)}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                          e.preventDefault();
+                          setIsFullscreenOpen(true);
+                        }
+                      }}
+                      role="button"
+                      tabIndex={0}
+                      aria-label="View screenshot fullscreen"
+                      className="bg-background focus-visible:ring-ring relative w-full cursor-pointer overflow-hidden border-t-0 outline-none focus-visible:ring-1"
+                    >
+                      {displayImages.map((src, index) => {
                         const isActive = index === activeImgIndex;
                         return (
                           <Image
@@ -302,10 +320,10 @@ export function ProjectCard({ project, showStack = false }: ProjectCardProps) {
                             width={1600}
                             height={1000}
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 800px"
-                            className={`max-h-[50vh] md:max-h-[60vh] object-contain ${
+                            className={`max-h-[50vh] object-contain md:max-h-[60vh] ${
                               isActive
-                                ? "relative w-full h-auto block opacity-100"
-                                : "absolute inset-0 w-full h-full opacity-0 pointer-events-none"
+                                ? "relative block h-auto w-full opacity-100"
+                                : "pointer-events-none absolute inset-0 h-full w-full opacity-0"
                             }`}
                             priority={index === 0 || isActive}
                           />
@@ -315,20 +333,34 @@ export function ProjectCard({ project, showStack = false }: ProjectCardProps) {
                   </div>
 
                   {/* Mono-styled Carousel controls */}
-                  {project.images.length > 1 && (
+                  {displayImages.length > 1 && (
                     <div className="border-border bg-muted/20 flex items-center justify-between border px-3 py-2 font-mono text-[11px]">
                       <button
                         onClick={() =>
                           setActiveImgIndex((prev) =>
-                            prev === 0 ? project.images!.length - 1 : prev - 1,
+                            prev === 0 ? displayImages.length - 1 : prev - 1,
                           )
                         }
-                        className="text-secondary hover:text-primary cursor-pointer font-semibold uppercase transition-colors select-none"
+                        className="text-secondary hover:text-primary flex cursor-pointer items-center gap-1 font-semibold uppercase transition-colors select-none"
                       >
-                        &lt; Prev
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="h-3 w-3"
+                        >
+                          <path
+                            d="M15 19L8 12L15 5"
+                            stroke="currentColor"
+                            strokeWidth="2.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                        Prev
                       </button>
                       <div className="flex items-center gap-1.5 select-none">
-                        {project.images.map((_, idx) => (
+                        {displayImages.map((_, idx) => (
                           <button
                             key={idx}
                             onClick={() => setActiveImgIndex(idx)}
@@ -346,12 +378,26 @@ export function ProjectCard({ project, showStack = false }: ProjectCardProps) {
                       <button
                         onClick={() =>
                           setActiveImgIndex((prev) =>
-                            prev === project.images!.length - 1 ? 0 : prev + 1,
+                            prev === displayImages.length - 1 ? 0 : prev + 1,
                           )
                         }
-                        className="text-secondary hover:text-primary cursor-pointer font-semibold uppercase transition-colors select-none"
+                        className="text-secondary hover:text-primary flex cursor-pointer items-center gap-1 font-semibold uppercase transition-colors select-none"
                       >
-                        Next &gt;
+                        Next
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="h-3 w-3"
+                        >
+                          <path
+                            d="M9 5L16 12L9 19"
+                            stroke="currentColor"
+                            strokeWidth="2.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
                       </button>
                     </div>
                   )}
@@ -487,6 +533,200 @@ export function ProjectCard({ project, showStack = false }: ProjectCardProps) {
               )}
             </div>
           </div>
+        </div>
+      )}
+
+      {/* Fullscreen Lightbox Overlay */}
+      {isFullscreenOpen && displayImages && displayImages.length > 0 && (
+        <div
+          className="animate-fade-in fixed inset-0 z-60 flex flex-col items-center justify-center bg-black/95 px-0 py-12 backdrop-blur-md"
+          onClick={() => setIsFullscreenOpen(false)}
+        >
+          {/* Close button at top right */}
+          <div className="absolute top-4 right-4 z-70">
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsFullscreenOpen(false);
+              }}
+              className="border-border bg-card text-foreground hover:bg-muted flex h-8 w-8 cursor-pointer items-center justify-center border transition-colors select-none active:translate-y-0.5"
+              aria-label="Close fullscreen view"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-4 w-4"
+              >
+                <path
+                  d="M18 6L6 18M6 6L18 18"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+
+          {/* Title/Counter at top left - hidden on desktop view */}
+          <div className="text-muted-foreground absolute top-4 left-4 z-70 hidden font-mono text-[10px] select-none sm:block md:hidden">
+            {project.name.toUpperCase()} &mdash; {activeImgIndex + 1}/
+            {displayImages.length}
+          </div>
+
+          {/* Main image container */}
+          <div
+            className="relative flex max-h-[75vh] w-full items-center justify-center"
+            onClick={(e) => {
+              if (e.target === e.currentTarget) {
+                setIsFullscreenOpen(false);
+              }
+            }}
+          >
+            {displayImages.map((src, index) => {
+              const isActive = index === activeImgIndex;
+              return (
+                <Image
+                  key={`fs-${src}`}
+                  src={src}
+                  alt={`${project.name} fullscreen screenshot ${index + 1}`}
+                  width={2000}
+                  height={1250}
+                  sizes="100vw"
+                  className={`max-h-[70vh] w-full max-w-full object-contain transition-all duration-300 select-none md:max-h-[75vh] ${
+                    isActive
+                      ? "relative block scale-100 opacity-100"
+                      : "pointer-events-none absolute scale-95 opacity-0"
+                  }`}
+                  priority={isActive}
+                />
+              );
+            })}
+          </div>
+
+          {/* Desktop-only Image Counter (placed below the image container, not covering it) */}
+          {displayImages.length > 1 && (
+            <div className="border-border text-muted-foreground z-75 mt-4 hidden border bg-black/75 px-2.5 py-1.5 font-mono text-[10px] select-none md:block">
+              {activeImgIndex + 1} / {displayImages.length}
+            </div>
+          )}
+
+          {/* Fullscreen Navigation Controls */}
+          {displayImages.length > 1 && (
+            <>
+              {/* Left Floating Arrow (Desktop) */}
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setActiveImgIndex((prev) =>
+                    prev === 0 ? displayImages!.length - 1 : prev - 1,
+                  );
+                }}
+                className="border-border bg-card text-foreground hover:bg-muted absolute top-1/2 left-6 z-70 hidden h-12 w-12 -translate-y-1/2 cursor-pointer items-center justify-center border font-mono text-lg font-bold transition-colors select-none active:translate-y-[calc(-50%+2px)] md:flex"
+                title="Previous Image"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                >
+                  <path
+                    d="M15 19L8 12L15 5"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </button>
+
+              {/* Right Floating Arrow (Desktop) */}
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setActiveImgIndex((prev) =>
+                    prev === displayImages!.length - 1 ? 0 : prev + 1,
+                  );
+                }}
+                className="border-border bg-card text-foreground hover:bg-muted absolute top-1/2 right-6 z-70 hidden h-12 w-12 -translate-y-1/2 cursor-pointer items-center justify-center border font-mono text-lg font-bold transition-colors select-none active:translate-y-[calc(-50%+2px)] md:flex"
+                title="Next Image"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                >
+                  <path
+                    d="M9 5L16 12L9 19"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </button>
+
+              {/* Bottom Navigation controls (Mobile only) */}
+              <div className="absolute bottom-6 z-70 flex items-center gap-4 font-mono text-[11px] select-none md:hidden">
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setActiveImgIndex((prev) =>
+                      prev === 0 ? displayImages!.length - 1 : prev - 1,
+                    );
+                  }}
+                  className="border-border bg-card text-foreground hover:bg-muted flex cursor-pointer items-center gap-1.5 border px-3 py-1.5 uppercase transition-colors active:translate-y-0.5"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-3.5 w-3.5"
+                  >
+                    <path
+                      d="M15 19L8 12L15 5"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                  Prev
+                </button>
+                <span className="text-muted-foreground bg-background border-border border px-2 py-1">
+                  {activeImgIndex + 1} / {displayImages.length}
+                </span>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setActiveImgIndex((prev) =>
+                      prev === displayImages!.length - 1 ? 0 : prev + 1,
+                    );
+                  }}
+                  className="border-border bg-card text-foreground hover:bg-muted flex cursor-pointer items-center gap-1.5 border px-3 py-1.5 uppercase transition-colors active:translate-y-0.5"
+                >
+                  Next
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-3.5 w-3.5"
+                  >
+                    <path
+                      d="M9 5L16 12L9 19"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </>
+          )}
         </div>
       )}
     </>
