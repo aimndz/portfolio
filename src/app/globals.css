@@ -72,6 +72,55 @@
     --ring: #000101;
   }
 
+  .chatgpt {
+    --background: #000101;
+    --foreground: #fafbf8;
+    --card: #000101;
+    --card-foreground: #fafbf8;
+    --popover: #000101;
+    --popover-foreground: #fafbf8;
+    --primary: #fafbf8;
+    --primary-foreground: #000101;
+    --secondary: #a7a7a7;
+    --secondary-foreground: #000101;
+    --muted: #0b0b0a;
+    --muted-foreground: #575352;
+    --accent: #fafbf8;
+    --accent-foreground: #000101;
+    --border: #282424;
+    --input: #282424;
+    --ring: #fafbf8;
+    --radius: 0.75rem;
+  }
+
+  .chatgpt-blink::after {
+    content: "●";
+    margin-left: 2px;
+    font-size: 10px;
+    animation: chatgpt-cursor-blink 1s steps(2, start) infinite;
+  }
+
+  @keyframes chatgpt-cursor-blink {
+    to {
+      visibility: hidden;
+    }
+  }
+
+  .chatgpt-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  .chatgpt-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .chatgpt-scrollbar::-webkit-scrollbar-thumb {
+    background: #2f2f2f;
+    border-radius: 9999px;
+  }
+  .chatgpt-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #424242;
+  }
+
   * {
     @apply border-border;
   }
