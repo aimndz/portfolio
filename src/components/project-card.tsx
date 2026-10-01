@@ -3,6 +3,7 @@
 import { useState, useEffect, useMemo } from "react";
 
 import { Card } from "@/components/ui/card";
+import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 
 type ProjectCardProps = {
@@ -106,7 +107,7 @@ export function ProjectCard({ project, showStack = false }: ProjectCardProps) {
 
   return (
     <>
-      <Card className="group hover:bg-muted/50 relative -mt-px -ml-px flex min-h-36 cursor-pointer flex-col justify-between overflow-visible transition-colors hover:z-10">
+      <Card className="group hover:bg-muted/40 relative -mt-px -ml-px flex min-h-36 cursor-pointer flex-col justify-between overflow-visible transition-all duration-200 border-border hover:border-foreground/50 hover:z-10">
         {/* Card absolute overlay to open modal instead of external navigation */}
         <button
           onClick={(e) => {
@@ -119,11 +120,23 @@ export function ProjectCard({ project, showStack = false }: ProjectCardProps) {
 
         {/* Card Content */}
         <div className="pointer-events-none relative z-10 flex flex-1 flex-col p-5 pb-4 sm:p-6">
-          <span className="text-muted-foreground font-mono text-xs leading-none">
-            {project.year}
-          </span>
-          <h3 className="text-foreground group-hover:text-primary mt-1.5 text-sm leading-5 font-semibold transition-colors">
-            {project.name}
+          <div className="flex items-center justify-between">
+            <span className="text-muted-foreground font-mono text-xs leading-none">
+              {project.year}
+            </span>
+            {project.featured ? (
+              <span className="text-foreground border border-border/80 bg-muted/60 px-1.5 py-0.5 font-mono text-[11px] uppercase tracking-wider">
+                FEATURED
+              </span>
+            ) : (
+              <span className="text-muted-foreground/60 font-mono text-[11px] uppercase tracking-wider">
+                SYS // APP
+              </span>
+            )}
+          </div>
+          <h3 className="text-foreground group-hover:text-primary mt-2 text-sm leading-5 font-semibold transition-all duration-150 group-hover:translate-x-0.5 flex items-center gap-1.5">
+            <span>{project.name}</span>
+            <ArrowUpRight aria-hidden="true" className="size-3.5 text-muted-foreground opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 shrink-0" />
           </h3>
           <p className="text-secondary mt-1 flex-1 text-sm leading-6">
             {project.description}
@@ -131,11 +144,11 @@ export function ProjectCard({ project, showStack = false }: ProjectCardProps) {
 
           {/* Tech Stack */}
           {showStack && project.stack && project.stack.length > 0 && (
-            <div className="mt-3 flex flex-wrap gap-1">
+            <div className="mt-3.5 flex flex-wrap gap-1.5">
               {project.stack.map((tech) => (
                 <span
                   key={tech}
-                  className="bg-muted text-muted-foreground px-1.5 py-0.5 font-mono text-[11px] tracking-wide uppercase"
+                  className="border border-border/70 bg-muted/40 text-muted-foreground px-2 py-0.5 font-mono text-[11px] tracking-wide uppercase transition-colors group-hover:border-foreground/30 group-hover:text-secondary"
                 >
                   {tech}
                 </span>
@@ -154,7 +167,7 @@ export function ProjectCard({ project, showStack = false }: ProjectCardProps) {
                   e.preventDefault();
                   setIsDrawerOpen(true);
                 }}
-                className="text-muted-foreground hover:border-primary hover:text-foreground border-border bg-card focus-visible:ring-foreground pointer-events-auto relative flex h-7 w-7 cursor-pointer items-center justify-center border transition-all duration-200 after:absolute after:-inset-2 after:content-[''] hover:-translate-y-0.5 focus-visible:ring-1 focus-visible:outline-none active:translate-y-0 sm:after:hidden"
+                className="text-muted-foreground hover:border-foreground hover:bg-foreground hover:text-background border-border bg-card focus-visible:ring-foreground pointer-events-auto relative flex h-7 w-7 cursor-pointer items-center justify-center border transition-all duration-150 after:absolute after:-inset-2 after:content-[''] hover:-translate-y-0.5 focus-visible:ring-1 focus-visible:outline-none active:translate-y-0 sm:after:hidden"
                 title="View Screenshots"
                 aria-label={`${project.name} Screenshots`}
               >
@@ -192,7 +205,7 @@ export function ProjectCard({ project, showStack = false }: ProjectCardProps) {
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:border-primary hover:text-foreground border-border bg-card focus-visible:ring-foreground pointer-events-auto relative flex h-7 w-7 cursor-pointer items-center justify-center border transition-all duration-200 after:absolute after:-inset-2 after:content-[''] hover:-translate-y-0.5 focus-visible:ring-1 focus-visible:outline-none active:translate-y-0 sm:after:hidden"
+                className="text-muted-foreground hover:border-foreground hover:bg-foreground hover:text-background border-border bg-card focus-visible:ring-foreground pointer-events-auto relative flex h-7 w-7 cursor-pointer items-center justify-center border transition-all duration-150 after:absolute after:-inset-2 after:content-[''] hover:-translate-y-0.5 focus-visible:ring-1 focus-visible:outline-none active:translate-y-0 sm:after:hidden"
                 title="View GitHub Repository"
                 aria-label={`${project.name} GitHub Repository`}
               >
@@ -216,7 +229,7 @@ export function ProjectCard({ project, showStack = false }: ProjectCardProps) {
                 href={project.website}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:border-primary hover:text-foreground border-border bg-card focus-visible:ring-foreground pointer-events-auto relative flex h-7 w-7 cursor-pointer items-center justify-center border transition-all duration-200 after:absolute after:-inset-2 after:content-[''] hover:-translate-y-0.5 focus-visible:ring-1 focus-visible:outline-none active:translate-y-0 sm:after:hidden"
+                className="text-muted-foreground hover:border-foreground hover:bg-foreground hover:text-background border-border bg-card focus-visible:ring-foreground pointer-events-auto relative flex h-7 w-7 cursor-pointer items-center justify-center border transition-all duration-150 after:absolute after:-inset-2 after:content-[''] hover:-translate-y-0.5 focus-visible:ring-1 focus-visible:outline-none active:translate-y-0 sm:after:hidden"
                 title="View Live Website"
                 aria-label={`${project.name} Live Website`}
               >

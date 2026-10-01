@@ -27,7 +27,7 @@ export function SiteHeader() {
     : "#";
 
   return (
-    <header className="bg-background border-border text-secondary sticky top-0 z-50 mx-auto grid w-full max-w-210 grid-cols-3 border-x font-mono text-xs uppercase">
+    <header className="bg-background/95 backdrop-blur-xs border-border text-secondary sticky top-0 z-50 mx-auto grid w-full max-w-210 grid-cols-3 border-x font-mono text-xs uppercase">
       {navItems.map((item) => {
         const isActive =
           item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);

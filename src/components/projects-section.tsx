@@ -11,17 +11,20 @@ export function ProjectsSection() {
 
   return (
     <section id="projects">
-      <div className="flex items-center gap-4">
-        <div className="min-w-0 flex-1">
+      <div className="flex items-center justify-between gap-4">
+        <div className="flex items-baseline gap-3">
           <SectionHeading>Projects</SectionHeading>
+          <span className="text-muted-foreground font-mono text-[11px] tracking-wider uppercase hidden sm:inline">
+            [{homeProjects.length.toString().padStart(2, "0")} SELECTED]
+          </span>
         </div>
         <Button
           asChild
-          className="border-border text-secondary hover:bg-muted hover:text-foreground h-8 shrink-0 cursor-pointer rounded-none px-3 font-mono text-[11px] uppercase"
+          className="border-border text-secondary hover:border-foreground hover:bg-muted hover:text-foreground h-8 shrink-0 cursor-pointer rounded-none px-3 font-mono text-[11px] uppercase transition-colors"
           variant="outline"
         >
           <Link href="/projects">
-            View all
+            View all [{projects.length}]
             <ArrowUpRight aria-hidden="true" className="size-3" />
           </Link>
         </Button>
