@@ -191,7 +191,6 @@ The geometric vocabulary is defined by crisp, 90-degree right angles and draftsp
 ### Signature Components
 - **Architectural Crop Avatar:** 144px square profile frame encased within 8 drafting trim marks.
 - **Timeline Diamond Spine:** Experience chronology mapped along a vertical hairline divider punctuated by 45-degree diamond nodes.
-- **ChatGPT Theme Sandbox:** Fully functional retro terminal/chat view providing a conversational interactive persona alongside standard layout modes.
 
 ## Do's and Don'ts
 

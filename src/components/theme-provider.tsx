@@ -1,9 +1,8 @@
 "use client";
 
 import React, { createContext, useContext, useEffect, useState } from "react";
-import { ChatGPTView } from "@/components/chatgpt-view";
 
-export type Theme = "dark" | "light" | "chatgpt";
+export type Theme = "dark" | "light";
 
 interface ThemeContextType {
   theme: Theme;
@@ -18,18 +17,20 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>("dark");
 
   useEffect(() => {
-    const storedTheme = window.localStorage.getItem(storageKey) as Theme;
-    const initialTheme: Theme =
-      storedTheme === "light" || storedTheme === "chatgpt" || storedTheme === "dark"
-        ? storedTheme
-        : "dark";
+    const storedTheme = window.localStorage.getItem(storageKey);
+    const initialTheme: Theme = storedTheme === "light" ? "light" : "dark";
 
     setTheme(initialTheme);
 
+    // Sanitize obsolete or unexpected stored themes in localStorage
+    if (storedTheme !== "light" && storedTheme !== "dark") {
+      window.localStorage.setItem(storageKey, "dark");
+    }
+
     const root = document.documentElement;
-    root.classList.remove("light", "chatgpt");
-    if (initialTheme !== "dark") {
-      root.classList.add(initialTheme);
+    root.classList.remove("light");
+    if (initialTheme === "light") {
+      root.classList.add("light");
     }
   }, []);
 
@@ -38,9 +39,9 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     window.localStorage.setItem(storageKey, nextTheme);
 
     const root = document.documentElement;
-    root.classList.remove("light", "chatgpt");
-    if (nextTheme !== "dark") {
-      root.classList.add(nextTheme);
+    root.classList.remove("light");
+    if (nextTheme === "light") {
+      root.classList.add("light");
     }
   };
 
@@ -59,22 +60,3 @@ export function useTheme() {
   return context;
 }
 
-export function AppThemeContainer({ children }: { children: React.ReactNode }) {
-  const { theme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    // Return standard children during SSR to avoid mismatch
-    return <>{children}</>;
-  }
-
-  if (theme === "chatgpt") {
-    return <ChatGPTView />;
-  }
-
-  return <>{children}</>;
-}

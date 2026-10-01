@@ -20,7 +20,7 @@ web
 ## Positioning
 
 - **Full-Stack Developer with an Artist's Foundation**: Approaches software engineering the same way as art—where structure, clarity, composition, and user expression matter as much as computational efficiency.
-- **Demonstrated Production Craft**: Backed by flagship products with tangible utility and technical depth (e.g., All3Rounds battle rap community archive, Articuli speech evaluation platform, and interactive easter-egg themes like the ChatGPT mode), rather than boilerplate tutorial projects.
+- **Demonstrated Production Craft**: Backed by flagship products with tangible utility and technical depth (e.g., All3Rounds battle rap community archive, Articuli speech evaluation platform), rather than boilerplate tutorial projects.
 
 ## Operating Context
 
@@ -30,7 +30,7 @@ web
 ## Capabilities and Constraints
 
 - **Stack**: Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS v4, Lucide icons, and Radix UI primitives.
-- **Interactive Themes**: Built-in multi-theme engine supporting Dark mode, Light mode, and an interactive ChatGPT view mode (`ChatGPTView`).
+- **Theme Support**: Built-in high-contrast theme engine supporting Dark mode and Light mode.
 - **Data Source**: Single source of truth in [src/data/portfolio.ts](file:///e:/dev/portfolio/src/data/portfolio.ts) driving profile info, experience, skills, and project catalog.
 - **Constraints**: Must maintain fast load times, excellent Core Web Vitals, zero hydration bugs, and full mobile responsiveness.
 
