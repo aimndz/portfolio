@@ -72,7 +72,7 @@ export function ProfileHero() {
               </span>
             ) : null}
             <Link
-              className="hover:text-foreground transition-colors"
+              className="hover:text-foreground transition-colors py-1 inline-block"
               href={link.href}
               target="_blank"
             >

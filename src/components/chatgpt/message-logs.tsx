@@ -16,8 +16,8 @@ import {
   Instagram,
 } from "lucide-react";
 import Image from "next/image";
-import { Thread, Message } from "./types";
-import { profile, projects, techStack, experiences } from "@/data/portfolio";
+import { Thread } from "./types";
+import { profile, projects, techStack } from "@/data/portfolio";
 import { techStackIcons } from "@/components/tech-stack-icons";
 
 interface MessageLogsProps {
@@ -77,7 +77,7 @@ export function MessageLogs({
                   {project.stack.map((s) => (
                     <span
                       key={s}
-                      className="rounded bg-[#282424] px-1.5 py-0.5 font-mono text-[10px] text-[#fafbf8]"
+                      className="rounded bg-[#282424] px-1.5 py-0.5 font-mono text-[11px] text-[#fafbf8]"
                     >
                       {s}
                     </span>
@@ -251,7 +251,7 @@ export function MessageLogs({
   };
 
   return (
-    <div className="mx-auto w-full max-w-[840px] flex-1 space-y-6 px-4">
+    <div className="mx-auto w-full max-w-210 flex-1 space-y-6 px-4">
       {activeThread.messages.map((msg, index) => {
         const isLastMsg = index === activeThread.messages.length - 1;
         const showStreamingText = isLastMsg && msg.isStreaming;

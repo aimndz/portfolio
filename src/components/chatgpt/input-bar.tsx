@@ -152,11 +152,11 @@ export function InputBar({
                     <span className="text-sm font-semibold text-[#fafbf8]">
                       {item.cmd}
                     </span>
-                    <span className="text-[10px] font-medium text-zinc-500">
+                    <span className="text-[11px] font-medium text-zinc-500">
                       {item.desc}
                     </span>
                   </span>
-                  <span className="rounded bg-[#282424] px-1.5 py-0.5 font-mono text-[10px] text-zinc-500">
+                  <span className="rounded bg-[#282424] px-1.5 py-0.5 font-mono text-[11px] text-zinc-500">
                     {item.label}
                   </span>
                 </button>
@@ -172,8 +172,14 @@ export function InputBar({
       )}
 
       {/* Search Capsule (Single-Row Pill Capsule) */}
-      <div className="flex h-[52px] w-full items-center rounded-full border border-[#282424] bg-[#0b0b0a] pr-2 pl-5 shadow-lg transition-all focus-within:ring-1 focus-within:ring-[#282424]">
-        <Plus className="mr-3 size-5 shrink-0 cursor-pointer text-[#a7a7a7] hover:text-[#fafbf8]" />
+      <div className="flex h-13 w-full items-center rounded-full border border-[#282424] bg-[#0b0b0a] pr-2 pl-5 shadow-lg transition-all focus-within:ring-1 focus-within:ring-[#282424]">
+        <button
+          type="button"
+          aria-label="Add attachment"
+          className="mr-3 flex size-5 shrink-0 cursor-pointer items-center justify-center border-0 bg-transparent p-0 text-[#a7a7a7] hover:text-[#fafbf8]"
+        >
+          <Plus className="size-5" />
+        </button>
 
         <input
           type="text"
@@ -186,14 +192,22 @@ export function InputBar({
         />
 
         <div className="flex shrink-0 items-center gap-3.5 pl-2">
-          <Mic className="size-5 cursor-pointer text-zinc-500 hover:text-[#a7a7a7]" />
+          <button
+            type="button"
+            aria-label="Voice input"
+            className="flex size-5 cursor-pointer items-center justify-center border-0 bg-transparent p-0 text-zinc-500 hover:text-[#a7a7a7]"
+          >
+            <Mic className="size-5" />
+          </button>
 
           <button
+            type="button"
             onClick={() => {
               onSendMessage();
               setShowSlashMenu(false);
             }}
             disabled={!hasText || isStreaming}
+            aria-label="Send prompt"
             className="flex size-9 shrink-0 cursor-pointer items-center justify-center rounded-full bg-[#fafbf8] text-[#000101] transition-opacity hover:opacity-90"
           >
             {hasText ? (

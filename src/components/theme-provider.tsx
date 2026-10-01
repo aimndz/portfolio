@@ -16,7 +16,6 @@ const storageKey = "portfolio-theme";
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>("dark");
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     const storedTheme = window.localStorage.getItem(storageKey) as Theme;
@@ -32,8 +31,6 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     if (initialTheme !== "dark") {
       root.classList.add(initialTheme);
     }
-
-    setMounted(true);
   }, []);
 
   const updateTheme = (nextTheme: Theme) => {

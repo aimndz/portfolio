@@ -4,7 +4,7 @@ import { profile } from "@/data/portfolio";
 
 export function SiteFooter() {
   return (
-    <footer className="border-border text-secondary mt-auto border-t pt-6 pb-6 font-mono text-[11px]">
+    <footer className="border-border text-secondary mt-auto border-t pt-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] font-mono text-[11px]">
       <div className="flex flex-col items-center text-center gap-4 sm:flex-row sm:items-center sm:justify-between sm:text-left">
         <p>© 2026 {profile.name}</p>
         <div className="flex flex-wrap justify-center gap-x-3 gap-y-2 uppercase sm:justify-start">
@@ -16,7 +16,7 @@ export function SiteFooter() {
                 </span>
               ) : null}
               <Link
-                className="hover:text-foreground transition-colors"
+                className="hover:text-foreground transition-colors py-1 inline-block"
                 href={link.href}
                 target="_blank"
               >

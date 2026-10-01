@@ -22,6 +22,7 @@ export function Header({
         {isSidebarCollapsed && (
           <button
             onClick={onOpenSidebar}
+            aria-label="Open sidebar"
             className="hidden cursor-pointer rounded-lg p-2 text-zinc-400 transition-colors hover:bg-[#282424] hover:text-[#fafbf8] md:block"
             title="Open sidebar"
           >
@@ -30,6 +31,7 @@ export function Header({
         )}
         <button
           onClick={onOpenMobileSidebar}
+          aria-label="Open sidebar"
           className="cursor-pointer rounded-lg p-2 text-zinc-400 transition-colors hover:bg-[#282424] hover:text-[#fafbf8] md:hidden"
         >
           <Menu className="size-5" />

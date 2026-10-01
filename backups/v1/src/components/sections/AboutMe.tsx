@@ -43,7 +43,7 @@ function AboutMe() {
               }}
             >
               <Image
-                src="/images/me-img.webp"
+                src="/images/me-img.png"
                 alt="About me"
                 width={500}
                 height={500}

@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils";
 
 const navItems = [
   { label: "Home", href: "/" },
-  { label: "Projs", href: "/projects" },
+  { label: "Projects", href: "/projects" },
 ];
 
 export function SiteHeader() {
@@ -27,7 +27,7 @@ export function SiteHeader() {
     : "#";
 
   return (
-    <header className="sticky top-0 z-50 bg-background mx-auto grid w-full max-w-[840px] grid-cols-3 border-x border-border font-mono text-xs uppercase text-secondary">
+    <header className="bg-background border-border text-secondary sticky top-0 z-50 mx-auto grid w-full max-w-210 grid-cols-3 border-x font-mono text-xs uppercase">
       {navItems.map((item) => {
         const isActive =
           item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
@@ -36,7 +36,7 @@ export function SiteHeader() {
           <Link
             aria-current={isActive ? "page" : undefined}
             className={cn(
-              "flex h-12 items-center justify-center border-r border-b border-border transition-colors hover:bg-muted hover:text-foreground",
+              "border-border hover:bg-muted hover:text-foreground flex h-12 items-center justify-center border-r border-b transition-colors",
               isActive && "border-b-foreground text-foreground",
             )}
             href={item.href}
@@ -48,7 +48,7 @@ export function SiteHeader() {
       })}
       <Button
         asChild
-        className="h-12 rounded-none border-0 bg-primary px-2 text-xs text-primary-foreground hover:bg-primary/90"
+        className="bg-primary text-primary-foreground hover:bg-primary/90 h-12 rounded-none border-0 px-2 text-xs"
       >
         <Link
           aria-label={`Email ${profile.name}`}

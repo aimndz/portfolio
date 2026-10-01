@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider, AppThemeContainer } from "@/components/theme-provider";
 import "./globals.css";
@@ -12,6 +12,16 @@ const geistMono = Geist_Mono({
   variable: "--font-mono",
   subsets: ["latin"],
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#fafbf8" },
+    { media: "(prefers-color-scheme: dark)", color: "#000101" },
+  ],
+};
 
 export const metadata: Metadata = {
   title: "Amiel Ian Mendoza | Full-Stack Developer",

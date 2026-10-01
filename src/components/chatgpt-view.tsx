@@ -249,7 +249,7 @@ export function ChatGPTView() {
 
       {/* Sidebar Panel Drawer (Mobile) */}
       <div
-        className={`fixed inset-y-0 left-0 z-50 w-[270px] shrink-0 transform border-r border-[#282424] transition-transform duration-300 ease-in-out md:hidden ${
+        className={`fixed inset-y-0 left-0 z-50 w-67.5 shrink-0 transform border-r border-[#282424] transition-transform duration-300 ease-in-out md:hidden ${
           isMobileSidebarOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
@@ -273,7 +273,7 @@ export function ChatGPTView() {
 
       {/* Sidebar Panel (Desktop) */}
       {!isSidebarCollapsed && (
-        <div className="hidden h-screen w-[260px] shrink-0 border-r border-[#282424] md:block">
+        <div className="hidden h-screen w-65 shrink-0 border-r border-[#282424] md:block">
           <Sidebar
             activeThreadId={activeThreadId}
             recentItems={recentItems}
@@ -308,13 +308,13 @@ export function ChatGPTView() {
         >
           {!activeThread ? (
             /* Welcome Screen / New Chat State */
-            <div className="mx-auto flex h-full w-full max-w-[840px] flex-1 flex-col items-center justify-center px-4 text-center">
+            <div className="max-w-210 mx-auto flex h-full w-full flex-1 flex-col items-center justify-center px-4 text-center">
               <h2 className="-mt-28 mb-8 text-2xl font-medium tracking-tight text-white sm:text-3xl">
                 Learn more about me
               </h2>
 
               {/* Central Capsule Input bar wrapper */}
-              <div className="w-full max-w-[840px]">
+              <div className="max-w-210 w-full">
                 <InputBar
                   input={input}
                   setInput={setInput}
@@ -341,15 +341,15 @@ export function ChatGPTView() {
 
         {/* Sticky Input Bar at Bottom (when chat is active) */}
         {activeThread && (
-          <div className="sticky bottom-0 z-20 flex w-full justify-center bg-[#000101] px-4 py-2 pt-0">
-            <div className="flex w-full max-w-[840px] flex-col gap-2 px-4">
+          <div className="sticky bottom-0 z-20 flex w-full justify-center bg-[#000101] px-4 py-2 pt-0 pb-[max(0.5rem,env(safe-area-inset-bottom))]">
+            <div className="flex w-full max-w-210 flex-col gap-2 px-4">
               <InputBar
                 input={input}
                 setInput={setInput}
                 isStreaming={isStreaming}
                 onSendMessage={handleSendMessage}
               />
-              <p className="pb-2 text-center text-[10px] text-zinc-500">
+              <p className="pb-2 text-center text-[11px] text-zinc-500">
                 Amiel Ian Mendoza can make mistakes. Verify important info.
               </p>
             </div>

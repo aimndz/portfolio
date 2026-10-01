@@ -114,7 +114,7 @@ export function ProjectCard({ project, showStack = false }: ProjectCardProps) {
             setIsDrawerOpen(true);
           }}
           aria-label={`View details for ${project.name}`}
-          className="absolute inset-0 z-10 animate-none cursor-pointer border-0 bg-transparent p-0 outline-none"
+          className="focus-visible:ring-foreground absolute inset-0 z-10 animate-none cursor-pointer border-0 bg-transparent p-0 outline-none focus-visible:ring-2 focus-visible:ring-inset"
         />
 
         {/* Card Content */}
@@ -135,7 +135,7 @@ export function ProjectCard({ project, showStack = false }: ProjectCardProps) {
               {project.stack.map((tech) => (
                 <span
                   key={tech}
-                  className="bg-muted text-muted-foreground px-1.5 py-0.5 font-mono text-[10px] tracking-wide uppercase"
+                  className="bg-muted text-muted-foreground px-1.5 py-0.5 font-mono text-[11px] tracking-wide uppercase"
                 >
                   {tech}
                 </span>
@@ -154,7 +154,7 @@ export function ProjectCard({ project, showStack = false }: ProjectCardProps) {
                   e.preventDefault();
                   setIsDrawerOpen(true);
                 }}
-                className="text-muted-foreground hover:border-primary hover:text-foreground border-border bg-card pointer-events-auto flex h-7 w-7 cursor-pointer items-center justify-center border transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
+                className="text-muted-foreground hover:border-primary hover:text-foreground border-border bg-card focus-visible:ring-foreground pointer-events-auto relative flex h-7 w-7 cursor-pointer items-center justify-center border transition-all duration-200 after:absolute after:-inset-2 after:content-[''] hover:-translate-y-0.5 focus-visible:ring-1 focus-visible:outline-none active:translate-y-0 sm:after:hidden"
                 title="View Screenshots"
                 aria-label={`${project.name} Screenshots`}
               >
@@ -192,7 +192,7 @@ export function ProjectCard({ project, showStack = false }: ProjectCardProps) {
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:border-primary hover:text-foreground border-border bg-card pointer-events-auto flex h-7 w-7 cursor-pointer items-center justify-center border transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
+                className="text-muted-foreground hover:border-primary hover:text-foreground border-border bg-card focus-visible:ring-foreground pointer-events-auto relative flex h-7 w-7 cursor-pointer items-center justify-center border transition-all duration-200 after:absolute after:-inset-2 after:content-[''] hover:-translate-y-0.5 focus-visible:ring-1 focus-visible:outline-none active:translate-y-0 sm:after:hidden"
                 title="View GitHub Repository"
                 aria-label={`${project.name} GitHub Repository`}
               >
@@ -216,7 +216,7 @@ export function ProjectCard({ project, showStack = false }: ProjectCardProps) {
                 href={project.website}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:border-primary hover:text-foreground border-border bg-card pointer-events-auto flex h-7 w-7 cursor-pointer items-center justify-center border transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
+                className="text-muted-foreground hover:border-primary hover:text-foreground border-border bg-card focus-visible:ring-foreground pointer-events-auto relative flex h-7 w-7 cursor-pointer items-center justify-center border transition-all duration-200 after:absolute after:-inset-2 after:content-[''] hover:-translate-y-0.5 focus-visible:ring-1 focus-visible:outline-none active:translate-y-0 sm:after:hidden"
                 title="View Live Website"
                 aria-label={`${project.name} Live Website`}
               >
@@ -262,9 +262,9 @@ export function ProjectCard({ project, showStack = false }: ProjectCardProps) {
           />
 
           {/* Dialog frame: morphs between bottom sheet (mobile) and centered panel (desktop) */}
-          <div className="bg-background border-border animate-slide-up relative z-10 flex max-h-[90vh] w-full flex-col border-t p-4 md:max-h-[85vh] md:max-w-2xl md:border md:p-6 md:shadow-2xl">
+          <div className="bg-background border-border animate-slide-up relative z-10 flex max-h-[90vh] w-full flex-col border-t p-4 pb-[max(1.25rem,env(safe-area-inset-bottom))] md:max-h-[85vh] md:max-w-2xl md:border md:p-6 md:shadow-2xl">
             {/* Retro Drawer Grab Handle (Mobile only) */}
-            <div className="bg-muted-foreground/30 mx-auto mb-5 h-1 w-12 rounded-full md:hidden" />
+            <div className="bg-muted-foreground/30 mx-auto mb-5 h-0.5 w-12 md:hidden" />
 
             {/* Body: Scrollable image, carousel controls, and description */}
             <div className="flex-1 space-y-4 overflow-y-auto">
@@ -283,14 +283,14 @@ export function ProjectCard({ project, showStack = false }: ProjectCardProps) {
 
                       {/* URL bar (centered monospace text) */}
                       <div className="pointer-events-none absolute inset-x-0 top-0 bottom-0 flex items-center justify-center">
-                        <span className="text-muted-foreground max-w-[60%] truncate font-mono text-[10px] tracking-tight">
+                        <span className="text-muted-foreground max-w-[60%] truncate font-mono text-[11px] tracking-tight">
                           {getProjectDomain()}
                         </span>
                       </div>
 
                       {/* Image index counter on the right side */}
                       {displayImages && displayImages.length > 1 && (
-                        <span className="text-muted-foreground z-10 ml-auto font-mono text-[10px] select-none">
+                        <span className="text-muted-foreground z-10 ml-auto font-mono text-[11px] select-none">
                           {activeImgIndex + 1}/{displayImages.length}
                         </span>
                       )}
@@ -364,7 +364,7 @@ export function ProjectCard({ project, showStack = false }: ProjectCardProps) {
                           <button
                             key={idx}
                             onClick={() => setActiveImgIndex(idx)}
-                            className={`cursor-pointer text-[12px] font-bold transition-colors ${
+                            className={`cursor-pointer text-[11px] font-bold transition-colors ${
                               idx === activeImgIndex
                                 ? "text-primary"
                                 : "text-muted-foreground/35 hover:text-muted-foreground"
@@ -422,7 +422,7 @@ export function ProjectCard({ project, showStack = false }: ProjectCardProps) {
                     {project.stack.map((tech) => (
                       <span
                         key={tech}
-                        className="bg-muted text-muted-foreground px-1.5 py-0.5 font-mono text-[10px] tracking-wide uppercase"
+                        className="bg-muted text-muted-foreground px-1.5 py-0.5 font-mono text-[11px] tracking-wide uppercase"
                       >
                         {tech}
                       </span>
@@ -549,7 +549,7 @@ export function ProjectCard({ project, showStack = false }: ProjectCardProps) {
                 e.stopPropagation();
                 setIsFullscreenOpen(false);
               }}
-              className="border-border bg-card text-foreground hover:bg-muted flex h-8 w-8 cursor-pointer items-center justify-center border transition-colors select-none active:translate-y-0.5"
+              className="border-border bg-card text-foreground hover:bg-muted relative flex h-8 w-8 cursor-pointer items-center justify-center border transition-colors select-none after:absolute after:-inset-1.5 after:content-[''] active:translate-y-0.5 sm:after:hidden"
               aria-label="Close fullscreen view"
             >
               <svg
@@ -570,7 +570,7 @@ export function ProjectCard({ project, showStack = false }: ProjectCardProps) {
           </div>
 
           {/* Title/Counter at top left - hidden on desktop view */}
-          <div className="text-muted-foreground absolute top-4 left-4 z-70 hidden font-mono text-[10px] select-none sm:block md:hidden">
+          <div className="text-muted-foreground absolute top-4 left-4 z-70 hidden font-mono text-[11px] select-none sm:block md:hidden">
             {project.name.toUpperCase()} &mdash; {activeImgIndex + 1}/
             {displayImages.length}
           </div>
@@ -607,7 +607,7 @@ export function ProjectCard({ project, showStack = false }: ProjectCardProps) {
 
           {/* Desktop-only Image Counter (placed below the image container, not covering it) */}
           {displayImages.length > 1 && (
-            <div className="border-border text-muted-foreground z-75 mt-4 hidden border bg-black/75 px-2.5 py-1.5 font-mono text-[10px] select-none md:block">
+            <div className="border-border text-muted-foreground z-75 mt-4 hidden border bg-black/75 px-2.5 py-1.5 font-mono text-[11px] select-none md:block">
               {activeImgIndex + 1} / {displayImages.length}
             </div>
           )}
@@ -670,7 +670,7 @@ export function ProjectCard({ project, showStack = false }: ProjectCardProps) {
               </button>
 
               {/* Bottom Navigation controls (Mobile only) */}
-              <div className="absolute bottom-6 z-70 flex items-center gap-4 font-mono text-[11px] select-none md:hidden">
+              <div className="absolute bottom-[max(1.5rem,env(safe-area-inset-bottom))] z-70 flex items-center gap-4 font-mono text-[11px] select-none md:hidden">
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
@@ -678,7 +678,7 @@ export function ProjectCard({ project, showStack = false }: ProjectCardProps) {
                       prev === 0 ? displayImages!.length - 1 : prev - 1,
                     );
                   }}
-                  className="border-border bg-card text-foreground hover:bg-muted flex cursor-pointer items-center gap-1.5 border px-3 py-1.5 uppercase transition-colors active:translate-y-0.5"
+                  className="border-border bg-card text-foreground hover:bg-muted relative flex cursor-pointer items-center gap-1.5 border px-3 py-1.5 uppercase transition-colors after:absolute after:-inset-1.5 after:content-[''] active:translate-y-0.5"
                 >
                   <svg
                     viewBox="0 0 24 24"
@@ -706,7 +706,7 @@ export function ProjectCard({ project, showStack = false }: ProjectCardProps) {
                       prev === displayImages!.length - 1 ? 0 : prev + 1,
                     );
                   }}
-                  className="border-border bg-card text-foreground hover:bg-muted flex cursor-pointer items-center gap-1.5 border px-3 py-1.5 uppercase transition-colors active:translate-y-0.5"
+                  className="border-border bg-card text-foreground hover:bg-muted relative flex cursor-pointer items-center gap-1.5 border px-3 py-1.5 uppercase transition-colors after:absolute after:-inset-1.5 after:content-[''] active:translate-y-0.5"
                 >
                   Next
                   <svg

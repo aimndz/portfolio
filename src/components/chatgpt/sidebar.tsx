@@ -99,7 +99,7 @@ export function Sidebar({
           <div className="relative size-8 shrink-0 overflow-hidden rounded-full border border-[#282424] bg-[#0b0b0a]">
             <Image
               alt="Amiel Ian Mendoza"
-              src="/images/me-img.webp"
+              src="/images/me-img.png"
               width={32}
               height={32}
               className="h-full w-full object-cover"
@@ -109,7 +109,7 @@ export function Sidebar({
             <p className="truncate text-xs font-semibold text-zinc-200">
               Amiel Ian Mendoza
             </p>
-            <p className="text-[10px] font-medium text-zinc-500">
+            <p className="text-[11px] font-medium text-zinc-500">
               Full-Stack Developer
             </p>
           </div>

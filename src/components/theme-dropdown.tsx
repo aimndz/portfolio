@@ -17,7 +17,10 @@ interface ThemeDropdownProps {
   isChatGptHeader?: boolean;
 }
 
-export function ThemeDropdown({ align = "start", isChatGptHeader = false }: ThemeDropdownProps) {
+export function ThemeDropdown({
+  align = "start",
+  isChatGptHeader = false,
+}: ThemeDropdownProps) {
   const { theme, setTheme } = useTheme();
 
   return (
@@ -25,7 +28,7 @@ export function ThemeDropdown({ align = "start", isChatGptHeader = false }: Them
       <DropdownMenuTrigger asChild>
         {isChatGptHeader ? (
           <Button
-            className="flex h-8 items-center gap-1.5 rounded-lg border border-[#282424] bg-[#0b0b0a] px-3 text-xs font-medium text-[#fafbf8] transition-colors hover:bg-[#282424] hover:text-[#fafbf8] cursor-pointer"
+            className="flex h-8 cursor-pointer items-center gap-1.5 rounded-lg border border-[#282424] bg-[#0b0b0a] px-3 text-xs font-medium text-[#fafbf8] transition-colors hover:bg-[#282424] hover:text-[#fafbf8]"
             variant="ghost"
           >
             <Palette aria-hidden="true" className="size-3.5" />
@@ -33,7 +36,8 @@ export function ThemeDropdown({ align = "start", isChatGptHeader = false }: Them
           </Button>
         ) : (
           <Button
-            className="h-9 w-9 sm:w-auto cursor-pointer rounded-none border-border px-0 sm:px-4 font-mono text-[11px] uppercase text-secondary hover:bg-muted hover:text-foreground"
+            aria-label="Select theme"
+            className="border-border text-secondary hover:bg-muted hover:text-foreground relative h-9 w-9 cursor-pointer rounded-none px-0 font-mono text-[11px] uppercase after:absolute after:-inset-1 after:content-[''] sm:w-auto sm:px-4 sm:after:hidden"
             variant="outline"
           >
             <Palette aria-hidden="true" className="size-3.5" />
@@ -43,24 +47,43 @@ export function ThemeDropdown({ align = "start", isChatGptHeader = false }: Them
       </DropdownMenuTrigger>
       <DropdownMenuContent
         align={align}
-        className={isChatGptHeader ? "bg-[#0b0b0a] border-[#282424] text-[#fafbf8] rounded-xl p-1.5 min-w-36" : ""}
+        className={
+          isChatGptHeader
+            ? "min-w-36 rounded-xl border-[#282424] bg-[#0b0b0a] p-1.5 text-[#fafbf8]"
+            : ""
+        }
       >
-        <DropdownMenuRadioGroup onValueChange={(val) => setTheme(val as Theme)} value={theme}>
+        <DropdownMenuRadioGroup
+          onValueChange={(val) => setTheme(val as Theme)}
+          value={theme}
+        >
           <DropdownMenuRadioItem
             value="dark"
-            className={isChatGptHeader ? "normal-case font-sans text-xs font-semibold text-[#fafbf8] rounded-lg focus:bg-[#282424] focus:text-[#fafbf8] hover:bg-[#282424] hover:text-[#fafbf8] px-2 py-1.5 pl-7 transition-colors cursor-pointer" : ""}
+            className={
+              isChatGptHeader
+                ? "cursor-pointer rounded-lg px-2 py-1.5 pl-7 font-sans text-xs font-semibold text-[#fafbf8] normal-case transition-colors hover:bg-[#282424] hover:text-[#fafbf8] focus:bg-[#282424] focus:text-[#fafbf8]"
+                : ""
+            }
           >
             Dark Mode
           </DropdownMenuRadioItem>
           <DropdownMenuRadioItem
             value="light"
-            className={isChatGptHeader ? "normal-case font-sans text-xs font-semibold text-[#fafbf8] rounded-lg focus:bg-[#282424] focus:text-[#fafbf8] hover:bg-[#282424] hover:text-[#fafbf8] px-2 py-1.5 pl-7 transition-colors cursor-pointer" : ""}
+            className={
+              isChatGptHeader
+                ? "cursor-pointer rounded-lg px-2 py-1.5 pl-7 font-sans text-xs font-semibold text-[#fafbf8] normal-case transition-colors hover:bg-[#282424] hover:text-[#fafbf8] focus:bg-[#282424] focus:text-[#fafbf8]"
+                : ""
+            }
           >
             Light Mode
           </DropdownMenuRadioItem>
           <DropdownMenuRadioItem
             value="chatgpt"
-            className={isChatGptHeader ? "normal-case font-sans text-xs font-semibold text-[#fafbf8] rounded-lg focus:bg-[#282424] focus:text-[#fafbf8] hover:bg-[#282424] hover:text-[#fafbf8] px-2 py-1.5 pl-7 transition-colors cursor-pointer" : ""}
+            className={
+              isChatGptHeader
+                ? "cursor-pointer rounded-lg px-2 py-1.5 pl-7 font-sans text-xs font-semibold text-[#fafbf8] normal-case transition-colors hover:bg-[#282424] hover:text-[#fafbf8] focus:bg-[#282424] focus:text-[#fafbf8]"
+                : ""
+            }
           >
             ChatGPT
           </DropdownMenuRadioItem>

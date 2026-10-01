@@ -2,7 +2,7 @@ export const profile = {
   name: "Amiel Ian Mendoza",
   role: "Full-Stack Developer",
   location: "Cavite, Philippines",
-  image: "/images/me-img.webp",
+  image: "/images/me-img.png",
   email: "amiel.ian.mendoza@gmail.com",
   resumeUrl:
     "https://drive.google.com/file/d/1QUkCEfc5kdImTl1H2UehTn4-QgC0tA9S/view",

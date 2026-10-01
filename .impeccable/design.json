@@ -1,0 +1,214 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-01T22:15:30.000Z",
+  "title": "Design System: Amiel Ian Mendoza Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "obsidian-void": {
+        "role": "neutral",
+        "displayName": "Obsidian Void",
+        "canonical": "#000101",
+        "tonalRamp": ["#000101", "#0b0b0a", "#1a1918", "#282424", "#575352", "#a7a7a7", "#d8d3ce", "#fafbf8"]
+      },
+      "warm-bone": {
+        "role": "primary",
+        "displayName": "Warm Bone",
+        "canonical": "#fafbf8",
+        "tonalRamp": ["#fafbf8", "#efebe5", "#d8d3ce", "#a7a7a7", "#575352", "#282424", "#0b0b0a", "#000101"]
+      },
+      "charcoal-hairline": {
+        "role": "neutral",
+        "displayName": "Charcoal Hairline",
+        "canonical": "#282424",
+        "tonalRamp": ["#000101", "#151313", "#282424", "#3d3838", "#575352", "#7e7876", "#a7a7a7", "#fafbf8"]
+      },
+      "silver-ash": {
+        "role": "secondary",
+        "displayName": "Silver Ash",
+        "canonical": "#a7a7a7",
+        "tonalRamp": ["#1a1a1a", "#333333", "#575352", "#808080", "#a7a7a7", "#cccccc", "#e6e6e6", "#fafbf8"]
+      },
+      "vellum-cream": {
+        "role": "neutral",
+        "displayName": "Vellum Cream",
+        "canonical": "#efebe5",
+        "tonalRamp": ["#2b2723", "#554e47", "#857c72", "#b8ada1", "#d8d3ce", "#efebe5", "#f7f5f2", "#fafbf8"]
+      },
+      "stone-hairline": {
+        "role": "neutral",
+        "displayName": "Stone Hairline",
+        "canonical": "#d8d3ce",
+        "tonalRamp": ["#1c1a18", "#383431", "#5f5a55", "#8c857e", "#b8b0a8", "#d8d3ce", "#ece9e5", "#fafbf8"]
+      },
+      "graphite-muted": {
+        "role": "neutral",
+        "displayName": "Graphite Muted",
+        "canonical": "#575352",
+        "tonalRamp": ["#0b0b0a", "#1c1b1b", "#333130", "#575352", "#7e7876", "#a7a7a7", "#d8d3ce", "#fafbf8"]
+      },
+      "off-black": {
+        "role": "neutral",
+        "displayName": "Off Black",
+        "canonical": "#0b0b0a",
+        "tonalRamp": ["#000101", "#0b0b0a", "#151413", "#282424", "#575352", "#a7a7a7", "#d8d3ce", "#fafbf8"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display Hero",
+        "purpose": "Profile name and primary surface title."
+      },
+      "headline": {
+        "displayName": "Section Headline",
+        "purpose": "Major section divisions alongside hairline separators."
+      },
+      "title": {
+        "displayName": "Card & Role Title",
+        "purpose": "Project names, role titles, and dialog headings."
+      },
+      "body": {
+        "displayName": "Prose Body",
+        "purpose": "Narrative about copy, project descriptions, and bio."
+      },
+      "label": {
+        "displayName": "Technical Mono",
+        "purpose": "Navigation tabs, timestamps, tech stack tags, and metadata."
+      }
+    },
+    "shadows": [
+      {
+        "name": "flat-rest",
+        "value": "none",
+        "purpose": "Default surface state across cards, buttons, inputs, and headers."
+      },
+      {
+        "name": "modal-elevation",
+        "value": "0 25px 50px -12px rgba(0, 0, 0, 0.7)",
+        "purpose": "Reserved strictly for floating project preview dialogs on desktop."
+      }
+    ],
+    "motion": [
+      {
+        "name": "swift-ease",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Slide-up and fade-in entrances for dialogs and modals."
+      },
+      {
+        "name": "tactile-snap",
+        "value": "150ms ease",
+        "purpose": "Instant feedback on hover, scale micro-elevation, and color shifts."
+      }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "High-emphasis action button with stark inverted monochrome polarity and zero radius.",
+      "html": "<button class=\"ds-btn-primary\"><span>CONTACT ME</span><svg class=\"ds-icon-arrow\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\"><path d=\"M7 17L17 7M17 7H7M17 7V17\"/></svg></button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 48px; padding: 0 16px; background-color: #fafbf8; color: #000101; font-family: var(--font-mono, 'Courier New', monospace); font-size: 12px; font-weight: 500; text-transform: uppercase; border: none; border-radius: 0; cursor: pointer; transition: background-color 150ms ease, opacity 150ms ease; } .ds-btn-primary:hover { opacity: 0.9; } .ds-btn-primary:focus-visible { outline: 2px solid #fafbf8; outline-offset: 2px; } .ds-icon-arrow { width: 14px; height: 14px; }"
+    },
+    {
+      "name": "Outline Filter Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Hairline-bordered secondary action trigger for filters and expandable sections.",
+      "html": "<button class=\"ds-btn-outline\"><span>SHOW MORE</span><svg class=\"ds-icon-chevron\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M6 9l6 6 6-6\"/></svg></button>",
+      "css": ".ds-btn-outline { display: inline-flex; align-items: center; justify-content: center; gap: 6px; height: 32px; padding: 0 16px; background-color: transparent; color: #a7a7a7; font-family: var(--font-mono, 'Courier New', monospace); font-size: 11px; text-transform: uppercase; border: 1px solid #282424; border-radius: 0; cursor: pointer; transition: all 150ms ease; } .ds-btn-outline:hover { background-color: #0b0b0a; color: #fafbf8; transform: scale(1.02); } .ds-btn-outline:focus-visible { outline: 1px solid #fafbf8; } .ds-icon-chevron { width: 14px; height: 14px; }"
+    },
+    {
+      "name": "Hairline Project Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Full-width technical showcase container with 1px border, project metadata, and external link triggers.",
+      "html": "<div class=\"ds-card\"><div class=\"ds-card-header\"><h3 class=\"ds-card-title\">All3Rounds</h3><span class=\"ds-card-year\">2026</span></div><p class=\"ds-card-desc\">Community-Driven Filipino Battle Rap Archive</p><div class=\"ds-card-footer\"><span class=\"ds-badge\">NEXT.JS</span><span class=\"ds-badge\">TYPESCRIPT</span><div class=\"ds-card-actions\"><a href=\"#\" class=\"ds-icon-btn\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z\"/></svg></a></div></div></div>",
+      "css": ".ds-card { background-color: #000101; border: 1px solid #282424; padding: 16px; border-radius: 0; color: #fafbf8; display: flex; flex-direction: column; gap: 8px; } .ds-card-header { display: flex; align-items: baseline; justify-content: space-between; } .ds-card-title { font-family: var(--font-sans, Arial, sans-serif); font-size: 16px; font-weight: 500; margin: 0; color: #fafbf8; } .ds-card-year { font-family: var(--font-mono, monospace); font-size: 11px; color: #a7a7a7; } .ds-card-desc { font-family: var(--font-sans, Arial, sans-serif); font-size: 14px; line-height: 1.5; color: #a7a7a7; margin: 0; } .ds-card-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 8px; } .ds-badge { font-family: var(--font-mono, monospace); font-size: 10px; color: #575352; text-transform: uppercase; margin-right: 8px; } .ds-card-actions { margin-left: auto; } .ds-icon-btn { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border: 1px solid #282424; background-color: #000101; color: #575352; text-decoration: none; transition: all 150ms ease; } .ds-icon-btn:hover { border-color: #fafbf8; color: #fafbf8; transform: translateY(-1px); } .ds-icon-btn svg { width: 14px; height: 14px; }"
+    },
+    {
+      "name": "Crop Mark Frame",
+      "kind": "custom",
+      "refersTo": "custom-crop-frame",
+      "description": "Architectural crop marks surrounding visual focal assets like the profile avatar.",
+      "html": "<div class=\"ds-crop-container\"><span class=\"ds-crop-mark ds-c-tl-h\"></span><span class=\"ds-crop-mark ds-c-tl-v\"></span><span class=\"ds-crop-mark ds-c-tr-h\"></span><span class=\"ds-crop-mark ds-c-tr-v\"></span><span class=\"ds-crop-mark ds-c-bl-h\"></span><span class=\"ds-crop-mark ds-c-bl-v\"></span><span class=\"ds-crop-mark ds-c-br-h\"></span><span class=\"ds-crop-mark ds-c-br-v\"></span><div class=\"ds-crop-box\"><span class=\"ds-crop-inner-label\">AVATAR FRAME</span></div></div>",
+      "css": ".ds-crop-container { position: relative; padding: 8px; display: inline-block; } .ds-crop-mark { position: absolute; background-color: #575352; } .ds-c-tl-h { top: 8px; left: 0; width: 8px; height: 1px; } .ds-c-tl-v { top: 0; left: 8px; width: 1px; height: 8px; } .ds-c-tr-h { top: 8px; right: 0; width: 8px; height: 1px; } .ds-c-tr-v { top: 0; right: 8px; width: 1px; height: 8px; } .ds-c-bl-h { bottom: 8px; left: 0; width: 8px; height: 1px; } .ds-c-bl-v { bottom: 0; left: 8px; width: 1px; height: 8px; } .ds-c-br-h { bottom: 8px; right: 0; width: 8px; height: 1px; } .ds-c-br-v { bottom: 0; right: 8px; width: 1px; height: 8px; } .ds-crop-box { width: 128px; height: 128px; background-color: #0b0b0a; border: 1px solid #282424; display: flex; align-items: center; justify-content: center; } .ds-crop-inner-label { font-family: var(--font-mono, monospace); font-size: 10px; color: #a7a7a7; letter-spacing: 0.05em; }"
+    },
+    {
+      "name": "Timeline Diamond Node",
+      "kind": "custom",
+      "refersTo": "custom-timeline-node",
+      "description": "Chronological milestone marker using a 45-degree rotated square resting on a vertical hairline spine.",
+      "html": "<div class=\"ds-timeline-item\"><div class=\"ds-timeline-spine\"><div class=\"ds-timeline-track\"></div><div class=\"ds-timeline-diamond\"></div></div><div class=\"ds-timeline-content\"><h4 class=\"ds-timeline-role\">Full-Stack Developer</h4><p class=\"ds-timeline-company\">All3Rounds</p><span class=\"ds-timeline-year\">2026</span></div></div>",
+      "css": ".ds-timeline-item { display: grid; grid-template-columns: 24px 1fr; gap: 16px; position: relative; } .ds-timeline-spine { position: relative; width: 24px; } .ds-timeline-track { position: absolute; left: 11px; top: 0; bottom: 0; width: 1px; background-color: #282424; } .ds-timeline-diamond { position: absolute; left: 50%; top: 6px; width: 10px; height: 10px; background-color: #000101; border: 1px solid #fafbf8; transform: translateX(-50%) rotate(45deg); z-index: 2; } .ds-timeline-content { padding-bottom: 20px; } .ds-timeline-role { font-family: var(--font-sans, Arial, sans-serif); font-size: 14px; font-weight: 600; color: #fafbf8; margin: 0; } .ds-timeline-company { font-family: var(--font-sans, Arial, sans-serif); font-size: 14px; color: #a7a7a7; margin: 4px 0 0 0; } .ds-timeline-year { font-family: var(--font-mono, monospace); font-size: 12px; color: #575352; display: block; margin-top: 4px; }"
+    },
+    {
+      "name": "Sticky Grid Navigation",
+      "kind": "nav",
+      "refersTo": "nav-item",
+      "description": "3-column hairline grid header with centered monospace links and active border markers.",
+      "html": "<nav class=\"ds-header-grid\"><a href=\"#\" class=\"ds-nav-cell ds-nav-active\">HOME</a><a href=\"#\" class=\"ds-nav-cell\">PROJS</a><div class=\"ds-nav-cta\"><button class=\"ds-nav-btn\">CONTACT ↗</button></div></nav>",
+      "css": ".ds-header-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; border-left: 1px solid #282424; border-right: 1px solid #282424; border-bottom: 1px solid #282424; background-color: #000101; max-width: 840px; width: 100%; } .ds-nav-cell { display: flex; align-items: center; justify-content: center; height: 48px; border-right: 1px solid #282424; font-family: var(--font-mono, monospace); font-size: 12px; text-transform: uppercase; color: #a7a7a7; text-decoration: none; transition: all 150ms ease; } .ds-nav-cell:hover { background-color: #0b0b0a; color: #fafbf8; } .ds-nav-active { color: #fafbf8; border-bottom: 2px solid #fafbf8; } .ds-nav-cta { display: flex; } .ds-nav-btn { width: 100%; height: 48px; background-color: #fafbf8; color: #000101; font-family: var(--font-mono, monospace); font-size: 12px; font-weight: 600; text-transform: uppercase; border: none; cursor: pointer; transition: opacity 150ms ease; } .ds-nav-btn:hover { opacity: 0.9; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Technical Drafter's Folio",
+    "overview": "The portfolio balances full-stack software engineering rigor with the deliberate craft of an artist. It operates not as a marketing landing page or a bubbly SaaS dashboard, but as a disciplined digital blueprint—a technical folio bound by 1px hairline rules, pure contrast, and razor-sharp geometries. Every boundary is drawn with intentionality; nothing floats on vague drop shadows or arbitrary blur effects.\n\nDensity is calibrated for high-speed recruiter scannability while preserving tactile character. White space functions as architectural breathing room rather than empty void. Content is compartmentalized inside clear gridlines and bordered panels, punctuated by subtle drafting cues: hairline corner crop marks framing visual work, monospace metadata lines with slash delimiters, and 45-degree rotated diamond timeline nodes.",
+    "keyCharacteristics": [
+      "Extreme Monochromatic Contrast: Obsidian Void (#000101) anchored against Warm Bone White (#fafbf8).",
+      "Hairline Containment: Surfaces, dividers, and interactive states are demarcated by 1px solid hairline borders (#282424 dark, #d8d3ce light).",
+      "Zero-Radius Brutalism: Strict 0px corner geometry across containers, buttons, cards, and headers.",
+      "Typographic Duality: Clean sans-serif headings and body prose paired with technical uppercase monospace for metadata, coordinates, navigation, and tags.",
+      "Tactile Micro-Feedback: Instant, snappy transitions (150ms) with slight vertical micro-shifts (-1px) rather than sluggish ambient swells."
+    ],
+    "rules": [
+      {
+        "name": "The Hairline Boundary Rule",
+        "body": "Colors are bounded by explicit 1px rules, never by ambient gradient bleeds or soft drop shadows. Structural separation is structural, not atmospheric.",
+        "section": "colors"
+      },
+      {
+        "name": "The Absolute Contrast Rule",
+        "body": "Interactive action elements (such as the primary contact button) use full inverted polarity: solid Warm Bone background (#fafbf8) with Obsidian Void text (#000101) in dark mode, and vice-versa in light mode.",
+        "section": "colors"
+      },
+      {
+        "name": "The Metadata Is Monospace Rule",
+        "body": "Any data point representing a timestamp, file size, route, category, technology name, coordinate, or status indicator must be set in uppercase Geist Mono at 11px.",
+        "section": "typography"
+      },
+      {
+        "name": "The Underline Highlight Rule",
+        "body": "Inline emphasized text in body prose receives a solid bottom hairline border (border-b border-border text-foreground), never colored marker fills or bold italic treatments.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat-By-Default Rule",
+        "body": "Surfaces are completely flat at rest. Depth is established through 1px hairline boundaries (#282424 / #d8d3ce) and subtle background fills (#0b0b0a / #efebe5), not ambient shadows.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Right-Angle Invariant",
+        "body": "Corner radii on core UI structures (cards, buttons, inputs, headers, tags) must remain strictly 0px. Soft rounded pills are prohibited.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do maintain strict 0px border radius across buttons, cards, modals, and container frames.",
+      "Do format all dates, technology tags, categories, navigation items, and coordinates in uppercase monospace (font-mono text-[11px]).",
+      "Do use 1px solid hairline borders (#282424 dark / #d8d3ce light) as the primary tool for spatial separation.",
+      "Do separate list items and metadata with explicit slash delimiters (\" / \").",
+      "Do keep micro-interactions rapid and snappy (150ms transitions, subtle 1px hover lifts)."
+    ],
+    "donts": [
+      "Don't use bubbly pill-shaped buttons, rounded badges, or soft rounded cards.",
+      "Don't add colored gradients, ambient pastel glows, or multi-colored background blurs.",
+      "Don't use arbitrary drop shadows on static resting elements.",
+      "Don't use generic saturated accent colors; remain anchored in the high-contrast Obsidian & Bone monochrome palette."
+    ]
+  }
+}
